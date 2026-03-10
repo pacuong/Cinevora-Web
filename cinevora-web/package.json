@@ -9,13 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.1.4",
     "@tanstack/react-query": "^5.90.16",
     "axios": "^1.13.2",
     "cinego-app": "link:",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "next": "16.1.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
@@ -28,6 +28,7 @@
     "@eslint/compat": "^1.4.0",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.36.0",
+    "@tailwindcss/postcss": "^4.2.1",
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
