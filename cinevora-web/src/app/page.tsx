@@ -15,6 +15,7 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   return (
     <div>
+      <h1 className="text-white-100">hello KHoa</h1>
       <InputComponent
         id="name"
         value={name}

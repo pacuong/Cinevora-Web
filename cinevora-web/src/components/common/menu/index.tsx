@@ -1,7 +1,7 @@
 import ButtonComponent from "@/src/components/common/button";
 import { Menu, type MenuProps } from "antd";
 import { useState, type ReactNode } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface MenuLink {
   key: string | number;
@@ -24,7 +24,7 @@ const MenuComponent = ({ itemsData, title, variant }: MenuComponentProps) => {
   const menuItems: MenuItem[] = itemsData.map((item) => ({
     key: item.key,
     label: (
-      <Link to={item.value.link} target="_blank" rel="noopener noreferrer">
+      <Link href={item.value.link} target="_blank" rel="noopener noreferrer">
         {item.value.label}
       </Link>
     ),

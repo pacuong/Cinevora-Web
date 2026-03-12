@@ -5,6 +5,7 @@ export interface TabsItems {
   key: string;
   label: ReactNode;
   children?: ReactNode;
+  
 }
 
 interface TabsProps {
