@@ -1,5 +1,6 @@
 import type { MenuProps } from "antd";
 import { Button, Dropdown, Space } from "antd";
+import Link from "next/link";
 
 export interface LinkItem {
   key: string;
@@ -13,25 +14,27 @@ export interface LinkItem {
 export interface LinkItemProps {
   itemLink: LinkItem[];
   textLink: string;
-  isPlacement?: "bottomLeft";
+  placement?: "bottomLeft" | "bottomRight" | "bottom";
+  className?: string;
 }
 
 const DropdownComponent = ({
   itemLink,
   textLink,
-  isPlacement = "bottomLeft",
+  placement = "bottomLeft",
+  className,
 }: LinkItemProps) => {
   const items: MenuProps["items"] = itemLink.map((item) => ({
     key: item.key,
     label: (
-      <a
+      <Link
         href={item.href}
         {...(item.idExternal
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
       >
         {item.text}
-      </a>
+      </Link>
     ),
     disabled: item.isDisabled,
     danger: item.isDanger,
@@ -39,8 +42,10 @@ const DropdownComponent = ({
   return (
     <Space direction="vertical">
       <Space wrap>
-        <Dropdown menu={{ items }} placement={isPlacement}>
-          <Button className="dropdown-trigger">{textLink}</Button>
+        <Dropdown menu={{ items }} placement={placement}>
+          <Button className={`dropdown-trigger ${className}`}>
+            {textLink}
+          </Button>
         </Dropdown>
       </Space>
     </Space>
