@@ -1,7 +1,12 @@
-import { AuthResponse, LoginUser, RegisterPayload, UserProfile } from '@/src/interfaces/authUser';
-import { authLogin, authRegister } from '@/src/services/authService';
-import { create } from 'zustand';
-import { createJSONStorage, persist } from 'zustand/middleware';
+import {
+  AuthResponse,
+  LoginUser,
+  RegisterPayload,
+  UserProfile,
+} from "@/src/interfaces/authUser";
+import { authLogin, authRegister } from "@/src/services/authService";
+import { create } from "zustand";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 interface UserAction {
   userAuthentication: AuthResponse | null;
@@ -25,7 +30,7 @@ export const useAuthSlice = create(
         return response;
       },
       logout: () => {
-        localStorage.removeItem('user-storage');
+        localStorage.removeItem("user-storage");
         set({ userAuthentication: null });
       },
       updateProfile: (profile) =>
@@ -44,7 +49,7 @@ export const useAuthSlice = create(
         }),
     }),
     {
-      name: 'user-storage',
+      name: "user-storage",
       storage: createJSONStorage(() => localStorage),
     },
   ),

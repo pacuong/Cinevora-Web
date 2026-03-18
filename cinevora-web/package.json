@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare": "husky install",
+    "server": "json-server-auth --watch src/db/db.json --port 3001"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.16",

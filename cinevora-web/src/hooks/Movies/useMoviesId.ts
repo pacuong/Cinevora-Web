@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { getMovieById } from "@/src/services/movieService";
 import { useQuery } from "@tanstack/react-query";

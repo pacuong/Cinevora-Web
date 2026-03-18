@@ -1,0 +1,361 @@
+{
+  "movieList": [
+    {
+      "id": "thien-duong-mau",
+      "title": "Thiên đường máu",
+      "rating": 1,
+      "ageRating": "C16",
+      "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
+      "releaseDate": "12-01-2025",
+      "genre": "tội phạm, giật gân, tâm lý",
+      "duration": 166,
+      "rated": "C13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "Nguyễn Quang Dũng",
+      "actor": "Thái Hòa, Thu Trang, Hồng Ánh",
+      "language": "Tiếng Việt",
+      "type": "now",
+      "description": "Một vụ án mạng bí ẩn xảy ra trong gia đình giàu có, hé lộ những góc khuất tăm tối của lòng tham và sự phản bội.",
+      "isUpComming": true
+    },
+    {
+      "id": "avatar-3-fire-and-ash",
+      "title": "avatar- 3 lửa và tro tàn",
+      "rating": 2,
+      "ageRating": "C13",
+      "posterUrl": "https://metiz.vn/media/poster_film/avatar.jpg",
+      "releaseDate": "03-02-2026",
+      "genre": "khoa học viễn tưởng, phiêu lưu, hành động",
+      "duration": 166,
+      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "James Cameron",
+      "actor": "Sam Worthington, Zoe Saldaña, Sigourney Weaver",
+      "language": "Tiếng Anh",
+      "description": "Cuộc chiến mới trên hành tinh Pandora bùng nổ khi con người quay trở lại với tham vọng khai thác tàn khốc.",
+      "isUpComming": true
+    },
+    {
+      "id": "ai-thuong-ai-men",
+      "title": "ai thương ai mến",
+      "rating": 3,
+      "ageRating": "P",
+      "posterUrl": "https://metiz.vn/media/poster_film/ai_men.jpg",
+      "releaseDate": "03-01-2024",
+      "genre": "hài, gia đình, tình cảm",
+      "duration": 166,
+      "rated": "P - phim dành cho mọi lứa tuổi",
+      "director": "Huỳnh Đông",
+      "actor": "Lê Khánh, Đại Nghĩa, Puka",
+      "language": "Tiếng Việt",
+      "description": "Câu chuyện gia đình nhẹ nhàng, hài hước xoay quanh những mâu thuẫn nhỏ nhưng đầy yêu thương.",
+      "isUpComming": true
+    },
+    {
+      "id": "dino-family-jurassic",
+      "title": "gia đình khủng long: mắc kẹt kỷ jura",
+      "ageRating": "P",
+      "posterUrl": "https://metiz.vn/media/poster_film/700x1000-dino.jpg",
+      "releaseDate": "28-02-2024",
+      "genre": "hoạt hình, phiêu lưu, gia đình",
+      "duration": 165,
+      "rated": "P - phim dành cho mọi lứa tuổi",
+      "director": "Mark Dindal",
+      "actor": "Lồng tiếng",
+      "language": "Lồng tiếng Việt",
+      "description": "Gia đình khủng long bị lạc vào kỷ Jura và phải hợp sức để tìm đường trở về nhà.",
+      "isUpComming": true
+    },
+    {
+      "id": "tom-jerry-magic-compass",
+      "title": "tom and jerry - chiếc la bàn kỳ bí",
+      "ageRating": "P",
+      "posterUrl": "https://metiz.vn/media/poster_film/tom_GEQ3qx2.jpg",
+      "releaseDate": "15-03-2024",
+      "genre": "hoạt hình, hài hước, phiêu lưu",
+      "duration": 134,
+      "rated": "P - phim dành cho mọi lứa tuổi",
+      "director": "Darrell Van Citters",
+      "actor": "Lồng tiếng",
+      "language": "Lồng tiếng Việt",
+      "description": "Tom và Jerry bước vào cuộc phiêu lưu kỳ lạ xoay quanh một chiếc la bàn phép thuật.",
+      "isUpComming": true
+    },
+    {
+      "id": "journey-to-the-west-comedy",
+      "title": "đại thoại tây du",
+      "ageRating": "P",
+      "posterUrl": "https://metiz.vn/media/poster_film/tdk.jpg",
+      "releaseDate": "08-03-2024",
+      "genre": "hài, giả tưởng, phiêu lưu",
+      "duration": 94,
+      "rated": "P - phim dành cho mọi lứa tuổi",
+      "director": "Lưu Trấn Vỹ",
+      "actor": "Châu Tinh Trì, Ngô Mạnh Đạt",
+      "language": "Tiếng Trung",
+      "description": "Phiên bản hài hước kinh điển của Tây Du Ký với phong cách đặc trưng của Châu Tinh Trì.",
+      "isUpComming": true
+    },
+    {
+      "id": "godzilla-x-kong-new-empire",
+      "title": "Godzilla x Kong: đế chế mới",
+      "ageRating": "C13",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/2vFuG6bWGyQUzYS9d69E5l85nIz.jpg",
+      "releaseDate": "29-03-2024",
+      "genre": "hành động, khoa học viễn tưởng, quái vật",
+      "duration": 115,
+      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "Adam Wingard",
+      "actor": "Rebecca Hall, Brian Tyree Henry",
+      "language": "Tiếng Anh",
+      "description": "Godzilla và Kong buộc phải liên minh trước mối đe dọa mới có thể hủy diệt toàn bộ thế giới.",
+      "isUpComming": true
+    },
+    {
+      "id": "mai",
+      "title": "mai",
+      "ageRating": "C16",
+      "posterUrl": "https://metiz.vn/media/poster_film/mai.jpg",
+      "releaseDate": "10-02-2024",
+      "genre": "tình cảm, tâm lý, gia đình",
+      "duration": 131,
+      "rated": "T16 - phim cấm khán giả dưới 16 tuổi",
+      "director": "Trấn Thành",
+      "actor": "Phương Anh Đào, Tuấn Trần",
+      "language": "Tiếng Việt",
+      "description": "Câu chuyện cảm xúc về tình yêu, gia đình và những lựa chọn khó khăn trong cuộc sống.",
+      "isUpComming": true
+    },
+    {
+      "id": "lac-pham-tran",
+      "title": "lạc phàm trần",
+      "ageRating": "C13",
+      "posterUrl": "https://metiz.vn/media/poster_film/lac_phaqm_tran.jpg",
+      "releaseDate": "19-01-2025",
+      "genre": "hài, tình cảm",
+      "duration": 108,
+      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "Lý Hải",
+      "actor": "Song Luân, Kaity Nguyễn",
+      "language": "Tiếng Việt",
+      "description": "Một chàng trai vô tình rơi vào chuỗi tình huống dở khóc dở cười giữa đời thường.",
+      "isUpComming": true
+    },
+    {
+      "id": "nha-hai-chu",
+      "title": "nhà hai chủ",
+      "ageRating": "C13",
+      "posterUrl": "https://metiz.vn/media/poster_film/nha_hai_chu.jpg",
+      "releaseDate": "12-04-2024",
+      "genre": "hài, gia đình",
+      "duration": 110,
+      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "Nhật Trung",
+      "actor": "Hồng Vân, Quốc Trường",
+      "language": "Tiếng Việt",
+      "description": "Hai gia đình cùng sở hữu một căn nhà, từ đó nảy sinh hàng loạt tình huống hài hước.",
+      "isUpComming": true
+    },
+    {
+      "id": "mission-impossible-8",
+      "title": "Mission: Impossible 8",
+      "ageRating": "C13",
+      "posterUrl": "https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/m/i/mi8_poster_470x700_1.jpg",
+      "releaseDate": "28-06-2025",
+      "genre": "hành động, gián điệp",
+      "duration": 165,
+      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "Christopher McQuarrie",
+      "actor": "Tom Cruise, Hayley Atwell",
+      "language": "Tiếng Anh",
+      "description": "Ethan Hunt trở lại trong nhiệm vụ nguy hiểm nhất từ trước đến nay.",
+      "isUpComming": false
+    },
+    {
+      "id": "inside-out-2",
+      "title": "Inside Out 2",
+      "ageRating": "P",
+      "posterUrl": "https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/1/0/1080x1350-insideout.jpg",
+      "releaseDate": "14-06-2025",
+      "genre": "hoạt hình, gia đình",
+      "duration": 100,
+      "rated": "P - phim dành cho mọi lứa tuổi",
+      "director": "Kelsey Mann",
+      "actor": "Amy Poehler, Maya Hawke",
+      "language": "Tiếng Anh",
+      "description": "Riley bước vào tuổi thiếu niên, kéo theo những cảm xúc hoàn toàn mới xuất hiện.",
+      "isUpComming": false
+    },
+    {
+      "id": "transformers-one",
+      "title": "Transformers One",
+      "ageRating": "C13",
+      "posterUrl": "https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/t/f/tf1_intl_allspark_dgtl_online_payoff_keyart_vie_470x700.jpg",
+      "releaseDate": "20-09-2025",
+      "genre": "hoạt hình, khoa học viễn tưởng",
+      "duration": 120,
+      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "Josh Cooley",
+      "actor": "Chris Hemsworth, Brian Tyree Henry",
+      "language": "Tiếng Anh",
+      "description": "Câu chuyện nguồn gốc của Optimus Prime và Megatron.",
+      "isUpComming": false
+    },
+    {
+      "id": "joker-folie-a-deux",
+      "title": "Joker: Folie à Deux",
+      "ageRating": "C18",
+      "posterUrl": "https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/r/s/rsz_poster_payoff_joker_folie_a_deux_5_1_.jpg",
+      "releaseDate": "04-10-2025",
+      "genre": "tội phạm, tâm lý",
+      "duration": 138,
+      "rated": "C18 - phim cấm khán giả dưới 18 tuổi",
+      "director": "Todd Phillips",
+      "actor": "Joaquin Phoenix, Lady Gaga",
+      "language": "Tiếng Anh",
+      "description": "Joker trở lại với một chương đen tối và điên loạn hơn bao giờ hết.",
+      "isUpComming": false
+    },
+    {
+      "id": "batman-the-dark-knight-rises",
+      "title": "Batman: The Dark Knight Rises",
+      "ageRating": "C13",
+      "posterUrl": "https://toomva.com/images/videos/2022/05/ky-si-bong-dem-troi-day-2012--1652094438.jpg",
+      "releaseDate": "20-07-2025",
+      "genre": "hành động, tội phạm, chính kịch",
+      "duration": 165,
+      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
+      "director": "Christopher Nolan",
+      "actor": "Christian Bale, Tom Hardy, Anne Hathaway",
+      "language": "Tiếng Anh",
+      "description": "Tám năm sau cái chết của Harvey Dent, Batman buộc phải quay trở lại khi Gotham bị đe dọa bởi Bane – một kẻ khủng bố tàn bạo với âm mưu hủy diệt toàn bộ thành phố.",
+      "isUpComming": false
+    }
+  ],
+  "users": [
+    {
+      "email": "khoa98921@donga.edu.vn",
+      "password": "$2a$10$RMSW5YS91vpByK0w1H9gbO5sJwL/hedKZ7dhZNd8edfB7nTfRUjfS",
+      "fullName": "Dang Khoa Nguyen1",
+      "dateOfBirth": "08-01-2026",
+      "phone": "0788515490",
+      "confirmPassword": "123@123a",
+      "city": "danang",
+      "district": "haichau",
+      "address": "61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng\n61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng",
+      "sex": "Nữ",
+      "IDCardNumber": "0924788374",
+      "id": 1
+    },
+    {
+      "email": "dangkhoa241024@gmail.com",
+      "password": "$2a$10$tQ/Idi22VUZNGkFlM1xyVeacZCijGegTniXdM26nBSGiJ8mX6zN8e",
+      "fullName": "Đăng Khoa Nguyễn",
+      "dateOfBirth": "15-01-2026",
+      "phone": "0987654324",
+      "confirmPassword": "123@123a",
+      "city": "danang",
+      "district": "camle",
+      "address": "61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng\n61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng",
+      "sex": "Nam",
+      "IDCardNumber": "099876542322",
+      "id": 2
+    }
+  ],
+  "movies": [
+    {
+      "id": "28-nam-sau-ngoi-den-tu-than",
+      "title": "28 năm sau - ngôi đền tử thần",
+      "age": "C18",
+      "posterUrl": "https://metiz.vn/media/poster_film/28-year.jpg",
+      "schedules": {
+        "2026-03-18": [
+          {
+            "time": "18:00 - 20:30",
+            "room": "01"
+          },
+          {
+            "time": "20:45 - 23:15",
+            "room": "02"
+          }
+        ],
+        "2026-03-19": [
+          {
+            "time": "17:00 - 19:30",
+            "room": "03"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ai-thuong-ai-men",
+      "title": "ai thương ai mến",
+      "age": "C16",
+      "posterUrl": "https://metiz.vn/media/poster_film/ai_men.jpg",
+      "schedules": {
+        "2026-03-18": [
+          {
+            "time": "18:00 - 20:30",
+            "room": "01"
+          },
+          {
+            "time": "20:45 - 23:15",
+            "room": "02"
+          }
+        ],
+        "2026-01-30": [
+          {
+            "time": "17:00 - 19:30",
+            "room": "03"
+          }
+        ]
+      }
+    },
+    {
+      "id": "avatar-3-fire-and-ash",
+      "title": "Avatar 3 - lửa và tro tàn",
+      "age": "C13",
+      "posterUrl": "https://metiz.vn/media/poster_film/avatar.jpg",
+      "schedules": {
+        "2026-02-03": [
+          {
+            "time": "17:00 - 19:30",
+            "room": "03"
+          }
+        ],
+        "2026-02-04": [
+          {
+            "time": "18:00 - 20:30",
+            "room": "01"
+          },
+          {
+            "time": "20:45 - 23:15",
+            "room": "02"
+          }
+        ]
+      }
+    },
+    {
+      "id": "thien-duong-mau",
+      "title": "thiên đường máu",
+      "age": "C16",
+      "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
+      "schedules": {
+        "2026-01-30": [
+          {
+            "time": "17:00 - 19:30",
+            "room": "03"
+          }
+        ],
+        "2026-01-31": [
+          {
+            "time": "18:00 - 20:30",
+            "room": "01"
+          },
+          {
+            "time": "20:45 - 23:15",
+            "room": "02"
+          }
+        ]
+      }
+    }
+  ]
+}
