@@ -150,6 +150,15 @@ const Footer = ({
               </p>
             ))}
           </div>
+          <div className="w-[150px] lg:w-[185px]">
+            <Image
+              width={185}
+              height={185}
+              className="w-[150px] lg:w-[185px] h-auto"
+              src={notify.image}
+              alt="notify"
+            />
+          </div>
         </div>
       </div>
       <hr />
@@ -157,7 +166,12 @@ const Footer = ({
         <p className="text-blue-50 text-sm font-bold font-saira uppercase">
           {bottomInfo.productionNote}
         </p>
-        <Image width={30} height={30} src={bottomInfo.brandLogoUrl} alt="brand logo" />
+        <Image
+          width={30}
+          height={30}
+          src={bottomInfo.brandLogoUrl}
+          alt="brand logo"
+        />
         <p className="text-blue-50 text-sm font-bold font-saira uppercase">
           {bottomInfo.copyrightText}
         </p>

@@ -6,7 +6,7 @@
       "rating": 1,
       "ageRating": "C16",
       "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
-      "releaseDate": "12-01-2025",
+      "releaseDate": "19-03-2025",
       "genre": "tội phạm, giật gân, tâm lý",
       "duration": 166,
       "rated": "C13 - phim cấm khán giả dưới 13 tuổi",
@@ -233,31 +233,17 @@
   "users": [
     {
       "email": "khoa98921@donga.edu.vn",
-      "password": "$2a$10$RMSW5YS91vpByK0w1H9gbO5sJwL/hedKZ7dhZNd8edfB7nTfRUjfS",
-      "fullName": "Dang Khoa Nguyen1",
-      "dateOfBirth": "08-01-2026",
+      "password": "$2a$10$5E3FdUxJRIjbsbB4W61eUuY5tsOvdryBZ826sjh3usHI1oSrtmC1e",
+      "fullName": "Dang Khoa Nguyen",
+      "dateOfBirth": "02-03-2026",
       "phone": "0788515490",
-      "confirmPassword": "123@123a",
-      "city": "danang",
-      "district": "haichau",
-      "address": "61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng\n61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng",
-      "sex": "Nữ",
-      "IDCardNumber": "0924788374",
-      "id": 1
-    },
-    {
-      "email": "dangkhoa241024@gmail.com",
-      "password": "$2a$10$tQ/Idi22VUZNGkFlM1xyVeacZCijGegTniXdM26nBSGiJ8mX6zN8e",
-      "fullName": "Đăng Khoa Nguyễn",
-      "dateOfBirth": "15-01-2026",
-      "phone": "0987654324",
       "confirmPassword": "123@123a",
       "city": "danang",
       "district": "camle",
       "address": "61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng\n61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng",
       "sex": "Nam",
-      "IDCardNumber": "099876542322",
-      "id": 2
+      "IDCardNumber": "012345654354",
+      "id": 1
     }
   ],
   "movies": [
