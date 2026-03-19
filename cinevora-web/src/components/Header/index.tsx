@@ -47,7 +47,7 @@ const Header = ({ onLogin, onRegister }: HeaderProps) => {
             ) : (
               <div className="flex items-center gap-3">
                 <Link
-                  href="/thong-tin-tai-khoan"
+                  href={PAGEURL.ACCOUNT_INFORMATION_PAGE}
                   className="text-blue-50 font-saira text-sm uppercase hover:text-orange-90"
                 >
                   {userAuthentication?.user.fullName}

@@ -54,7 +54,7 @@ export const footerDataMock: FooterData = {
   ],
 
   notify: {
-    image: "/src/assets/images/icon-notify.png",
+    image: "/assets/images/icon-notify.png",
   },
   bottomInfo: {
     productionNote: "một sản phẩm đến từ khởi phát, ltd.",
