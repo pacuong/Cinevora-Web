@@ -150,9 +150,6 @@ const Footer = ({
               </p>
             ))}
           </div>
-          <div className="w-[150px] lg:w-[185px]">
-            <Image fill src={notify.image} alt="notify" />
-          </div>
         </div>
       </div>
       <hr />
