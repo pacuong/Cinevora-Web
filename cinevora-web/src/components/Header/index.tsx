@@ -13,7 +13,7 @@ const Header = ({ onLogin, onRegister }: HeaderProps) => {
   const userAuthentication = useAuthSlice((state) => state.userAuthentication);
   const logout = useAuthSlice((state) => state.logout);
   return (
-    <div className="pt-16 lg:pt-[28px] bg-blue-100">
+    <div className="pt-16 lg:pt-[28px] lg:pb-8 bg-blue-100">
       <div className="flex justify-end py-[3px] pr-[15px] lg:mx-27">
         <p className="text-white-100 uppercase text-sm lg:text-md font-saira mr-[15px]">
           hotline: 0123 456 789

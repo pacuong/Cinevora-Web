@@ -11,6 +11,7 @@ import { useAuthSlice } from "@/src/stores/useAuth";
 import { useAuthMessageStore } from "@/src/stores/useAuthMessageStore";
 import { getApiErrorMessage } from "@/src/utils/getApiErrorMessage";
 import { usePathname, useRouter } from "next/navigation";
+import Layout from "../siteLayout";
 
 const LoginPage = () => {
   const pathname = usePathname();
@@ -39,18 +40,20 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="auth-tabs-wrapper pt-18 pb-14">
-      {isDesktop && (
-        <TabsComponent
-          activeKey={activeTabKey}
-          onTabClick={handleAuthTabChange}
-          className="background-btn"
-          items={authuTabs}
-        />
-      )}
+    <Layout>
+      <div className="auth-tabs-wrapper pt-18 pb-14">
+        {isDesktop && (
+          <TabsComponent
+            activeKey={activeTabKey}
+            onTabClick={handleAuthTabChange}
+            className="background-btn"
+            items={authuTabs}
+          />
+        )}
 
-      <LoginForm onLogin={handleLogin} />
-    </div>
+        <LoginForm onLogin={handleLogin} />
+      </div>
+    </Layout>
   );
 };
 

@@ -11,6 +11,7 @@ import { authuTabs } from "@/src/constants/authTab";
 import TabsComponent from "@/src/components/common/tabs";
 import FormRegister from "@/src/components/FormRegister";
 import pageUrl from "@/src/constants/pageUrl";
+import Layout from "../siteLayout";
 
 const RegisterPage = () => {
   const pathname = usePathname();
@@ -40,17 +41,19 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="auth-tabs-wrapper pt-18 pb-14">
-      {isDesktop && (
-        <TabsComponent
-          activeKey={activeTabKey}
-          onTabClick={handleAuthTabChange}
-          className="background-btn"
-          items={authuTabs}
-        />
-      )}
-      <FormRegister onUserName={handleOnRegister} />
-    </div>
+    <Layout>
+      <div className="auth-tabs-wrapper pt-18 pb-14">
+        {isDesktop && (
+          <TabsComponent
+            activeKey={activeTabKey}
+            onTabClick={handleAuthTabChange}
+            className="background-btn"
+            items={authuTabs}
+          />
+        )}
+        <FormRegister onUserName={handleOnRegister} />
+      </div>
+    </Layout>
   );
 };
 
