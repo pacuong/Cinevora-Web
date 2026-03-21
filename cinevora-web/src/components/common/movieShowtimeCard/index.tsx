@@ -1,6 +1,8 @@
-'use client'
+"use client";
 
-import AgeRestrictionModal, { MovieAgeClassification } from "@/src/components/AgeRestrictionModal";
+import AgeRestrictionModal, {
+  MovieAgeClassification,
+} from "@/src/components/AgeRestrictionModal";
 import ConfirmProfile from "@/src/components/ConfirmProfile";
 import LoginModal from "@/src/components/LoginModal";
 import PAGEURL from "@/src/constants/pageUrl";
@@ -147,7 +149,11 @@ const MovieShowtimeCard = ({
         onClose={handleCloseLoginModal}
         onLogin={async (data) => {
           await login(data);
-          //TODO:navigate('/');
+          setOpenLoginModal(false);
+          if (pendingIndex !== null) {
+            openConfirm(pendingIndex);
+          }
+          // router.push("/booking");
         }}
       />
       {openConfirmProfile && profileData && (

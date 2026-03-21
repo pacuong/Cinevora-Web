@@ -1,28 +1,11 @@
-"use client";
+import ProfileWrapper from "@/src/components/ProfileWrapper";
+import { Metadata } from "next";
 
-import ProfileForm from "@/src/components/AccountProfile";
-import { UserProfile } from "@/src/interfaces/authUser";
-import { updateUserProfile } from "@/src/services/authService";
-import { useAuthSlice } from "@/src/stores/useAuth";
-import { mapUserToUserProfile } from "@/src/utils/mapUserToUserProfile";
-
-const ProfilePage = () => {
-  const user = useAuthSlice((s) => s.userAuthentication?.user);
-  const updateProfile = useAuthSlice((s) => s.updateProfile);
-  const profileAccount = user ? mapUserToUserProfile(user) : null;
-  console.log(profileAccount);
-  const handleUpdateProfile = async (data: UserProfile) => {
-    if (!user) return;
-    await updateUserProfile(user.id, data);
-    updateProfile(data);
-  };
-
-  return (
-    <ProfileForm
-      onSubmitProfile={handleUpdateProfile}
-      profileAccount={profileAccount}
-    />
-  );
+export const metadata: Metadata = {
+  title: "Thông tin tài khoản | Cinevora",
+  description:
+    "Quản lý thông tin cá nhân, lịch sử đặt vé và cập nhật tài khoản Cinevora của bạn một cách dễ dàng.",
 };
 
-export default ProfilePage;
+const Profile = () => <ProfileWrapper />;
+export default Profile;

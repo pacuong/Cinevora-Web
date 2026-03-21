@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import DropdownComponent, { LinkItem } from "@/src/components/DropdownComponent";
+import DropdownComponent, {
+  LinkItem,
+} from "@/src/components/DropdownComponent";
 
 export interface NavbarItemBase {
   content: ReactNode;
@@ -25,20 +27,21 @@ interface NavbarProps {
 
 const NavBarComponent = ({ navList }: NavbarProps) => {
   return (
-    <nav className="bg-black-40 py-8 md:pt-[25px] md:pb-[22px] lg:pb-11 lg:mr-auto lg:ml-[170px]">
+    <nav className="bg-black-40 py-8 md:pt-[25px] md:pb-[22px] lg:pb-11 lg:ml-[170px]">
       <ul className="flex gap-2">
         {navList.map((item, index) => (
           <li className="" key={index}>
             {item.type === "dropdown" ? (
               <DropdownComponent
-                className="lg:font-bold md:h-[28px] lg:h-12 lg:mx-9 md:font-normal md:text-base lg:text-[20px] md:p-0"
+                className="lg:font-bold md:h-[28px] lg:h-12 lg:mx-9 md:font-normal md:text-base lg:text-l md:p-0"
                 textLink={String(item.content)}
                 itemLink={item.dropdownItems}
                 placement={item.placement ?? "bottomLeft"}
               />
             ) : (
               <Link
-                className="text-white-100 active:text-orange-90 lg:mx-9 lg:font-bold hover:text-orange-90 font-saira md:text-base lg:text-[20px] lg:hover:border-b-2 lg:active:border-b-2 lg:active:pb-5 lg:hover:pb-5 uppercase"
+                className="text-white-100 active:text-orange-90 md:mx-6 lg:mx-9 lg:font-bold
+                 hover:text-orange-90 font-saira md:text-base lg:text-l lg:hover:border-b-2 lg:active:border-b-2 lg:active:pb-5 lg:hover:pb-5 uppercase"
                 href={item.href}
               >
                 {item.content}
