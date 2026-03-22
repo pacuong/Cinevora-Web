@@ -4,9 +4,10 @@ import MovieCard from "@/src/components/common/movieCard";
 import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListNowMovies } from "@/src/hooks/Movies/useListNowMovies";
 import { useBookingStore } from "@/src/stores/bookingStore";
+import { Metadata } from "next";
 import { useState } from "react";
 
-const NowShowingPage = () => {
+const NowShowingClient = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState<string | null>(null);
   const { movies = [], isLoadingMovie, isErrorMovie } = useListNowMovies();
@@ -30,7 +31,7 @@ const NowShowingPage = () => {
   };
 
   return (
-    <div>
+    <div className="ml-6">
       <div className="pt-[40px] mb-[25px] md:pt-[55px] lg:pt-[40px] lg:mb-[35px]">
         <h2 className="tracking-tight uppercase font-bold font-saira text-[25px] md:text-[32px] lg:text-[24px]">
           phim đang chiếu
@@ -61,4 +62,4 @@ const NowShowingPage = () => {
   );
 };
 
-export default NowShowingPage;
+export default NowShowingClient;

@@ -71,7 +71,7 @@ const ShowtimeScheduleModal = ({
             onSelect={setDate}
           />
 
-          <div className="px-15 md:!px-20 p-10">
+          <div className="pt-10">
             <h2 className="text-2xl font-saira text-blue-100 font-bold">
               Chọn ngày chiếu
             </h2>

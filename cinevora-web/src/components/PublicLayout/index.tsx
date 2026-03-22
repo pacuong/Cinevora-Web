@@ -1,6 +1,5 @@
-'use client'
-
 import ReactQueryProvider from "@/src/providers/ReactQueryProvider"
+import HeaderMobile from '@/src/components/HeaderMobile'
 import Header from "../Header"
 import Footer from "../Footer"
 import { footerDataMock } from "@/src/mocks/footerDataMock"
@@ -8,9 +7,15 @@ import { footerDataMock } from "@/src/mocks/footerDataMock"
 const PublicLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <ReactQueryProvider>
-      <div >
-        <Header />
-        <div className="">{children}</div>
+      <div className="flex min-h-screen flex-col">
+        <div className="md:hidden lg:hidden">
+          <HeaderMobile />
+        </div>
+
+        <div className="hidden md:block">
+          <Header />
+        </div>
+        <div className="flex-1 mx-auto">{children}</div>
         <Footer
           socialLinks={footerDataMock.socialLinks}
           brand={footerDataMock.brand}

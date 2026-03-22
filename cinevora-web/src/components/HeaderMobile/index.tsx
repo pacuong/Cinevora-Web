@@ -27,9 +27,8 @@ const HeaderMobile = () => {
           return (
             <div key={item.key}>
               <button
-                className={`tab-menu-item flex justify-between  ${
-                  openMovieMenu ? "!text-orange-70 !bg-white-90" : ""
-                }`}
+                className={`tab-menu-item flex justify-between  ${openMovieMenu ? "!text-orange-70 !bg-white-90" : ""
+                  }`}
                 onClick={() => setOpenMovieMenu((prev) => !prev)}
               >
                 {item.label}
@@ -109,12 +108,10 @@ const HeaderMobile = () => {
     {
       key: "menu",
       label: <HamburgerMenu />,
-      children: renderMenu(),
     },
     {
       key: "user",
       label: <UserIcons />,
-      children: renderUserMenu(),
     },
   ];
 
@@ -142,12 +139,30 @@ const HeaderMobile = () => {
         </div>
       </div>
 
-      <div className="tabs-container">
+      <div className="tabs-container relative">
         <TabsComponent
           items={tabItems}
           activeKey={activeTab}
           onTabClick={handleTabClick}
         />
+
+        <div
+          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${activeTab === "menu"
+              ? "max-h-[300px] translate-y-0 opacity-100"
+              : "pointer-events-none max-h-0 -translate-y-2 opacity-0"
+            }`}
+        >
+          {renderMenu()}
+        </div>
+
+        <div
+          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${activeTab === "user"
+              ? "max-h-[300px] translate-y-0 opacity-100"
+              : "pointer-events-none max-h-0 -translate-y-2 opacity-0"
+            }`}
+        >
+          {renderUserMenu()}
+        </div>
       </div>
     </div>
   );
