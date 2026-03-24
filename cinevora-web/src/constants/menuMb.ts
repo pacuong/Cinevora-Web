@@ -1,3 +1,5 @@
+import PAGEURL from "@/src/constants/pageUrl";
+
 export const menuItems = [
   { key: "schedule", label: "lịch chiếu" },
   { key: "movies", label: "phim" },
@@ -7,11 +9,11 @@ export const menuItems = [
 ];
 
 export const guestUserItems = [
-  { key: "login", label: "đăng nhập" },
-  { key: "register", label: "đăng ký" },
+  { key: "login", label: "đăng nhập", path: PAGEURL.LOGIN },
+  { key: "register", label: "đăng ký", path: PAGEURL.REGISTER },
 ];
 
 export const authUserItems = [
-  { key: "profile", label: "hồ sơ" },
-  { key: "logout", label: "đăng xuất" },
+  { key: "profile", label: "hồ sơ", path: PAGEURL.ACCOUNT_INFORMATION_PAGE },
+  { key: "logout", label: "đăng xuất", action: "logout" },
 ];

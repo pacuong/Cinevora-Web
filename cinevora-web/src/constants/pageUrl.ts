@@ -3,11 +3,10 @@ const PAGEURL = {
   LOGIN: "/login",
   REGISTER: "/register",
   DETAIL_PAGE: "/detail",
-  NOW_SHOWING_PAGE: "/phim-dang-chieu",
-  UP_COMING_PAGE: "/phim-sap-chieu",
-  MOVIE_SHOWTIME_PAGE: "/lich-chieu-phim",
+  NOW_SHOWING_PAGE: "/nowShowing",
+  UP_COMING_PAGE: "/upcomingMovies",
+  MOVIE_SHOWTIME_PAGE: "/showtimes",
   BOOKING_PAGE: "/booking",
   ACCOUNT_INFORMATION_PAGE: "/profile",
-  CHANGE_PASSWORD_PAGE: "/thay-doi-mat-khau",
 };
 export default PAGEURL;

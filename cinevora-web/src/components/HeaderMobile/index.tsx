@@ -4,18 +4,25 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import PAGEURL from "@/src/constants/pageUrl";
-import { guestUserItems, menuItems } from "@/src/constants/menuMb";
+import {
+  authUserItems,
+  guestUserItems,
+  menuItems,
+} from "@/src/constants/menuMb";
 import TabsComponent from "@/src/components/common/tabs";
 import UserIcons from "@/src/icons/userIcon";
 import HamburgerMenu from "@/src/icons/hamburgerMenu";
 import Image from "next/image";
+import { useAuthSlice } from "@/src/stores/useAuth";
 
 const HeaderMobile = () => {
   const router = useRouter();
   const [openMovieMenu, setOpenMovieMenu] = useState(false);
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null);
-
+  const userAuthentication = useAuthSlice((state) => state.userAuthentication);
+  const logout = useAuthSlice((state) => state.logout);
+  const menuList = userAuthentication ? authUserItems : guestUserItems;
   const handleTabClick = (key: string) => {
     setActiveTab((prev) => (prev === key ? null : key));
   };
@@ -78,21 +85,21 @@ const HeaderMobile = () => {
 
   const renderUserMenu = () => (
     <div>
-      {guestUserItems.map((item) => (
+      {menuList.map((item) => (
         <button
           key={item.key}
           className={`tab-menu-item ${activeMenuItem === item.key ? "active" : ""}`}
           onClick={() => {
             setActiveMenuItem(item.key);
-
             setActiveTab(null);
 
-            if (item.key === "login") {
-              router.push(PAGEURL.LOGIN);
+            if (item.path) {
+              router.push(item.path);
             }
 
-            if (item.key === "register") {
-              router.push(PAGEURL.REGISTER);
+            if ("action" in item && item.action === "logout") {
+              logout();
+              router.push(PAGEURL.HOME);
             }
 
             setActiveMenuItem(null);

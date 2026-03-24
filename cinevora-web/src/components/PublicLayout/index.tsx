@@ -28,7 +28,7 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
         />
       </div>
     </ReactQueryProvider>
-  )
-}
+  );
+};
 
 export default PublicLayout;

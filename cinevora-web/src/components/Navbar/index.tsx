@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import DropdownComponent, { LinkItem } from "@/src/components/DropdownComponent";
+import DropdownComponent, {
+  LinkItem,
+} from "@/src/components/DropdownComponent";
 
 export interface NavbarItemBase {
   content: ReactNode;
@@ -31,7 +33,7 @@ const NavBarComponent = ({ navList }: NavbarProps) => {
           <li key={index}>
             {item.type === "dropdown" ? (
               <DropdownComponent
-                className="lg:font-bold md:h-[28px] lg:h-12 lg:mx-9 md:font-normal md:text-base lg:text-[20px] md:p-0"
+                className="lg:font-bold md:h-[28px] lg:h-12 lg:mx-9 md:font-normal md:text-base lg:text-l md:p-0"
                 textLink={String(item.content)}
                 itemLink={item.dropdownItems}
                 placement={item.placement ?? "bottomLeft"}

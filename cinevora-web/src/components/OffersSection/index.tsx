@@ -44,7 +44,7 @@ const OffersSection = ({
           {topImages.map((item) => (
             <div
               key={item.id}
-              className="relative group w-full h-full md:h-[170px] lg:h-[260px] "
+              className="relative group w-full h-[152px] md:h-[170px] lg:h-[260px] "
             >
               <Image
                 className="object-cover"
@@ -58,11 +58,11 @@ const OffersSection = ({
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-5 md:grid-cols-4 h-full">
+      <div className="grid grid-cols-2 gap-5 h-[314px] md:grid-cols-4 ">
         {gridImages.map((item) => (
           <div
             key={item.id}
-            className="relative group w-full h-full md:h-[170px] lg:h-[260px] overflow-hidden"
+            className="relative group w-full h-full md:h-[170px] lg:h-[260px] "
           >
             <Image
               className="object-cover"
