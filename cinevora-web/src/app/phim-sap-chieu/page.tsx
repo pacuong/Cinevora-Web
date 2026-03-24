@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import UpComingClient from "./UpComingClient";
+import UpComingWrapper from "./UpComingWrapper";
 
 export const metadata: Metadata = {
   title: "Phim Sắp Chiếu",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function UpComingPage() {
-  return <UpComingClient />;
+  return <UpComingWrapper />;
 }

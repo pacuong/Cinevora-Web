@@ -5,7 +5,7 @@ import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListUpComingMovies } from "@/src/hooks/Movies/useListUpComingMovies";
 import { useState } from "react";
 
-const UpComingClient = () => {
+const UpComingWrapper = () => {
   const [openShowtime, setOpenShowtime] = useState(false);
   const { movies = [], isErrorMovie, isLoadingMovie } = useListUpComingMovies();
 
@@ -45,4 +45,4 @@ const UpComingClient = () => {
   );
 };
 
-export default UpComingClient;
+export default UpComingWrapper;

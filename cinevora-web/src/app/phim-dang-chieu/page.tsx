@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import NowShowingClient from "./NowShowingClient";
+import NowShowingWrapper from "./NowShowingWrapper";
 
 export const metadata: Metadata = {
   title: "Phim Đang Chiếu",
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function NowShowingPage() {
-  return <NowShowingClient />;
+  return <NowShowingWrapper />;
 }
