@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
-const DetailPage = () => {
+const DetailWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
   const { id } = useParams();
   const movieId = Array.isArray(id) ? id[0] : id;
@@ -43,7 +43,7 @@ const DetailPage = () => {
 
   return (
     <>
-      <div className="pt-4 md:mt-10 md:mx-5">
+      <div className="pt-4 mx-4 md:mt-10 md:mx-9">
         <div className="flex items-start md:items-center gap-4 w-full mb-8">
           <h3
             className="
@@ -69,7 +69,7 @@ const DetailPage = () => {
         </div>
 
         <div>
-          <div className="md:flex md:justify-between lg:justify-center">
+          <div className="md:flex lg:justify-center">
             <div>
               <img
                 className="w-[195px] h-[265px] lg:h-[281px] object-cover md:mr-15"
@@ -189,9 +189,10 @@ const DetailPage = () => {
       <ShowtimeScheduleModal
         isModalOpen={openModal}
         setIsModalOpen={setOpenModal}
+        movieId={movieId}
       />
     </>
   );
 };
 
-export default DetailPage;
+export default DetailWrapper;

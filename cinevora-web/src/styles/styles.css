@@ -922,7 +922,6 @@ textarea.ant-input {
 
 .detail-list {
   display: flex;
-  gap: 14px;
   margin-bottom: 8px;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
