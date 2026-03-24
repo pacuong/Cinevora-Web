@@ -9,7 +9,7 @@ import { offersData } from "@/src/mocks/offersData";
 import { slides } from "@/src/mocks/slides";
 import { useState } from "react";
 
-const HomePage = () => {
+const HomeWrapper = () => {
   const [active, setActive] = useState(false);
   const handleNowShowing = () => setActive(true);
   const handleComingSoon = () => setActive(false);
@@ -56,4 +56,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default HomeWrapper;

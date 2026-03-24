@@ -2,7 +2,7 @@ import { NavbarItem } from "@/src/components/Navbar";
 import pageUrl from "@/src/constants/pageUrl";
 
 export const navItems: NavbarItem[] = [
-  { href: "lich-chieu-phim", content: "lịch chiếu" },
+  { href: `${pageUrl.MOVIE_SHOWTIME_PAGE}`, content: "lịch chiếu" },
 
   {
     type: "dropdown",

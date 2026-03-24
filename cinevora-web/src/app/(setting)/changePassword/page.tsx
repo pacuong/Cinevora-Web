@@ -1,22 +1,11 @@
-"use client";
+import ChangePasswordWrapper from "@/src/components/ChangePasswordWrapper";
+import { Metadata } from "next";
 
-import ChangePassword from "@/src/components/ChangePassword";
-import { UserChangePassword } from "@/src/interfaces/authUser";
-import { changeUserPassword } from "@/src/services/authService";
-import { useAuthSlice } from "@/src/stores/useAuth";
-
-const ChangePasswordPage = () => {
-  const user = useAuthSlice((s) => s.userAuthentication?.user);
-
-  const handleChangePassword = async (data: UserChangePassword) => {
-    if (!user) return;
-
-    await changeUserPassword(user.id, data.newPassword);
-
-    alert("Đổi mật khẩu thành công");
-  };
-
-  return <ChangePassword onSubmitChangePasswor={handleChangePassword} />;
+export const metadata: Metadata = {
+  title: "Đổi mật khẩu | Cinevora",
+  description:
+    "Cập nhật mật khẩu tài khoản Cinevora để tăng cường bảo mật và bảo vệ thông tin cá nhân của bạn.",
 };
 
-export default ChangePasswordPage;
+const ChangePassword = () => <ChangePasswordWrapper />;
+export default ChangePassword;

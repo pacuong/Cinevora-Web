@@ -11,6 +11,7 @@ import AddIcon from "@/src/icons/iconAdd";
 import ChevronLeft from "@/src/icons/chevronLeft";
 import ChevronRight from "@/src/icons/ChevronRight";
 import ButtonComponent from "@/src/components/common/button";
+import Image from "next/image";
 
 interface Slide {
   id: number;
@@ -88,10 +89,10 @@ export const Banner: React.FC<BannerProps> = ({
               onClick={() => handleThumbnailClick(index)}
             >
               <div className="h-[112px] md:h-[257px] lg:h-[407px]">
-                <img
+                <Image
+                  fill
                   src={slide.image}
                   alt={slide.title || `Slide ${index}`}
-                  className="w-full h-full"
                 />
               </div>
             </SwiperSlide>
@@ -113,6 +114,7 @@ export const Banner: React.FC<BannerProps> = ({
         />
       </div>
       <div className="relative overflow-hidden bg-black-100 mb-5 p-2 md:p-5">
+        {/* TODO:  */}
         <Swiper
           modules={[Navigation, Thumbs]}
           onSwiper={setThumbSwiper}
@@ -127,22 +129,23 @@ export const Banner: React.FC<BannerProps> = ({
             return (
               <SwiperSlide
                 key={slide.id}
-                className="!h-auto flex-none"
+                className="!h-[100px] flex-none"
                 onClick={() => handleThumbnailClick(index)}
               >
                 <div
                   className={[
                     "relative w-full pb-[56%] overflow-hidden group",
-                    "transition-all duration-300",
+                    "transition-all duration-300 h-[100px]",
                     isActive
                       ? "opacity-100 grayscale-0 z-10 hover:opacity-50"
                       : "opacity-50 hover:opacity-50",
                   ].join(" ")}
                 >
-                  <img
+                  <Image
+                    fill
                     src={slide.image}
                     alt={slide.title || `Slide ${index}`}
-                    className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-300"
+                    className="absolute top-0 left-0 object-cover transition-all duration-300"
                   />
                   <BorderGlow
                     strokeWidth={5}
