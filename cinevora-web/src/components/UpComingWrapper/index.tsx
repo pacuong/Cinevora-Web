@@ -5,7 +5,7 @@ import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListUpComingMovies } from "@/src/hooks/Movies/useListUpComingMovies";
 import { useState } from "react";
 
-const UpcomingMoviesPage = () => {
+const UpComingWrapper = () => {
   const [openShowtime, setOpenShowtime] = useState(false);
   const { movies = [], isErrorMovie, isLoadingMovie } = useListUpComingMovies();
 
@@ -16,7 +16,7 @@ const UpcomingMoviesPage = () => {
   };
 
   return (
-    <div>
+    <div className="ml-6">
       <div className="pt-[40px] mb-[25px] md:pt-[55px] lg:pt-[40px] lg:mb-[35px]">
         <h2 className="tracking-tight uppercase font-bold font-saira text-[25px] md:text-[32px] lg:text-[24px]">
           phim sắp chiếu
@@ -32,6 +32,7 @@ const UpcomingMoviesPage = () => {
             isShowOnlyBookBtn
             onBooking={handleBooking}
             isShowGenre
+            isShowBtn
           />
         </div>
       )}
@@ -44,4 +45,4 @@ const UpcomingMoviesPage = () => {
   );
 };
 
-export default UpcomingMoviesPage;
+export default UpComingWrapper;
