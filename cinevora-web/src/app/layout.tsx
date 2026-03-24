@@ -6,7 +6,7 @@ import PublicLayout from "../components/PublicLayout";
 export const metadata: Metadata = {
   title: {
     default: "Metiz Cinema",
-    template: "%s | Metiz Cinema",
+    template: "%s ",
   },
   description: "Metiz Cinema website",
 };
