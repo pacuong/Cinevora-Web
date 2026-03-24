@@ -4,7 +4,6 @@ import MovieCard from "@/src/components/common/movieCard";
 import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListNowMovies } from "@/src/hooks/Movies/useListNowMovies";
 import { useBookingStore } from "@/src/stores/bookingStore";
-import { Metadata } from "next";
 import { useState } from "react";
 
 const NowShowingWrapper = () => {
