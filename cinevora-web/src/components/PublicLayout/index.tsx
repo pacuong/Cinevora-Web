@@ -1,21 +1,21 @@
-"use client";
-
-import ReactQueryProvider from "@/src/providers/ReactQueryProvider";
-import Header from "../Header";
-import Footer from "../Footer";
-import { footerDataMock } from "@/src/mocks/footerDataMock";
-import { useCustomDevice } from "@/src/hooks/deviceDetect";
-import HeaderMobile from "@/src/components/HeaderMobile";
+import ReactQueryProvider from "@/src/providers/ReactQueryProvider"
+import HeaderMobile from '@/src/components/HeaderMobile'
+import Header from "../Header"
+import Footer from "../Footer"
+import { footerDataMock } from "@/src/mocks/footerDataMock"
 
 const PublicLayout = ({ children }: { children: React.ReactNode }) => {
-  const { isMobile } = useCustomDevice();
   return (
     <ReactQueryProvider>
-      <div>
-        <div className="md:pb-[18px] bg-blue-100">
-          {isMobile ? <HeaderMobile /> : <Header />}
+      <div className="flex min-h-screen flex-col">
+        <div className="md:hidden lg:hidden">
+          <HeaderMobile />
         </div>
-        <div>{children}</div>
+
+        <div className="hidden md:block">
+          <Header />
+        </div>
+        <div className="flex-1 mx-auto">{children}</div>
         <Footer
           socialLinks={footerDataMock.socialLinks}
           brand={footerDataMock.brand}

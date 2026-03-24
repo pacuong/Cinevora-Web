@@ -4,8 +4,6 @@ import type { ReactNode } from "react";
 export interface TabsItems {
   key: string;
   label: ReactNode;
-  children?: ReactNode;
-  
 }
 
 interface TabsProps {
@@ -38,7 +36,7 @@ const TabsComponent = ({
             {item.label}
           </button>
         ),
-        children: activeKey === item.key ? item.children : null,
+        children: null,
       }))}
     />
   );
