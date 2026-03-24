@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import NowShowingWrapper from "./NowShowingWrapper";
+import NowShowingWrapper from "@/src/components/NowShowingWrapper";
 
 export const metadata: Metadata = {
   title: "Phim Đang Chiếu",

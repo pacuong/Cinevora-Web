@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import UpComingWrapper from "./UpComingWrapper";
+import UpComingWrapper from "@/src/components/UpComingWrapper";
 
 export const metadata: Metadata = {
   title: "Phim Sắp Chiếu",
