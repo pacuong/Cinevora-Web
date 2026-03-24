@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { useAuthSlice } from "@/src/stores/useAuth";
@@ -33,14 +33,14 @@ const Header = () => {
               {!userAuthentication ? (
                 <>
                   <Link
-                    href={"/login"}
+                    href={"/dang-nhap"}
                     className="header-btn uppercase font-saira text-blue-50 p-0 bg-black-40 md:text-sm lg:text-md hover:text-orange-90 active:text-orange-90"
                   >
                     đăng nhập
                   </Link>
                   <span className="text-blue-50 mr-1">/</span>
                   <Link
-                    href={"/register"}
+                    href={"/dang-ky"}
                     className="header-btn uppercase font-saira text-blue-50 p-0 bg-black-40 md:text-sm lg:text-md hover:text-orange-90 active:text-orange-90"
                   >
                     đăng ký
@@ -52,7 +52,9 @@ const Header = () => {
                     href={PAGEURL.ACCOUNT_INFORMATION_PAGE}
                     className="text-blue-50 md:max-w-[50px] lg:max-w-[100px] truncate font-saira text-sm uppercase hover:text-orange-90"
                   >
-                    {userAuthentication?.user.fullName}
+                    {userAuthentication?.user?.fullName && (
+                      <span>{userAuthentication.user.fullName}</span>
+                    )}
                   </Link>
                   <span className="text-blue-50">/</span>
                   <Link

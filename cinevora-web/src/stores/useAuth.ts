@@ -14,11 +14,15 @@ interface UserAction {
   register: (data: RegisterPayload) => Promise<AuthResponse>;
   updateProfile: (profile: UserProfile) => void;
   logout: () => void;
+  isInitialized: boolean;
+  setInitialized: (state: boolean) => void;
 }
 export const useAuthSlice = create(
   persist<UserAction>(
     (set) => ({
       userAuthentication: null,
+      isInitialized: false,
+      setInitialized: (state) => set({ isInitialized: state }),
       login: async (data) => {
         const response = await authLogin(data);
         set({ userAuthentication: response });
@@ -51,6 +55,9 @@ export const useAuthSlice = create(
     {
       name: "user-storage",
       storage: createJSONStorage(() => localStorage),
+      onRehydrateStorage: () => (state) => {
+        state?.setInitialized(true);
+      },
     },
   ),
 );

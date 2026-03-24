@@ -9,10 +9,8 @@ import { useState } from "react";
 const NowShowingWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState<string | null>(null);
-  const { movies = [], isLoadingMovie, isErrorMovie } = useListNowMovies();
+  const { movies = [], isLoadingMovie } = useListNowMovies();
   const setMovie = useBookingStore((s) => s.setMovie);
-
-  if (isErrorMovie) return <div>Lỗi tải dữ liệu</div>;
 
   const handleBooking = (movie: {
     id: string;
@@ -32,7 +30,10 @@ const NowShowingWrapper = () => {
   return (
     <div className="ml-6">
       <div className="pt-[40px] mb-[25px] md:pt-[55px] lg:pt-[40px] lg:mb-[35px]">
-        <h2 className="tracking-tight uppercase font-bold font-saira text-[25px] md:text-[32px] lg:text-[24px]">
+        <h2
+          className="tracking-tight uppercase font-bold font-saira text-[25px] md:text-[32px] lg:text-[24px] 
+        min-w-[355px] md:max-w-[574px] lg:min-w-[980px] mx-auto"
+        >
           phim đang chiếu
         </h2>
       </div>

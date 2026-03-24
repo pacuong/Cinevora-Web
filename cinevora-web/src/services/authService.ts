@@ -1,13 +1,20 @@
-import { AuthResponse, LoginUser, RegisterPayload, UserProfile } from '@/src/interfaces/authUser';
-import fetchApi from '@/src/services/fetchApi';
+import {
+  AuthResponse,
+  LoginUser,
+  RegisterPayload,
+  UserProfile,
+} from "@/src/interfaces/authUser";
+import fetchApi from "@/src/services/fetchApi";
 
-export const authRegister = async (data: RegisterPayload): Promise<AuthResponse> => {
-  const response = await fetchApi.post<AuthResponse>('/users', data);
+export const authRegister = async (
+  data: RegisterPayload,
+): Promise<AuthResponse> => {
+  const response = await fetchApi.post<AuthResponse>("/users", data);
   return response.data;
 };
 
 export const authLogin = async (data: LoginUser): Promise<AuthResponse> => {
-  const response = await fetchApi.post<AuthResponse>('/login', data);
+  const response = await fetchApi.post<AuthResponse>("/login", data);
   return response.data;
 };
 
