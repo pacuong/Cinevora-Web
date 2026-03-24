@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: "Metiz Cinema website",
 };
 
-export default function NowShowingPage() {
+const NowShowingPage = () => {
   return <NowShowingWrapper />;
-}
+};
+
+export default NowShowingPage;

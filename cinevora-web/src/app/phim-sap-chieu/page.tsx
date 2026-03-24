@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   description: "Metiz Cinema website",
 };
 
-export default function UpComingPage() {
+const UpComingPage = () => {
   return <UpComingWrapper />;
 }
+
+export default UpComingPage;
