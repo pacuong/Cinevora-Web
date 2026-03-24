@@ -50,7 +50,7 @@ const Header = () => {
                 <div className="flex items-center gap-3">
                   <Link
                     href={PAGEURL.ACCOUNT_INFORMATION_PAGE}
-                    className="text-blue-50 font-saira text-sm uppercase hover:text-orange-90"
+                    className="text-blue-50 md:max-w-[50px] lg:max-w-[100px] truncate font-saira text-sm uppercase hover:text-orange-90"
                   >
                     {userAuthentication?.user.fullName}
                   </Link>
@@ -67,8 +67,8 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="bg-black-40 w-[100px] h-23 lg:w-[133px] lg:h-[155px] absolute top-[-20px] lg:top-30 lg:left-[150px]">
-            <Link href={PAGEURL.HOME} className="">
+          <div className="bg-black-40 w-[100px] h-23 lg:w-[133px] lg:h-[146px] absolute top-[-20px] lg:top-[-49px] lg:left-[150px]">
+            <Link href={PAGEURL.HOME} >
               <Image
                 fill
                 src="/assets/images/logo_header.png"

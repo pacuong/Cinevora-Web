@@ -28,7 +28,7 @@ interface NavbarProps {
 const NavBarComponent = ({ navList }: NavbarProps) => {
   return (
     <nav className="bg-black-40 py-8 md:pt-[25px] md:pb-[22px] md:mr-6 lg:pb-11 lg:mr-auto lg:ml-[170px]">
-      <ul className="flex gap-8">
+      <ul className="flex items-center gap-8">
         {navList.map((item, index) => (
           <li key={index}>
             {item.type === "dropdown" ? (
