@@ -16,7 +16,7 @@ const Header = () => {
       <div className="flex justify-center">
         <div className="flex justify-end py-[3px] md:w-[720] lg:w-[1140px]">
           <p className="text-white-100 uppercase text-sm lg:text-md font-saira mr-[15px]">
-            hotline: 0123 456 789
+            hotline: 123 123 123
           </p>
           <p className="text-white-100 uppercase text-sm lg:text-md font-saira">
             giờ mở cửa: 9:00 - 22:00
