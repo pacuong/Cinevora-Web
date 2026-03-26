@@ -21,9 +21,9 @@ export interface MovieCardProps {
   director?: string;
   actor?: string;
   genre?: string;
-  duration: number;
+  duration?: number;
   language?: string;
-  rated: string;
+  rated?: string;
   description?: string;
   isUpComming?: boolean;
 }
