@@ -15,7 +15,7 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="hidden md:block">
           <Header />
         </div>
-        <div>{children}</div>
+        <div className="mx-auto">{children}</div>
         <Footer
           socialLinks={footerDataMock.socialLinks}
           brand={footerDataMock.brand}
