@@ -7,19 +7,19 @@ const Loading = () => {
             mx-auto
             rounded-full
             h-16 w-16
-            border-[2px] border-gray-100 border-t-blue-20
+            border-[2px] border-gray-10 border-t-orange-90
             animate-spin 
           "
         />
         <p
           className="
-         text-blue-20
+         text-orange-90
             text-base
             md:text-l
             lg:text-lg
           "
         >
-          Đang tải...
+          Cinevora...
         </p>
       </div>
     </div>
