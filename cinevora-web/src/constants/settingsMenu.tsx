@@ -8,12 +8,12 @@ export const accountMenuItems: NavProps[] = [
   {
     icon: <UserIcons width={14} height={14} />,
     label: "Thông tin tài khoản",
-    to: "/profile",
+    to: "/thong-tin-tai-khoan",
   },
   {
     icon: <LockIcon size={14} />,
     label: "Thay đổi mật khẩu",
-    to: "/changePassword",
+    to: "/thay-doi-mat-khau",
   },
   {
     icon: <IdCardIcon size={14} />,

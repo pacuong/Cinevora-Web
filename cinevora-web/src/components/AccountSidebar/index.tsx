@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -11,7 +11,7 @@ const AccountSidebar = ({ accountMenuItems }: AccountSidebarProps) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <div className=" border bg-sand-80 lg:bg-white-100 border-red-80 md:flex lg:self-start">
+    <div className=" border md:mb-17 lg:my-17 bg-sand-80 lg:bg-white-100 border-red-80 md:flex lg:self-start">
       <div className="flex items-center justify-between px-4 py-3 md:hidden">
         <h2 className=" font-saira uppercase text-red-70 text-l">Tài khoản</h2>
         <ButtonComponent

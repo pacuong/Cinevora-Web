@@ -1,8 +1,8 @@
-import ReactQueryProvider from "@/src/providers/ReactQueryProvider"
-import HeaderMobile from '@/src/components/HeaderMobile'
-import Header from "../Header"
-import Footer from "../Footer"
-import { footerDataMock } from "@/src/mocks/footerDataMock"
+import ReactQueryProvider from "@/src/providers/ReactQueryProvider";
+import HeaderMobile from "@/src/components/HeaderMobile";
+import Header from "../Header";
+import Footer from "../Footer";
+import { footerDataMock } from "@/src/mocks/footerDataMock";
 
 const PublicLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -15,7 +15,7 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="hidden md:block">
           <Header />
         </div>
-        <div className="flex-1 mx-auto">{children}</div>
+        <div>{children}</div>
         <Footer
           socialLinks={footerDataMock.socialLinks}
           brand={footerDataMock.brand}

@@ -1,12 +1,12 @@
 const PAGEURL = {
   HOME: "/",
-  LOGIN: "/login",
-  REGISTER: "/register",
+  LOGIN: "/dang-nhap",
+  REGISTER: "/dang-ky",
   DETAIL_PAGE: "/phim",
   NOW_SHOWING_PAGE: "/phim-dang-chieu",
   UP_COMING_PAGE: "/phim-sap-chieu",
-  MOVIE_SHOWTIME_PAGE: "/showtimes",
+  MOVIE_SHOWTIME_PAGE: "/lich-chieu-phim",
   BOOKING_PAGE: "/booking",
-  ACCOUNT_INFORMATION_PAGE: "/profile",
+  ACCOUNT_INFORMATION_PAGE: "/thong-tin-tai-khoan",
 };
 export default PAGEURL;

@@ -29,7 +29,7 @@ const ChangePassword = ({ onSubmitChangePasswor }: changePasswordProps) => {
     mode: "onBlur",
   });
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center md:pb-17 lg:py-17">
       <h1 className="text-white-100 text-l bg-blue-50 py-5 text-center font-saira uppercase w-[230px] md:w-[650px]">
         Thay đổi mật khẩu
       </h1>

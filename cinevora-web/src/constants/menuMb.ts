@@ -9,11 +9,15 @@ export const menuItems = [
 ];
 
 export const guestUserItems = [
-  { key: "login", label: "đăng nhập", path: PAGEURL.LOGIN },
-  { key: "register", label: "đăng ký", path: PAGEURL.REGISTER },
+  { key: "dang-nhap", label: "đăng nhập", path: PAGEURL.LOGIN },
+  { key: "dang-ky", label: "đăng ký", path: PAGEURL.REGISTER },
 ];
 
 export const authUserItems = [
-  { key: "profile", label: "hồ sơ", path: PAGEURL.ACCOUNT_INFORMATION_PAGE },
+  {
+    key: "thong-tin-tai-khoan",
+    label: "hồ sơ",
+    path: PAGEURL.ACCOUNT_INFORMATION_PAGE,
+  },
   { key: "logout", label: "đăng xuất", action: "logout" },
 ];

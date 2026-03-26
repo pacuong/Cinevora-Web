@@ -2,11 +2,11 @@ import { TabsItems } from "@/src/components/common/tabs";
 
 export const authuTabs: TabsItems[] = [
   {
-    key: "login",
+    key: "dang-nhap",
     label: "Đăng nhập",
   },
   {
-    key: "register",
+    key: "dang-ky",
     label: "Đăng ký",
   },
 ];

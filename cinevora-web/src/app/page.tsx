@@ -8,4 +8,5 @@ export const metadata: Metadata = {
 };
 
 const Home = () => <HomeWrapper />;
+
 export default Home;
