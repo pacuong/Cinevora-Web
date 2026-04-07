@@ -8,6 +8,6 @@ const PAGEURL = {
   MOVIE_SHOWTIME_PAGE: "/lich-chieu-phim",
   BOOKING_PAGE: "/booking",
   ACCOUNT_INFORMATION_PAGE: "/thong-tin-tai-khoan",
-  PAYMENT_PAGE: "/payment",
+  PAYMENT_PAGE: "/thanh-toan",
 };
 export default PAGEURL;
