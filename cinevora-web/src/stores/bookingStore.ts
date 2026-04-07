@@ -17,6 +17,7 @@ interface BookingState {
   selectedDate: string | null;
   selectedShowtime: Showtime | null;
   selectedSeats: string[];
+  expiresAt: number | null;
 
   setMovie: (movie: BookingMovie) => void;
   setDate: (date: string) => void;
@@ -25,6 +26,8 @@ interface BookingState {
   resetBooking: () => void;
 }
 
+const TTL = 10 * 60 * 1000;
+
 export const useBookingStore = createWithEqualityFn<BookingState>()(
   persist(
     (set) => ({
@@ -32,11 +35,19 @@ export const useBookingStore = createWithEqualityFn<BookingState>()(
       selectedDate: null,
       selectedShowtime: null,
       selectedSeats: [],
+      expiresAt: null,
 
-      setMovie: (movie) => set({ movie }),
-      setDate: (date) => set({ selectedDate: date }),
-      setShowtime: (showtime) => set({ selectedShowtime: showtime }),
-      setSelectedSeats: (selectedSeats) => set({ selectedSeats }),
+      setMovie: (movie) =>
+        set({ movie, expiresAt: Date.now() + TTL }),
+
+      setDate: (date) =>
+        set({ selectedDate: date, expiresAt: Date.now() + TTL }),
+
+      setShowtime: (showtime) =>
+        set({ selectedShowtime: showtime, expiresAt: Date.now() + TTL }),
+
+      setSelectedSeats: (selectedSeats) =>
+        set({ selectedSeats, expiresAt: Date.now() + TTL }),
 
       resetBooking: () =>
         set({
@@ -44,11 +55,22 @@ export const useBookingStore = createWithEqualityFn<BookingState>()(
           selectedDate: null,
           selectedShowtime: null,
           selectedSeats: [],
+          expiresAt: null,
         }),
     }),
     {
       name: 'booking-storage',
       storage: createJSONStorage(() => localStorage),
+
+      onRehydrateStorage: () => (state) => {
+        if (!state) return;
+
+        const now = Date.now();
+
+        if (state.expiresAt && now > state.expiresAt) {
+          state.resetBooking();
+        }
+      },
     }
   ),
   shallow
