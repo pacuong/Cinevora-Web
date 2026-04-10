@@ -12,10 +12,11 @@ import ChevronLeft from "@/src/icons/chevronLeft";
 import ChevronRight from "@/src/icons/ChevronRight";
 import ButtonComponent from "@/src/components/common/button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface Slide {
-  id: number;
-  image: string;
+  id: string;
+  posterBanner: string;
   title?: string;
 }
 
@@ -32,7 +33,7 @@ export const Banner: React.FC<BannerProps> = ({
   const iconSize = isMobile ? 14 : isTablet ? 30 : 50;
   const [currentIndex, setCurrentIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
-
+  const router = useRouter();
   const handlePrev = () => {
     swiperRef.current?.slidePrev();
   };
@@ -50,6 +51,17 @@ export const Banner: React.FC<BannerProps> = ({
     const target = (realIndex + total - middleIndex) % total;
 
     thumbSwiper.slideToLoop(target, 300);
+  };
+
+  const handleBannerClick = (index: number, id: string) => {
+    if (!swiperRef.current) return;
+
+    swiperRef.current.slideToLoop(index, 600);
+
+    setTimeout(() => {
+      centerThumbnail(index);
+    });
+    router.push(`/phim/${id}`);
   };
 
   const handleThumbnailClick = (index: number) => {
@@ -86,13 +98,14 @@ export const Banner: React.FC<BannerProps> = ({
           {slides.map((slide, index) => (
             <SwiperSlide
               key={slide.id}
-              onClick={() => handleThumbnailClick(index)}
+              onClick={() => handleBannerClick(index, slide.id)}
             >
-              <div className="h-[112px] md:h-[257px] lg:h-[407px]">
+              <div className="relative h-[112px] md:h-[257px] lg:h-[407px]">
                 <Image
                   fill
-                  src={slide.image}
+                  src={slide.posterBanner}
                   alt={slide.title || `Slide ${index}`}
+                  className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-300"
                 />
               </div>
             </SwiperSlide>
@@ -129,13 +142,13 @@ export const Banner: React.FC<BannerProps> = ({
             return (
               <SwiperSlide
                 key={slide.id}
-                className="!h-[100px] flex-none"
+                className="!h-auto"
                 onClick={() => handleThumbnailClick(index)}
               >
                 <div
                   className={[
-                    "relative w-full pb-[56%] overflow-hidden group",
-                    "transition-all duration-300 h-[100px]",
+                    "relative w-full aspect-video overflow-hidden group",
+                    "transition-all duration-300",
                     isActive
                       ? "opacity-100 grayscale-0 z-10 hover:opacity-50"
                       : "opacity-50 hover:opacity-50",
@@ -143,9 +156,9 @@ export const Banner: React.FC<BannerProps> = ({
                 >
                   <Image
                     fill
-                    src={slide.image}
+                    src={slide.posterBanner}
                     alt={slide.title || `Slide ${index}`}
-                    className="absolute top-0 left-0 object-cover transition-all duration-300"
+                    className="object-cover transition-all duration-300"
                   />
                   <BorderGlow
                     strokeWidth={5}

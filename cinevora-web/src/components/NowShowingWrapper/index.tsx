@@ -9,7 +9,8 @@ import { useState } from "react";
 const NowShowingWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedMovieId, setSelectedMovieId] = useState<string | null>(null);
-  const { movies = [], isLoadingMovie } = useListNowMovies();
+  const { nowShowingMovies = [], isLoadingNowShowingMovies } =
+    useListNowMovies();
   const setMovie = useBookingStore((s) => s.setMovie);
 
   const handleBooking = (movie: {
@@ -38,12 +39,12 @@ const NowShowingWrapper = () => {
         </h2>
       </div>
 
-      {isLoadingMovie ? (
+      {isLoadingNowShowingMovies ? (
         <p>Đang tải dữ liệu...</p>
       ) : (
         <div>
           <MovieCard
-            movies={movies}
+            movies={nowShowingMovies}
             onBooking={handleBooking}
             isShowOnlyBookBtn
             isShowGenre

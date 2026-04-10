@@ -30,9 +30,9 @@ const ChangePassword = ({ onSubmitChangePasswor }: changePasswordProps) => {
   });
   return (
     <div className="flex flex-col items-center md:pb-17 lg:py-17">
-      <h1 className="text-white-100 text-l bg-blue-50 py-5 text-center font-saira uppercase w-[230px] md:w-[650px]">
+      <h2 className="text-white-100 text-l bg-blue-50 py-5 text-center font-saira uppercase w-[230px] md:w-[650px]">
         Thay đổi mật khẩu
-      </h1>
+      </h2>
       <form
         onSubmit={handleSubmit(onSubmitChangePasswor)}
         className="

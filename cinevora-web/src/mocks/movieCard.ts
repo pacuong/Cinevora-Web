@@ -1,8 +1,8 @@
-import { MovieCardProps } from "@/src/components/common/movieCard";
+import { MovieCardProps } from "@/src/interfaces/movieCard";
 
 export const MOCK_MOVIES: MovieCardProps[] = [
   {
-    id:"1",
+    id: "1",
     title: "Deadpool & Wolverine",
     rating: 1,
     ageRating: "C18",
@@ -13,7 +13,7 @@ export const MOCK_MOVIES: MovieCardProps[] = [
     genre: "Hành động · Hài",
   },
   {
-    id:"2",
+    id: "2",
     title: "Inside Out 2",
     rating: 2,
     ageRating: "P",
@@ -22,10 +22,9 @@ export const MOCK_MOVIES: MovieCardProps[] = [
     duration: 96,
     releaseDate: "14/06/2024",
     genre: "Hoạt hình · Gia đình",
-
   },
   {
-    id:"3",
+    id: "3",
     title: "Dune: Part Two",
     rating: 3,
     ageRating: "C16",
@@ -34,10 +33,9 @@ export const MOCK_MOVIES: MovieCardProps[] = [
     duration: 166,
     releaseDate: "01/03/2024",
     genre: "Khoa học viễn tưởng",
-
   },
   {
-    id:"3",
+    id: "3",
     title: "Kung Fu Panda 4",
     ageRating: "P",
     posterUrl:
@@ -45,10 +43,9 @@ export const MOCK_MOVIES: MovieCardProps[] = [
     duration: 94,
     releaseDate: "08/03/2024",
     genre: "Hoạt hình · Phiêu lưu",
-
   },
   {
-    id:"3",
+    id: "3",
     title: "Godzilla x Kong: The New Empire",
     ageRating: "C13",
     posterUrl:
@@ -56,6 +53,5 @@ export const MOCK_MOVIES: MovieCardProps[] = [
     duration: 115,
     releaseDate: "29/03/2024",
     genre: "Hành động · Viễn tưởng",
-
   },
 ];
