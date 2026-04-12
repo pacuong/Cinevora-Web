@@ -5,6 +5,7 @@ import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListNowMovies } from "@/src/hooks/Movies/useListNowMovies";
 import { useBookingStore } from "@/src/stores/bookingStore";
 import { useState } from "react";
+import MovieCardSkeleton from "../common/movieCard/MovieCardSkeleton";
 
 const NowShowingWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -39,18 +40,16 @@ const NowShowingWrapper = () => {
       </div>
 
       {isLoadingMovie ? (
-        <p>Đang tải dữ liệu...</p>
+        <MovieCardSkeleton count={10} />
       ) : (
-        <div>
-          <MovieCard
-            movies={movies}
-            onBooking={handleBooking}
-            isShowOnlyBookBtn
-            isShowGenre
-            isShowDuration
-            isShowBtn
-          />
-        </div>
+        <MovieCard
+          movies={movies}
+          onBooking={handleBooking}
+          isShowOnlyBookBtn
+          isShowGenre
+          isShowDuration
+          isShowBtn
+        />
       )}
 
       <ShowtimeScheduleModal
