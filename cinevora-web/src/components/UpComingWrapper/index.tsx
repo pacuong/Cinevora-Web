@@ -7,7 +7,11 @@ import { useState } from "react";
 
 const UpComingWrapper = () => {
   const [openShowtime, setOpenShowtime] = useState(false);
-  const { movies = [], isErrorMovie, isLoadingMovie } = useListUpComingMovies();
+  const {
+    upComingMovies = [],
+    isErrorMovie,
+    isLoadingUpComingMovies,
+  } = useListUpComingMovies();
 
   if (isErrorMovie) return <div>Lỗi tải dữ liệu</div>;
 
@@ -23,12 +27,12 @@ const UpComingWrapper = () => {
         </h2>
       </div>
 
-      {isLoadingMovie ? (
+      {isLoadingUpComingMovies ? (
         <p>Đang tải dữ liệu...</p>
       ) : (
         <div>
           <MovieCard
-            movies={movies}
+            movies={upComingMovies}
             isShowOnlyBookBtn
             onBooking={handleBooking}
             isShowGenre

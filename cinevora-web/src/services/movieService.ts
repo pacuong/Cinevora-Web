@@ -1,4 +1,4 @@
-import { MovieCardProps } from "@/src/components/common/movieCard";
+import { MovieCardProps } from "@/src/interfaces/movieCard";
 import fetchApi from "./fetchApi";
 import { MovieSchedule } from "@/src/interfaces/movieSchedule";
 

@@ -5,13 +5,13 @@ import { useQuery } from "@tanstack/react-query";
 
 export const useListNowMovies = () => {
   const {
-    data: movies,
+    data: nowShowingMovies,
     isError: isErrorMovie,
-    isLoading: isLoadingMovie,
+    isLoading: isLoadingNowShowingMovies,
   } = useQuery({
     queryKey: ["nowShowingMovies"],
     queryFn: getNowShowingMovies,
   });
 
-  return { movies, isErrorMovie, isLoadingMovie };
+  return { nowShowingMovies, isErrorMovie, isLoadingNowShowingMovies };
 };

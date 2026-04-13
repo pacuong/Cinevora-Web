@@ -1,7 +1,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { MovieCardProps } from "@/src/components/common/movieCard";
 import MovieCardItem from "@/src/components/common/movieCard/MovieCardItem";
+import { MovieCardProps } from "@/src/interfaces/movieCard";
 
 interface MovieCarouselProps {
   movies: MovieCardProps[];
