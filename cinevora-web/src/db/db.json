@@ -15,8 +15,7 @@
       "language": "Tiếng Việt",
       "type": "now",
       "description": "Một vụ án mạng bí ẩn xảy ra trong gia đình giàu có, hé lộ những góc khuất tăm tối của lòng tham và sự phản bội.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "avatar-3-fire-and-ash",
@@ -32,8 +31,7 @@
       "actor": "Sam Worthington, Zoe Saldaña, Sigourney Weaver",
       "language": "Tiếng Anh",
       "description": "Cuộc chiến mới trên hành tinh Pandora bùng nổ khi con người quay trở lại với tham vọng khai thác tàn khốc.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/gai_ngoan.jpg"
+      "isUpComming": true
     },
     {
       "id": "ai-thuong-ai-men",
@@ -49,8 +47,7 @@
       "actor": "Lê Khánh, Đại Nghĩa, Puka",
       "language": "Tiếng Việt",
       "description": "Câu chuyện gia đình nhẹ nhàng, hài hước xoay quanh những mâu thuẫn nhỏ nhưng đầy yêu thương.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/mario.jpg"
+      "isUpComming": true
     },
     {
       "id": "dino-family-jurassic",
@@ -65,8 +62,7 @@
       "actor": "Lồng tiếng",
       "language": "Lồng tiếng Việt",
       "description": "Gia đình khủng long bị lạc vào kỷ Jura và phải hợp sức để tìm đường trở về nhà.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "tom-jerry-magic-compass",
@@ -81,8 +77,7 @@
       "actor": "Lồng tiếng",
       "language": "Lồng tiếng Việt",
       "description": "Tom và Jerry bước vào cuộc phiêu lưu kỳ lạ xoay quanh một chiếc la bàn phép thuật.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "journey-to-the-west-comedy",
@@ -97,8 +92,7 @@
       "actor": "Châu Tinh Trì, Ngô Mạnh Đạt",
       "language": "Tiếng Trung",
       "description": "Phiên bản hài hước kinh điển của Tây Du Ký với phong cách đặc trưng của Châu Tinh Trì.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "godzilla-x-kong-new-empire",
@@ -113,8 +107,7 @@
       "actor": "Rebecca Hall, Brian Tyree Henry",
       "language": "Tiếng Anh",
       "description": "Godzilla và Kong buộc phải liên minh trước mối đe dọa mới có thể hủy diệt toàn bộ thế giới.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "mai",
@@ -129,8 +122,7 @@
       "actor": "Phương Anh Đào, Tuấn Trần",
       "language": "Tiếng Việt",
       "description": "Câu chuyện cảm xúc về tình yêu, gia đình và những lựa chọn khó khăn trong cuộc sống.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "lac-pham-tran",
@@ -145,8 +137,7 @@
       "actor": "Song Luân, Kaity Nguyễn",
       "language": "Tiếng Việt",
       "description": "Một chàng trai vô tình rơi vào chuỗi tình huống dở khóc dở cười giữa đời thường.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "nha-hai-chu",
@@ -161,8 +152,7 @@
       "actor": "Hồng Vân, Quốc Trường",
       "language": "Tiếng Việt",
       "description": "Hai gia đình cùng sở hữu một căn nhà, từ đó nảy sinh hàng loạt tình huống hài hước.",
-      "isUpComming": true,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": true
     },
     {
       "id": "mission-impossible-8",
@@ -177,8 +167,7 @@
       "actor": "Tom Cruise, Hayley Atwell",
       "language": "Tiếng Anh",
       "description": "Ethan Hunt trở lại trong nhiệm vụ nguy hiểm nhất từ trước đến nay.",
-      "isUpComming": false,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": false
     },
     {
       "id": "inside-out-2",
@@ -193,8 +182,7 @@
       "actor": "Amy Poehler, Maya Hawke",
       "language": "Tiếng Anh",
       "description": "Riley bước vào tuổi thiếu niên, kéo theo những cảm xúc hoàn toàn mới xuất hiện.",
-      "isUpComming": false,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": false
     },
     {
       "id": "transformers-one",
@@ -209,8 +197,7 @@
       "actor": "Chris Hemsworth, Brian Tyree Henry",
       "language": "Tiếng Anh",
       "description": "Câu chuyện nguồn gốc của Optimus Prime và Megatron.",
-      "isUpComming": false,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": false
     },
     {
       "id": "joker-folie-a-deux",
@@ -225,8 +212,7 @@
       "actor": "Joaquin Phoenix, Lady Gaga",
       "language": "Tiếng Anh",
       "description": "Joker trở lại với một chương đen tối và điên loạn hơn bao giờ hết.",
-      "isUpComming": false,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": false
     },
     {
       "id": "batman-the-dark-knight-rises",
@@ -241,8 +227,7 @@
       "actor": "Christian Bale, Tom Hardy, Anne Hathaway",
       "language": "Tiếng Anh",
       "description": "Tám năm sau cái chết của Harvey Dent, Batman buộc phải quay trở lại khi Gotham bị đe dọa bởi Bane – một kẻ khủng bố tàn bạo với âm mưu hủy diệt toàn bộ thành phố.",
-      "isUpComming": false,
-      "posterBanner": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "isUpComming": false
     }
   ],
   "users": [
@@ -268,7 +253,7 @@
       "age": "C18",
       "posterUrl": "https://metiz.vn/media/poster_film/28-year.jpg",
       "schedules": {
-        "2026-04-09": [
+        "2026-03-22": [
           {
             "time": "18:00 - 20:30",
             "room": "01"
@@ -292,7 +277,7 @@
       "age": "C16",
       "posterUrl": "https://metiz.vn/media/poster_film/ai_men.jpg",
       "schedules": {
-        "2026-04-09": [
+        "2026-03-20": [
           {
             "time": "18:00 - 20:30",
             "room": "01"

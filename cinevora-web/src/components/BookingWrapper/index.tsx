@@ -9,6 +9,7 @@ import Link from "next/link";
 import PAGEURL from "@/src/constants/pageUrl";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import BookingInfoPanelSkeleton from "../BookingInfoPanel/BookingInfoPanelSkeleton";
 
 const PRICE_PER_TICKET = 75000;
 
@@ -67,7 +68,7 @@ const BookingWrapper = () => {
         </div>
 
         <div className="mt-15 lg:m-0">
-          {movie && selectedShowtime && (
+          {movie && selectedShowtime ? (
             <BookingInfoPanel
               posterUrl={movie.posterUrl}
               title={movie.title}
@@ -78,6 +79,8 @@ const BookingWrapper = () => {
               totalPrice={totalPrice}
               onReset={resetBooking}
             />
+          ) : (
+            <BookingInfoPanelSkeleton />
           )}
         </div>
       </div>

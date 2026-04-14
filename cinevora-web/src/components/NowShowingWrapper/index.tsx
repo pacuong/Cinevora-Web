@@ -5,6 +5,7 @@ import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListNowMovies } from "@/src/hooks/Movies/useListNowMovies";
 import { useBookingStore } from "@/src/stores/bookingStore";
 import { useState } from "react";
+import MovieCardSkeleton from "../common/movieCard/MovieCardSkeleton";
 
 const NowShowingWrapper = () => {
   const [openModal, setOpenModal] = useState(false);

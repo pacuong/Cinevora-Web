@@ -4,6 +4,7 @@ import MovieCard from "@/src/components/common/movieCard";
 import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListUpComingMovies } from "@/src/hooks/Movies/useListUpComingMovies";
 import { useState } from "react";
+import MovieCardSkeleton from "../common/movieCard/MovieCardSkeleton";
 
 const UpComingWrapper = () => {
   const [openShowtime, setOpenShowtime] = useState(false);
@@ -37,10 +38,9 @@ const UpComingWrapper = () => {
             onBooking={handleBooking}
             isShowGenre
             isShowBtn
-          />
-        </div>
+        />
       )}
-
+      
       <ShowtimeScheduleModal
         isModalOpen={openShowtime}
         setIsModalOpen={setOpenShowtime}
