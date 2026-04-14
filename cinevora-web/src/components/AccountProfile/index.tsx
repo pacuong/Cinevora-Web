@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import ButtonComponent from "@/src/components/common/button";
 import DatePicker from "@/src/components/common/datePicker";
@@ -7,7 +7,14 @@ import InputComponent from "@/src/components/common/input";
 import SelectComponent from "@/src/components/Select";
 import { UserProfile } from "@/src/interfaces/authUser";
 import { cityOptions, districtOptions } from "@/src/mocks/selectdata";
-import { addressRules, dateOfBirthRules, emailRules, fullNameRules, idCardRules, phoneRules } from "@/src/utils/validationRules";
+import {
+  addressRules,
+  dateOfBirthRules,
+  emailRules,
+  fullNameRules,
+  idCardRules,
+  phoneRules,
+} from "@/src/utils/validationRules";
 import { Radio } from "antd";
 import { useForm, Controller } from "react-hook-form";
 

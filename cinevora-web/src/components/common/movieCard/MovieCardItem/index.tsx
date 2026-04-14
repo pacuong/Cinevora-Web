@@ -1,11 +1,12 @@
-'use client'
+"use client";
 
 import { useState } from "react";
 import { Card, Tag } from "antd";
-import type { MovieCardProps } from "..";
 import { useCustomDevice } from "@/src/hooks/deviceDetect";
 import { getTagColor } from "@/src/utils/getTagColor";
 import { renderMedal } from "@/src/utils/renderMedal";
+import { MovieCardProps } from "@/src/interfaces/movieCard";
+import { useRouter } from "next/navigation";
 
 const { Meta } = Card;
 
@@ -32,11 +33,15 @@ const MovieCardItem = ({
 
   const { isDesktop } = useCustomDevice();
   const isLaptop = isDesktop;
-
+  const router = useRouter();
   const handleCardClick = () => {
     if (!isLaptop && !isShowGenre && !isShowOnlyBookBtn) {
       setIsActive((prev) => !prev);
     }
+  };
+
+  const handleClick = (id: string) => {
+    router.push(`/phim/${id}`);
   };
 
   return (
@@ -51,6 +56,12 @@ const MovieCardItem = ({
         variant="borderless"
       >
         <div
+          role="button"
+          tabIndex={0}
+          onClick={() => handleClick(movie.id)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") handleClick(movie.id);
+          }}
           className={`poster-wrapper ${isHoverMovie ? "lg:after:bg-orange-overlay" : ""}`}
         >
           {movie.rating && (
@@ -67,7 +78,15 @@ const MovieCardItem = ({
 
         <Meta
           title={
-            <span className="movie-title truncate uppercase text-[10px] md:text-xs lg:text-[14px]">
+            <span
+              role="button"
+              tabIndex={0}
+              onClick={() => handleClick(movie.id)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") handleClick(movie.id);
+              }}
+              className="movie-title truncate uppercase text-[10px] md:text-xs lg:text-[14px]"
+            >
               {movie.title}
             </span>
           }

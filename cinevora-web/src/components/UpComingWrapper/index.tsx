@@ -8,7 +8,11 @@ import MovieCardSkeleton from "../common/movieCard/MovieCardSkeleton";
 
 const UpComingWrapper = () => {
   const [openShowtime, setOpenShowtime] = useState(false);
-  const { movies = [], isErrorMovie, isLoadingMovie } = useListUpComingMovies();
+  const {
+    upComingMovies = [],
+    isErrorMovie,
+    isLoadingUpComingMovies,
+  } = useListUpComingMovies();
 
   if (isErrorMovie) return <div>Lỗi tải dữ liệu</div>;
 
@@ -24,11 +28,12 @@ const UpComingWrapper = () => {
         </h2>
       </div>
 
-      {isLoadingMovie ? (
-        <MovieCardSkeleton count={10} />
+      {isLoadingUpComingMovies ? (
+        <p>Đang tải dữ liệu...</p>
       ) : (
-        <MovieCard
-          movies={movies}
+        <div>
+          <MovieCard
+            movies={upComingMovies}
             isShowOnlyBookBtn
             onBooking={handleBooking}
             isShowGenre
