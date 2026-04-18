@@ -38,9 +38,10 @@ const UpComingWrapper = () => {
             onBooking={handleBooking}
             isShowGenre
             isShowBtn
-        />
+          />
+        </div>
       )}
-      
+
       <ShowtimeScheduleModal
         isModalOpen={openShowtime}
         setIsModalOpen={setOpenShowtime}

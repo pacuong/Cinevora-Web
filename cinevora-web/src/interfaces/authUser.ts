@@ -15,6 +15,7 @@ export interface UserRegister {
   address: string;
   sex: string;
   IDCardNumber: string;
+  recaptchaToken: string;
 }
 
 export interface User extends UserRegister {
@@ -26,7 +27,19 @@ export interface AuthResponse {
   user: User;
 }
 
-export type RegisterPayload = Omit<UserRegister, 'confirmPassword'>;
+export interface RegisterPayload {
+  fullName: string;
+  dateOfBirth: string;
+  email: string;
+  password: string;
+  phone: string;
+  city: string;
+  district: string;
+  address: string;
+  sex: string;
+  IDCardNumber: string;
+  recaptchaToken: string;
+}
 
 export interface UserProfile {
   fullName: string;

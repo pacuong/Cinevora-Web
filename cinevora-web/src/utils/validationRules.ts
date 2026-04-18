@@ -1,6 +1,6 @@
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{6,}$/;
-const phoneRegex = /^[0-9]{9,11}$/;
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+const phoneRegex = /^(?:3|5|7|8|9)\d{8}$/;
 const idCardRegex = /^[0-9]{9,12}$/;
 
 export const emailRules = {
@@ -14,12 +14,14 @@ export const emailRules = {
 export const passwordRules = {
   required: "Vui lòng nhập mật khẩu",
   minLength: {
-    value: 6,
-    message: "Mật khẩu phải có ít nhất 6 ký tự",
+    value: 8,
+    message:
+      "Mật khẩu chứa ít nhất 8 ký tự, bao gồm chữ thường, chữ hoa, số và ký tự đặc biệt",
   },
   pattern: {
     value: passwordRegex,
-    message: "Mật khẩu phải bao gồm chữ cái và số",
+    message:
+      "Mật khẩu chứa ít nhất 8 ký tự, bao gồm chữ thường, chữ hoa, số và ký tự đặc biệt",
   },
 };
 

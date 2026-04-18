@@ -5,6 +5,7 @@ import { useMoviesId } from "@/src/hooks/Movies/useMoviesId";
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { GenreFromBE } from "@/src/interfaces/movieCard";
 
 const DetailWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -27,9 +28,8 @@ const DetailWrapper = () => {
     ageRating,
     posterUrl,
     director,
-    isUpComming,
     actor,
-    genre,
+    genres,
     releaseDate,
     duration,
     language,
@@ -121,12 +121,14 @@ const DetailWrapper = () => {
 
                 <li className="detail-list">
                   <span className="label">Diễn viên:</span>
-                  {isUpComming && <span className="value">{actor}</span>}
+                  {<span className="value">{actor}</span>}
                 </li>
 
                 <li className="detail-list">
                   <span className="label">Thể loại:</span>
-                  <span className="value">{genre}</span>
+                  <span className="value">
+                    {genres.map((item: GenreFromBE) => item.name).join(", ")}
+                  </span>
                 </li>
 
                 <li className="detail-list">
@@ -136,9 +138,7 @@ const DetailWrapper = () => {
 
                 <li className="detail-list">
                   <span className="label">Thời lượng:</span>
-                  {isUpComming && (
-                    <span className="value">{duration} phút</span>
-                  )}
+                  <span className="value">{duration} phút</span>
                 </li>
 
                 <li className="detail-list">
@@ -148,13 +148,11 @@ const DetailWrapper = () => {
 
                 <li className="detail-list">
                   <span className="label">Rated:</span>
-                  {isUpComming && (
-                    <span className="value">
-                      <span className="rated">{rated.split(" - ")[0]}</span>
-                      {" - "}
-                      {rated.split(" - ")[1].toUpperCase()}
-                    </span>
-                  )}
+                  <span className="value">
+                    <span className="rated">{rated.split(" - ")[0]}</span>
+                    {" - "}
+                    {rated.split(" - ")[1].toUpperCase()}
+                  </span>
                 </li>
               </ul>
             </div>

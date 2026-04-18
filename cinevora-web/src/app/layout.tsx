@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "../styles/styles.css";
 import PublicLayout from "../components/PublicLayout";
+import ToastProvider from "@/src/components/ToastProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -19,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div>
+        <ToastProvider>
           <PublicLayout>{children}</PublicLayout>
-        </div>
+        </ToastProvider>
       </body>
     </html>
   );

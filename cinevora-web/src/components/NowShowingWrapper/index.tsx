@@ -41,7 +41,7 @@ const NowShowingWrapper = () => {
       </div>
 
       {isLoadingNowShowingMovies ? (
-        <p>Đang tải dữ liệu...</p>
+        <MovieCardSkeleton />
       ) : (
         <div>
           <MovieCard

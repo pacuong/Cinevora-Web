@@ -70,11 +70,12 @@ const Header = () => {
           </div>
 
           <div className="bg-black-40 w-[100px] h-23 lg:w-[133px] lg:h-[146px] absolute top-[-20px] lg:top-[-49px] lg:left-[150px]">
-            <Link href={PAGEURL.HOME} >
+            <Link href={PAGEURL.HOME}>
               <Image
                 fill
                 src="/assets/images/logo_header.png"
                 alt="logo-metiz"
+                className="object-contain"
               />
             </Link>
           </div>

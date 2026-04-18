@@ -3,6 +3,7 @@ import {
   LoginUser,
   RegisterPayload,
   UserProfile,
+  UserRegister,
 } from "@/src/interfaces/authUser";
 import { authLogin, authRegister } from "@/src/services/authService";
 import { create } from "zustand";
@@ -11,7 +12,7 @@ import { createJSONStorage, persist } from "zustand/middleware";
 interface UserAction {
   userAuthentication: AuthResponse | null;
   login: (data: LoginUser) => Promise<AuthResponse>;
-  register: (data: RegisterPayload) => Promise<AuthResponse>;
+  register: (data: UserRegister) => Promise<AuthResponse>;
   updateProfile: (profile: UserProfile) => void;
   logout: () => void;
   isInitialized: boolean;
@@ -28,8 +29,15 @@ export const useAuthSlice = create(
         set({ userAuthentication: response });
         return response;
       },
+      // TODO: add recaptcha
       register: async (data) => {
-        const response = await authRegister(data);
+        const { confirmPassword, ...rest } = data;
+
+        const payload: RegisterPayload = {
+          ...rest,
+          recaptchaToken: "test-recaptcha-token",
+        };
+        const response = await authRegister(payload);
         set({ userAuthentication: response });
         return response;
       },

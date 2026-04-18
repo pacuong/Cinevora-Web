@@ -1,12 +1,7 @@
+import { MovieBanner } from "@/src/interfaces/movieCard";
 import fetchApi from "@/src/services/fetchApi";
 
-interface MovieBanner {
-  id: string;
-  posterBanner: string;
-  title: string;
-}
-
 export const getMovieBanner = async () => {
-  const response = await fetchApi.get<MovieBanner[]>("/movieList");
+  const response = await fetchApi.get<MovieBanner[]>("/movies");
   return response.data;
 };

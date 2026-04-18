@@ -15,8 +15,8 @@ const ShowtimesWrapper = () => {
 
   const moviesByDate = useMemo(
     () =>
-      scheduleMovie.filter(
-        (movie) => (movie.schedules[selected]?.length ?? 0) > 0,
+      scheduleMovie?.filter(
+        (movie) => (movie?.schedules?.[selected]?.length ?? 0) > 0,
       ),
     [scheduleMovie, selected],
   );
@@ -42,7 +42,7 @@ const ShowtimesWrapper = () => {
 
         {!isLoadingSchedule &&
           !isErrorSchedule &&
-          moviesByDate.length === 0 && (
+          moviesByDate?.length === 0 && (
             <p className="font-saira text-center text-2xl text-blue-100 mt-10">
               Không có suất chiếu cho ngày này
             </p>
