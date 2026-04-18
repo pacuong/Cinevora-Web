@@ -1,22 +1,23 @@
-import { MovieCardProps } from "@/src/interfaces/movieCard";
+import { MovieCardProps, MovieFromBE } from "@/src/interfaces/movieCard";
 import fetchApi from "./fetchApi";
 import { MovieSchedule } from "@/src/interfaces/movieSchedule";
 
 export const getNowShowingMovies = async () => {
-  const { data } = await fetchApi.get<MovieCardProps[]>("/movieList");
-  return data.filter((movie) => movie.isUpComming === true);
+  const { data } = await fetchApi.get<MovieCardProps[]>("/movies");
+  return data.filter((movie) => movie.status === "now_showing");
 };
 
 export const getUpComingMovies = async () => {
-  const { data } = await fetchApi.get<MovieCardProps[]>("/movieList");
-  return data.filter((movie) => movie.isUpComming === false);
+  const { data } = await fetchApi.get<MovieCardProps[]>("/movies");
+  return data.filter((movie) => movie.status === "upcoming");
 };
 
-export const getMovieById = async (id: string) => {
-  const res = await fetchApi.get(`/movieList/${id}`);
+export const getMovieById = async (slug: string) => {
+  const res = await fetchApi.get(`/movies/${slug}`);
   return res.data;
 };
 
+//TODO:
 export const getMovieScheduleById = async (
   movieId: string,
 ): Promise<MovieSchedule> => {

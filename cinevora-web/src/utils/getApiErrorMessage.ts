@@ -10,7 +10,15 @@ export const getApiErrorMessage = (
     if (typeof data === "string") return data;
 
     if (typeof data === "object" && data !== null && "message" in data) {
-      return String((data as { message?: unknown }).message);
+      const message = (data as { message?: unknown }).message;
+
+      if (Array.isArray(message)) {
+        return message.join("\n");
+      }
+
+      if (typeof message === "string") {
+        return message;
+      }
     }
   }
 

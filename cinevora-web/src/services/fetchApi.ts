@@ -11,7 +11,7 @@ fetchApi.interceptors.response.use(
     const status = error?.response?.status;
 
     if (status === 400) {
-      return Promise.reject(new Error("Bad request"));
+      return Promise.reject(error);
     }
 
     if (status === 401) {

@@ -45,8 +45,8 @@ const MovieCard = ({
   const isLaptop = isDesktop;
   const router = useRouter();
 
-  const handleNavigateDetail = (id: string) => {
-    router.push(`${PAGEURL.DETAIL_PAGE}/${id}`);
+  const handleNavigateDetail = (slug: string) => {
+    router.push(`${PAGEURL.DETAIL_PAGE}/${slug}`);
   };
 
   const handleCardClick = (index: number) => {
@@ -75,17 +75,19 @@ const MovieCard = ({
               <div
                 role="button"
                 tabIndex={0}
-                onClick={() => handleNavigateDetail(movie.id)}
+                onClick={() => handleNavigateDetail(movie.slug)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    handleNavigateDetail(movie.id);
+                    handleNavigateDetail(movie.slug);
                   }
                 }}
                 className={`poster-wrapper ${isHoverMovie ? "lg:after:bg-orange-overlay" : ""}`}
               >
-                {movie.rating && (
-                  <div className="movie-medal">{renderMedal(movie.rating)}</div>
+                {movie.avgRating && (
+                  <div className="movie-medal">
+                    {renderMedal(movie.avgRating)}
+                  </div>
                 )}
 
                 <img
@@ -100,7 +102,7 @@ const MovieCard = ({
                 <Meta
                   title={
                     <Link
-                      href={`${PAGEURL.DETAIL_PAGE}/${movie.id}`}
+                      href={`${PAGEURL.DETAIL_PAGE}/${movie.slug}`}
                       className="movie-title tracking-tight !text-black-100 font-saira !text-[14px] md:!text-[15px] lg:text-[14px]"
                     >
                       {movie.title} ({movie.rated})
@@ -110,7 +112,8 @@ const MovieCard = ({
                     <div className="movie-info">
                       {isShowGenre && (
                         <div className="text-black-100 tracking-tight truncate uppercase !text-[13px] font-saira md:text-xs lg:text-sm">
-                          thể loại: {movie.genre || "—"}
+                          {/* TODO: Test data */}
+                          thể loại: {movie.genres[0].name || "—"}
                         </div>
                       )}
 
@@ -156,7 +159,7 @@ const MovieCard = ({
                             !px-[5px] md:!py-[5px] md:!px-[10px]"
                             onClick={() => {
                               onBooking?.({
-                                id: movie.id,
+                                id: movie.id.toString(),
                                 title: movie.title,
                                 posterUrl: movie.posterUrl,
                                 releaseDate: movie.releaseDate,

@@ -127,10 +127,12 @@ const Footer = ({
           <div className="w-[80%] md:w-[25%] md:pl-10">
             <div className="w-full bg-white-100 p-4">
               <div className="border border-gray-10">
-                <img
+                <Image
+                  width={30}
+                  height={30}
                   src={brand.logo}
                   alt={brand.label}
-                  className="border-2 border-blue-65 rounded-full"
+                  className="border border-blue-65 rounded-full object-contain h-12"
                 />
               </div>
               <p className="text-[#365899] text-l md:text-sm font-saira uppercase font-medium">
