@@ -19,7 +19,7 @@ const LoginWrapper = () => {
   const router = useRouter();
   const { isDesktop } = useCustomDevice();
   const { addToast } = useToast();
-  const { setErrorMessage } = useToastMessage();
+  const { handleToastErrorMessage } = useToastMessage();
 
   const activeTabKey = pathname.includes(AUTH_TAB_KEYS.REGISTER)
     ? AUTH_TAB_KEYS.REGISTER
@@ -37,10 +37,12 @@ const LoginWrapper = () => {
         TOAST_MESSAGE.LOGIN_SUCCESS.message,
         TOAST_MESSAGE.LOGIN_SUCCESS.type,
       );
-      // add loading indicator
       router.push("/");
     } catch (error: unknown) {
-      const message = setErrorMessage(error, TOAST_MESSAGE.LOGIN_ERROR.message);
+      const message = handleToastErrorMessage(
+        error,
+        TOAST_MESSAGE.LOGIN_ERROR.message,
+      );
       addToast(message, TOAST_MESSAGE.LOGIN_ERROR.type);
     }
   };

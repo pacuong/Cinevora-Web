@@ -5,7 +5,7 @@ import DatePicker from "@/src/components/common/datePicker";
 import FormError from "@/src/components/common/errorForm";
 import InputComponent from "@/src/components/common/input";
 import SelectComponent from "@/src/components/Select";
-import { AuthMessageType } from "@/src/hooks/useAuthMessage";
+import { ToastMessageType } from "@/src/hooks/useAuthMessage";
 import { UserRegister } from "@/src/interfaces/authUser";
 import { cityOptions, districtOptions } from "@/src/mocks/selectdata";
 import {
@@ -39,7 +39,7 @@ const initialValues = {
 export interface RegisterFormProps {
   onUserName: (data: UserRegister) => void;
   messageRegister: string;
-  typeRegister: AuthMessageType;
+  typeRegister: ToastMessageType;
   clearMessage: () => void;
 }
 
@@ -323,7 +323,6 @@ const FormRegister = ({
           </p>
         </div>
       </div>
-      {/* //TODO: Error */}
       {messageRegister && (
         <p
           className={`text-base text-saira ${
