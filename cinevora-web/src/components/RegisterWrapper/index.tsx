@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { getApiErrorMessage } from "@/src/utils/getApiErrorMessage";
 import { useAuthSlice } from "@/src/stores/useAuth";
 import { useAuthMessageStore } from "@/src/stores/useAuthMessageStore";
-import { UserRegister } from "@/src/interfaces/authUser";
+import { RegisterPayload, UserRegister } from "@/src/interfaces/authUser";
 import { useCustomDevice } from "@/src/hooks/deviceDetect";
 import { AUTH_TAB_KEYS } from "@/src/constants/authTabKey";
 import { authuTabs } from "@/src/constants/authTab";
@@ -29,16 +29,23 @@ const RegisterWrapper = () => {
   };
   const { setSuccess, setError } = useAuthMessageStore();
   const register = useAuthSlice((state) => state.register);
+
   const handleOnRegister = async (data: UserRegister) => {
-    try {
-      const { ...payload } = data;
-      await register(payload);
-      setSuccess("Đăng ký thành công");
-      router.push("/");
-    } catch (error: unknown) {
-      setError(getApiErrorMessage(error, "Đăng ký thất bại"));
-    }
-  };
+  try {
+    const { confirmPassword, ...rest } = data;
+
+    const payload: RegisterPayload = {
+      ...rest,
+      role: "user",
+    };
+
+    await register(payload);
+    setSuccess("Đăng ký thành công");
+    router.push("/");
+  } catch (error: unknown) {
+    setError(getApiErrorMessage(error, "Đăng ký thất bại"));
+  }
+};
 
   return (
     <Layout>

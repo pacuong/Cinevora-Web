@@ -1,10 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import MovieCard from "@/src/components/common/movieCard";
 import ShowtimeScheduleModal from "@/src/components/ShowtimeScheduleModal";
 import { useListNowMovies } from "@/src/hooks/Movies/useListNowMovies";
 import { useBookingStore } from "@/src/stores/bookingStore";
-import { useState } from "react";
 import MovieCardSkeleton from "../common/movieCard/MovieCardSkeleton";
 
 const NowShowingWrapper = () => {
@@ -41,7 +41,7 @@ const NowShowingWrapper = () => {
       </div>
 
       {isLoadingNowShowingMovies ? (
-        <p>Đang tải dữ liệu...</p>
+        <MovieCardSkeleton />
       ) : (
         <div>
           <MovieCard

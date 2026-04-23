@@ -39,6 +39,7 @@ const UpComingWrapper = () => {
             isShowGenre
             isShowBtn
         />
+        </div>
       )}
       
       <ShowtimeScheduleModal

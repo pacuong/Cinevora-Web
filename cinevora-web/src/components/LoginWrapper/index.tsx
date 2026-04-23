@@ -28,11 +28,18 @@ const LoginWrapper = () => {
   };
   const { setSuccess, setError } = useAuthMessageStore();
   const login = useAuthSlice((state) => state.login);
+
   const handleLogin = async (data: LoginUser) => {
     try {
-      await login(data);
+      const response = await login(data);
+
+      if (response.user.role !== "user") {
+        useAuthSlice.getState().logout(); 
+        alert("Tài khoản admin không được đăng nhập ở đây");
+        return;
+      }
+
       setSuccess("Đăng nhập thành công");
-      // add loading indicator
       router.push("/");
     } catch (error: unknown) {
       setError(getApiErrorMessage(error, "Đăng nhập thất bại"));

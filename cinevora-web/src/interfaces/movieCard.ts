@@ -1,3 +1,5 @@
+export type MovieApiStatus = "now_showing" | "upcoming" | "ended";
+
 export interface MovieCardProps {
   id: string;
   title: string;
@@ -5,12 +7,13 @@ export interface MovieCardProps {
   ageRating: string;
   posterUrl: string;
   releaseDate: string;
-  director?: string;
+  genre: string;
+  duration: number;
+  rated: string;
+  director: string;
   actor?: string;
-  genre?: string;
-  duration?: number;
   language?: string;
-  rated?: string;
   description?: string;
-  isUpComming?: boolean;
+  status: MovieApiStatus;
 }
+
