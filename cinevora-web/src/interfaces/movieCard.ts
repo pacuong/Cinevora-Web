@@ -17,3 +17,17 @@ export interface MovieCardProps {
   status: MovieApiStatus;
 }
 
+export interface AddMovieForm {
+  title: string;
+  director: string;
+  genres: string;
+  duration: number | string;
+  releaseDate: string;
+  description: string;
+  status: string;
+  poster: string;
+}
+
+export interface AddMoviesProps {
+  onAddMovie: (data: AddMovieForm) => void;
+}

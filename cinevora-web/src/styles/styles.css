@@ -1018,3 +1018,22 @@ textarea.ant-input {
   font-size: 15px;
   font-weight: 700;
 }
+
+.movie-label {
+  font-family: "SairaSemiCondensed", sans-serif;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.my-add-movie-modal .ant-modal-title {
+  color: #0e1d2f !important;
+  font-weight: 700 !important;
+  margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.my-add-movie-modal .ant-modal-header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}

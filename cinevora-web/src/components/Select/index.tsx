@@ -9,6 +9,7 @@ interface SelectComponentProps {
   label?: string;
   name: string;
   value: string;
+  classLable?: string;
   options: SelectOption[];
   placeholder?: string;
   onChange: (value: string) => void;
@@ -19,6 +20,7 @@ const SelectComponent = ({
   name,
   value,
   options,
+  classLable,
   placeholder,
   onChange,
 }: SelectComponentProps) => {
@@ -28,7 +30,10 @@ const SelectComponent = ({
   return (
     <div className="flex flex-col text-left gap-2">
       {label && (
-        <label htmlFor={name} className="text-blue-100 text-base font-saira">
+        <label
+          htmlFor={name}
+          className={` ${classLable} text-blue-100 text-base font-saira`}
+        >
           {label}
         </label>
       )}

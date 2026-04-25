@@ -1,16 +1,24 @@
-import { Input, type InputProps } from 'antd';
-import type { ChangeEvent } from 'react';
+import { Input, type InputProps } from "antd";
+import type { ChangeEvent } from "react";
 
 interface IInputProps extends InputProps {
   placeholder?: string;
   className?: string;
   type?: string;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  value: string;
+  value: string | number;
   id?: string;
 }
 
-const BaseInput = ({ value, onChange, type, className, placeholder, id, ...rest }: IInputProps) => {
+const BaseInput = ({
+  value,
+  onChange,
+  type,
+  className,
+  placeholder,
+  id,
+  ...rest
+}: IInputProps) => {
   return (
     <Input
       id={id}

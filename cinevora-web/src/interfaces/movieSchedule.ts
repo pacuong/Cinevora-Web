@@ -19,3 +19,21 @@ export interface MovieShowtimeCardProps {
   showtimes: Showtime[];
   onSelectShowtime?: (showtime: Showtime) => void;
 }
+
+export interface AddShowtimeFormValues {
+  poster: string;
+  movieId: string;
+  cinemaId: string;
+  roomId: string;
+  showDate: string;
+  showTime: string;
+  format: string;
+  subtitle: string;
+  language: string;
+  note: string;
+  status: string;
+}
+
+export interface AddShowtimeProps {
+  onAddShowtime: (data: AddShowtimeFormValues) => void;
+}
