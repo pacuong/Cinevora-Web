@@ -85,6 +85,8 @@ const ShowtimeScheduleModal = ({
                 title={movieSchedule.title}
                 age={movieSchedule.age}
                 posterUrl={movieSchedule.posterUrl}
+                releaseDate={movieSchedule.releaseDate}
+                selectedDate={selectedDate ?? ""}
                 showtimes={showtimesByDate}
               />
             )}

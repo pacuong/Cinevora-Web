@@ -354,21 +354,28 @@
       "title": "28 năm sau - ngôi đền tử thần",
       "age": "C18",
       "posterUrl": "https://metiz.vn/media/poster_film/28-year.jpg",
+      "duration": 150,
       "schedules": {
-        "2026-03-22": [
+        "2026-04-28": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 84
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 100
           }
         ],
-        "2026-03-21": [
+        "2026-04-29": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 36
           }
         ]
       }
@@ -378,29 +385,40 @@
       "title": "ai thương ai mến",
       "age": "C16",
       "posterUrl": "https://metiz.vn/media/poster_film/ai_men.jpg",
+      "duration": 166,
       "schedules": {
         "2026-03-20": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 65
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 92
           }
         ],
         "2026-03-22": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 28
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 100
           },
           {
-            "time": "20:45 - 23:15",
-            "room": "02"
+            "time": "14:15 - 16:45",
+            "room": "04",
+            "totalSeats": 80,
+            "soldSeats": 15
           }
         ]
       }
@@ -410,21 +428,28 @@
       "title": "Avatar 3 - lửa và tro tàn",
       "age": "C13",
       "posterUrl": "https://metiz.vn/media/poster_film/avatar.jpg",
+      "duration": 166,
       "schedules": {
         "2026-02-03": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 90
           }
         ],
         "2026-04-21": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 0
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 0
           }
         ]
       }
@@ -434,21 +459,60 @@
       "title": "thiên đường máu",
       "age": "C16",
       "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
+      "duration": 166,
       "schedules": {
         "2026-01-30": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 90
           }
         ],
-        "2026-01-31": [
+        "2026-04-23": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 120
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 74
+          }
+        ]
+      }
+    },
+    {
+      "id": "dino-family-jurassic",
+      "title": "gia đình khủng long: mắc kẹt kỷ jura",
+      "age": "C16",
+      "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
+      "duration": 166,
+      "releaseDate": "2026-04-28",
+      "schedules": {
+        "2026-04-28": [
+          {
+            "time": "17:00 - 19:30",
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 90
+          }
+        ],
+        "2026-04-23": [
+          {
+            "time": "18:00 - 20:30",
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 120
+          },
+          {
+            "time": "20:45 - 23:15",
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 74
           }
         ]
       }

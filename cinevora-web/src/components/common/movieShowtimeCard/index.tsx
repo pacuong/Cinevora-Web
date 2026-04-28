@@ -18,6 +18,8 @@ const MovieShowtimeCard = ({
   className,
   age,
   posterUrl,
+  releaseDate,
+  selectedDate,
   showtimes,
 }: MovieShowtimeCardProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -25,25 +27,45 @@ const MovieShowtimeCard = ({
   const [openAgeModal, setOpenAgeModal] = useState(false);
   const [openLoginModal, setOpenLoginModal] = useState(false);
   const [openConfirmProfile, setOpenConfirmProfile] = useState(false);
+
   const login = useAuthSlice((state) => state.login);
   const userAuthentication = useAuthSlice((state) => state.userAuthentication);
-  const setShowtime = useBookingStore((s) => s.setShowtime);
+
+  const setMovie = useBookingStore((state) => state.setMovie);
+  const setDate = useBookingStore((state) => state.setDate);
+  const setShowtime = useBookingStore((state) => state.setShowtime);
+
   const router = useRouter();
 
   const handleClickConfirm = () => {
-    router.push(`${PAGEURL.BOOKING_PAGE}`);
+    router.push(PAGEURL.BOOKING_PAGE);
   };
 
   const openConfirm = (index: number) => {
+    const selectedShowtime = showtimes[index];
+
+    if (!selectedShowtime) return;
+
     setSelectedIndex(index);
-    setShowtime({
-      time: showtimes[index].time,
+
+    setMovie({
+      title,
+      posterUrl,
+      releaseDate,
     });
+
+    setDate(selectedDate);
+
+    setShowtime({
+      time: selectedShowtime.time,
+    });
+
     setOpenConfirmProfile(true);
     setPendingIndex(null);
   };
 
   const user = userAuthentication?.user;
+
   const profileData = useMemo(
     () => (user ? mapUserToProfile(user) : undefined),
     [user],
@@ -80,7 +102,6 @@ const MovieShowtimeCard = ({
 
     if (pendingIndex !== null) {
       openConfirm(pendingIndex);
-      setPendingIndex(null);
     }
   };
 
@@ -101,7 +122,7 @@ const MovieShowtimeCard = ({
         </h3>
 
         <div className="flex flex-col lg:flex-row ml-6">
-          <div className="">
+          <div>
             <img
               src={posterUrl}
               alt={title}
@@ -119,11 +140,15 @@ const MovieShowtimeCard = ({
                     key={`${showtime.time}-${showtime.room}-${index}`}
                     onClick={() => handleSelectShowtime(index)}
                     className={`
-                    showtime-card cursor-pointer mb-5
-                    w-[115px] h-[78px] p-0
-                    lg:hover:bg-orange-100 lg:hover:text-white-100 lg:hover:border-0
-                    ${isSelected ? "bg-orange-100 text-white-100" : "bg-white-100 text-black-100"}
-                  `}
+                      showtime-card cursor-pointer mb-5
+                      w-[115px] h-[78px] p-0
+                      lg:hover:bg-orange-100 lg:hover:text-white-100 lg:hover:border-0
+                      ${
+                        isSelected
+                          ? "bg-orange-100 text-white-100"
+                          : "bg-white-100 text-black-100"
+                      }
+                    `}
                   >
                     <p className="font-semibold text-l">{showtime.time}</p>
                     {!isSelected && <hr className="divider" />}
@@ -136,6 +161,7 @@ const MovieShowtimeCard = ({
           </div>
         </div>
       </div>
+
       {age && age !== "P" && (
         <AgeRestrictionModal
           ageClassification={age as MovieAgeClassification}
@@ -144,18 +170,20 @@ const MovieShowtimeCard = ({
           onAgree={handleConfirmAge}
         />
       )}
+
       <LoginModal
         open={openLoginModal}
         onClose={handleCloseLoginModal}
         onLogin={async (data) => {
           await login(data);
           setOpenLoginModal(false);
+
           if (pendingIndex !== null) {
             openConfirm(pendingIndex);
           }
-          // router.push("/booking");
         }}
       />
+
       {openConfirmProfile && profileData && (
         <ConfirmProfile
           onClickConfirm={handleClickConfirm}
