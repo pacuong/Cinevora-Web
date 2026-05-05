@@ -36,8 +36,8 @@ export const footerDataMock: FooterData = {
     },
   ],
   brand: {
-    logo: "/assets/images/logo_metiz.jpg",
-    label: "Metiz Cinema",
+    logo: "/assets/images/logo_metiz.png",
+    label: "Cinevora",
   },
   companyInfo: [
     { text: "Tên Doanh Nghiệp: Công Ty TNHH KHỞI PHÁT." },

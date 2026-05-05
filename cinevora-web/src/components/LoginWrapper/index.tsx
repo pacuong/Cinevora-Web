@@ -3,20 +3,23 @@
 import Layout from "@/src/app/siteLayout";
 import TabsComponent from "@/src/components/common/tabs";
 import LoginForm from "@/src/components/FormLogin";
+import useToast from "@/src/components/ToastContext";
 import { authuTabs } from "@/src/constants/authTab";
 import { AUTH_TAB_KEYS } from "@/src/constants/authTabKey";
 import PAGEURL from "@/src/constants/pageUrl";
+import { TOAST_MESSAGE } from "@/src/constants/toastMessage";
 import { useCustomDevice } from "@/src/hooks/deviceDetect";
+import { useToastMessage } from "@/src/hooks/useAuthMessage";
 import { LoginUser } from "@/src/interfaces/authUser";
 import { useAuthSlice } from "@/src/stores/useAuth";
-import { useAuthMessageStore } from "@/src/stores/useAuthMessageStore";
-import { getApiErrorMessage } from "@/src/utils/getApiErrorMessage";
 import { usePathname, useRouter } from "next/navigation";
 
 const LoginWrapper = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { isDesktop } = useCustomDevice();
+  const { addToast } = useToast();
+  const { handleToastErrorMessage } = useToastMessage();
 
   const activeTabKey = pathname.includes(AUTH_TAB_KEYS.REGISTER)
     ? AUTH_TAB_KEYS.REGISTER
@@ -26,7 +29,6 @@ const LoginWrapper = () => {
     if (key === activeTabKey) return;
     router.push(PAGEURL.REGISTER);
   };
-  const { setSuccess, setError } = useAuthMessageStore();
   const login = useAuthSlice((state) => state.login);
 
   const handleLogin = async (data: LoginUser) => {
@@ -34,15 +36,24 @@ const LoginWrapper = () => {
       const response = await login(data);
 
       if (response.user.role !== "user") {
-        useAuthSlice.getState().logout(); 
+        useAuthSlice.getState().logout();
         alert("Tài khoản admin không được đăng nhập ở đây");
         return;
       }
 
-      setSuccess("Đăng nhập thành công");
+      addToast(
+        TOAST_MESSAGE.LOGIN_SUCCESS.message,
+        TOAST_MESSAGE.LOGIN_SUCCESS.type,
+      );
+
       router.push("/");
     } catch (error: unknown) {
-      setError(getApiErrorMessage(error, "Đăng nhập thất bại"));
+      const message = handleToastErrorMessage(
+        error,
+        TOAST_MESSAGE.LOGIN_ERROR.message,
+      );
+
+      addToast(message, TOAST_MESSAGE.LOGIN_ERROR.type);
     }
   };
 

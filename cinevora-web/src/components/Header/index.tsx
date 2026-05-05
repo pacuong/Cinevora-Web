@@ -100,6 +100,7 @@ const Header = () => {
                 fill
                 src="/assets/images/logo_header.png"
                 alt="logo-metiz"
+                className="object-contain"
               />
             </Link>
           </div>

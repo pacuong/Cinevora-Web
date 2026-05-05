@@ -30,7 +30,20 @@ export interface AuthResponse {
   user: User;
 }
 
-export type RegisterPayload = Omit<UserRegister, 'confirmPassword'>;
+export interface RegisterPayload {
+  fullName: string;
+  dateOfBirth: string;
+  email: string;
+  password: string;
+  phone: string;
+  city: string;
+  district: string;
+  address: string;
+  sex: string;
+  IDCardNumber: string;
+  recaptchaToken: string;
+  role: UserRole;
+}
 
 export interface UserProfile {
   fullName: string;

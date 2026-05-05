@@ -9,12 +9,12 @@ import fetchApi from "@/src/services/fetchApi";
 export const authRegister = async (
   data: RegisterPayload,
 ): Promise<AuthResponse> => {
-  const response = await fetchApi.post<AuthResponse>("/users", data);
+  const response = await fetchApi.post<AuthResponse>("/auth/register", data);
   return response.data;
 };
 
 export const authLogin = async (data: LoginUser): Promise<AuthResponse> => {
-  const response = await fetchApi.post<AuthResponse>("/login", data);
+  const response = await fetchApi.post<AuthResponse>("/auth/login", data);
   return response.data;
 };
 

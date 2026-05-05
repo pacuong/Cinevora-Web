@@ -5,6 +5,7 @@ import DatePicker from "@/src/components/common/datePicker";
 import FormError from "@/src/components/common/errorForm";
 import InputComponent from "@/src/components/common/input";
 import SelectComponent from "@/src/components/Select";
+import { ToastMessageType } from "@/src/hooks/useAuthMessage";
 import { UserRegister } from "@/src/interfaces/authUser";
 import { cityOptions, districtOptions } from "@/src/mocks/selectdata";
 import {
@@ -37,9 +38,17 @@ const initialValues = {
 
 export interface RegisterFormProps {
   onUserName: (data: UserRegister) => void;
+  messageRegister: string;
+  typeRegister: ToastMessageType;
+  clearMessage: () => void;
 }
 
-const FormRegister = ({ onUserName }: RegisterFormProps) => {
+const FormRegister = ({
+  onUserName,
+  messageRegister,
+  typeRegister,
+  clearMessage,
+}: RegisterFormProps) => {
   const {
     handleSubmit,
     control,
@@ -57,7 +66,6 @@ const FormRegister = ({ onUserName }: RegisterFormProps) => {
     (field: { onChange: (value: string) => void }) => (value: string) => {
       field.onChange(value);
     };
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -170,7 +178,7 @@ const FormRegister = ({ onUserName }: RegisterFormProps) => {
                     {...field}
                     id="phone"
                     placeholder="Số điện thoại"
-                    className=" w-full"
+                    className="w-full"
                   />
                   <FormError error={errors.phone} />
                 </>
@@ -203,7 +211,7 @@ const FormRegister = ({ onUserName }: RegisterFormProps) => {
         </div>
 
         <div className="flex flex-col gap-7 md:flex-row md:gap-15 lg:flex-row">
-          <div className="flex flex-col gap-2 w-full max-w-[300px]w-full max-w-[300px]">
+          <div className="flex flex-col gap-2 w-full max-w-[300px]">
             <label htmlFor="password" className="text-blue-100 text-base">
               Mật khẩu
             </label>
@@ -252,7 +260,7 @@ const FormRegister = ({ onUserName }: RegisterFormProps) => {
         </div>
 
         <div className="flex flex-col gap-7 md:flex-row md:gap-15 lg:flex-row">
-          <div className=" flex flex-col gap-2 w-full max-w-[300px]">
+          <div className="flex flex-col gap-2 w-full max-w-[300px]">
             <Controller
               name="city"
               control={control}
@@ -269,7 +277,7 @@ const FormRegister = ({ onUserName }: RegisterFormProps) => {
             />
           </div>
 
-          <div className=" flex flex-col gap-2 w-full max-w-[300px]">
+          <div className="flex flex-col gap-2 w-full max-w-[300px]">
             <Controller
               name="district"
               control={control}
@@ -315,6 +323,15 @@ const FormRegister = ({ onUserName }: RegisterFormProps) => {
           </p>
         </div>
       </div>
+      {messageRegister && (
+        <p
+          className={`text-base text-saira ${
+            typeRegister === "error" ? "text-red-100" : "text-green-100"
+          }`}
+        >
+          {messageRegister}
+        </p>
+      )}
       <ButtonComponent className="mt-8" name="Đăng ký" buttonType="submit" />
     </form>
   );

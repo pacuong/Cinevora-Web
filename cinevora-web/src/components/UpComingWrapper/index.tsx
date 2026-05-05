@@ -41,7 +41,7 @@ const UpComingWrapper = () => {
         />
         </div>
       )}
-      
+
       <ShowtimeScheduleModal
         isModalOpen={openShowtime}
         setIsModalOpen={setOpenShowtime}

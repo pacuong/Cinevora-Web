@@ -7,6 +7,7 @@ import { getTagColor } from "@/src/utils/getTagColor";
 import { renderMedal } from "@/src/utils/renderMedal";
 import { MovieCardProps } from "@/src/interfaces/movieCard";
 import { useRouter } from "next/navigation";
+import PAGEURL from "@/src/constants/pageUrl";
 
 const { Meta } = Card;
 
@@ -40,8 +41,8 @@ const MovieCardItem = ({
     }
   };
 
-  const handleClick = (id: string) => {
-    router.push(`/phim/${id}`);
+  const handleClick = (slug: string) => {
+    router.push(`${PAGEURL.DETAIL_PAGE}/${slug}`);
   };
 
   return (
@@ -58,9 +59,9 @@ const MovieCardItem = ({
         <div
           role="button"
           tabIndex={0}
-          onClick={() => handleClick(movie.id)}
+          onClick={() => handleClick(movie.slug)}
           onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") handleClick(movie.id);
+            if (e.key === "Enter" || e.key === " ") handleClick(movie.slug);
           }}
           className={`poster-wrapper ${isHoverMovie ? "lg:after:bg-orange-overlay" : ""}`}
         >
@@ -81,9 +82,9 @@ const MovieCardItem = ({
             <span
               role="button"
               tabIndex={0}
-              onClick={() => handleClick(movie.id)}
+              onClick={() => handleClick(movie.slug)}
               onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") handleClick(movie.id);
+                if (e.key === "Enter" || e.key === " ") handleClick(movie.slug);
               }}
               className="movie-title truncate uppercase text-[10px] md:text-xs lg:text-[14px]"
             >
@@ -94,7 +95,7 @@ const MovieCardItem = ({
             <div className="movie-info">
               {isShowGenre && (
                 <div className="movie-genre uppercase truncate text-[10px] md:text-xs lg:text-sm">
-                  thể loại: {movie.genre || "—"}
+                  thể loại: {movie.genres[0].name || "—"}
                 </div>
               )}
 

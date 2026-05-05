@@ -47,7 +47,7 @@ const ShowtimeScheduleModal = ({
 
   const showtimesByDate = useMemo(() => {
     if (!movieSchedule || !selectedDate) return [];
-    return movieSchedule.schedules[selectedDate] ?? [];
+    return movieSchedule?.schedules?.[selectedDate] ?? [];
   }, [movieSchedule, selectedDate]);
 
   const handleCloseModal = (open: boolean) => {
