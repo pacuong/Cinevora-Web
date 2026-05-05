@@ -30,19 +30,29 @@ const LoginWrapper = () => {
     router.push(PAGEURL.REGISTER);
   };
   const login = useAuthSlice((state) => state.login);
+
   const handleLogin = async (data: LoginUser) => {
     try {
-      await login(data);
+      const response = await login(data);
+
+      if (response.user.role !== "user") {
+        useAuthSlice.getState().logout();
+        alert("Tài khoản admin không được đăng nhập ở đây");
+        return;
+      }
+
       addToast(
         TOAST_MESSAGE.LOGIN_SUCCESS.message,
         TOAST_MESSAGE.LOGIN_SUCCESS.type,
       );
+
       router.push("/");
     } catch (error: unknown) {
       const message = handleToastErrorMessage(
         error,
         TOAST_MESSAGE.LOGIN_ERROR.message,
       );
+
       addToast(message, TOAST_MESSAGE.LOGIN_ERROR.type);
     }
   };

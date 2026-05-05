@@ -40,6 +40,12 @@ const ShowtimesWrapper = () => {
       <div className="px-10 font-saira overflow-y-scroll h-[300px] md:overflow-y-hidden md:h-auto mb-17">
         {isLoadingSchedule && <p>Đang tải...</p>}
 
+        {!isLoadingSchedule && isErrorSchedule && (
+          <p className="font-saira text-center text-2xl text-red-500 mt-10">
+            Không thể tải lịch chiếu
+          </p>
+        )}
+
         {!isLoadingSchedule &&
           !isErrorSchedule &&
           moviesByDate?.length === 0 && (
@@ -57,7 +63,9 @@ const ShowtimesWrapper = () => {
               title={movie.title}
               age={movie.age}
               posterUrl={movie.posterUrl}
-              showtimes={movie.schedules[selected]}
+              releaseDate={movie.releaseDate}
+              selectedDate={selected}
+              showtimes={movie.schedules[selected] ?? []}
             />
           ))}
       </div>

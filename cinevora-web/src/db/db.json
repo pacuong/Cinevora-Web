@@ -1,58 +1,6 @@
 {
   "movieList": [
     {
-      "id": "thien-duong-mau",
-      "title": "Thiên đường máu",
-      "rating": 1,
-      "ageRating": "C16",
-      "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
-      "releaseDate": "19-03-2025",
-      "genre": "tội phạm, giật gân, tâm lý",
-      "duration": 166,
-      "rated": "C13 - phim cấm khán giả dưới 13 tuổi",
-      "director": "Nguyễn Quang Dũng",
-      "actor": "Thái Hòa, Thu Trang, Hồng Ánh",
-      "language": "Tiếng Việt",
-      "type": "now",
-      "description": "Một vụ án mạng bí ẩn xảy ra trong gia đình giàu có, hé lộ những góc khuất tăm tối của lòng tham và sự phản bội.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
-    },
-    {
-      "id": "avatar-3-fire-and-ash",
-      "title": "avatar- 3 lửa và tro tàn",
-      "rating": 2,
-      "ageRating": "C13",
-      "posterUrl": "https://metiz.vn/media/poster_film/avatar.jpg",
-      "releaseDate": "03-02-2026",
-      "genre": "khoa học viễn tưởng, phiêu lưu, hành động",
-      "duration": 166,
-      "rated": "T13 - phim cấm khán giả dưới 13 tuổi",
-      "director": "James Cameron",
-      "actor": "Sam Worthington, Zoe Saldaña, Sigourney Weaver",
-      "language": "Tiếng Anh",
-      "description": "Cuộc chiến mới trên hành tinh Pandora bùng nổ khi con người quay trở lại với tham vọng khai thác tàn khốc.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/gai_ngoan.jpg"
-    },
-    {
-      "id": "ai-thuong-ai-men",
-      "title": "ai thương ai mến",
-      "rating": 3,
-      "ageRating": "P",
-      "posterUrl": "https://metiz.vn/media/poster_film/ai_men.jpg",
-      "releaseDate": "03-01-2024",
-      "genre": "hài, gia đình, tình cảm",
-      "duration": 166,
-      "rated": "P - phim dành cho mọi lứa tuổi",
-      "director": "Huỳnh Đông",
-      "actor": "Lê Khánh, Đại Nghĩa, Puka",
-      "language": "Tiếng Việt",
-      "description": "Câu chuyện gia đình nhẹ nhàng, hài hước xoay quanh những mâu thuẫn nhỏ nhưng đầy yêu thương.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/mario.jpg"
-    },
-    {
       "id": "dino-family-jurassic",
       "title": "gia đình khủng long: mắc kẹt kỷ jura",
       "ageRating": "P",
@@ -65,8 +13,7 @@
       "actor": "Lồng tiếng",
       "language": "Lồng tiếng Việt",
       "description": "Gia đình khủng long bị lạc vào kỷ Jura và phải hợp sức để tìm đường trở về nhà.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "now_showing"
     },
     {
       "id": "tom-jerry-magic-compass",
@@ -81,24 +28,7 @@
       "actor": "Lồng tiếng",
       "language": "Lồng tiếng Việt",
       "description": "Tom và Jerry bước vào cuộc phiêu lưu kỳ lạ xoay quanh một chiếc la bàn phép thuật.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
-    },
-    {
-      "id": "journey-to-the-west-comedy",
-      "title": "đại thoại tây du",
-      "ageRating": "P",
-      "posterUrl": "https://metiz.vn/media/poster_film/tdk.jpg",
-      "releaseDate": "08-03-2024",
-      "genre": "hài, giả tưởng, phiêu lưu",
-      "duration": 94,
-      "rated": "P - phim dành cho mọi lứa tuổi",
-      "director": "Lưu Trấn Vỹ",
-      "actor": "Châu Tinh Trì, Ngô Mạnh Đạt",
-      "language": "Tiếng Trung",
-      "description": "Phiên bản hài hước kinh điển của Tây Du Ký với phong cách đặc trưng của Châu Tinh Trì.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "now_showing"
     },
     {
       "id": "godzilla-x-kong-new-empire",
@@ -113,8 +43,7 @@
       "actor": "Rebecca Hall, Brian Tyree Henry",
       "language": "Tiếng Anh",
       "description": "Godzilla và Kong buộc phải liên minh trước mối đe dọa mới có thể hủy diệt toàn bộ thế giới.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "now_showing"
     },
     {
       "id": "mai",
@@ -129,8 +58,7 @@
       "actor": "Phương Anh Đào, Tuấn Trần",
       "language": "Tiếng Việt",
       "description": "Câu chuyện cảm xúc về tình yêu, gia đình và những lựa chọn khó khăn trong cuộc sống.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "now_showing"
     },
     {
       "id": "lac-pham-tran",
@@ -145,8 +73,7 @@
       "actor": "Song Luân, Kaity Nguyễn",
       "language": "Tiếng Việt",
       "description": "Một chàng trai vô tình rơi vào chuỗi tình huống dở khóc dở cười giữa đời thường.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "now_showing"
     },
     {
       "id": "nha-hai-chu",
@@ -161,8 +88,7 @@
       "actor": "Hồng Vân, Quốc Trường",
       "language": "Tiếng Việt",
       "description": "Hai gia đình cùng sở hữu một căn nhà, từ đó nảy sinh hàng loạt tình huống hài hước.",
-      "isUpComming": true,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "now_showing"
     },
     {
       "id": "mission-impossible-8",
@@ -177,8 +103,7 @@
       "actor": "Tom Cruise, Hayley Atwell",
       "language": "Tiếng Anh",
       "description": "Ethan Hunt trở lại trong nhiệm vụ nguy hiểm nhất từ trước đến nay.",
-      "isUpComming": false,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "upcoming"
     },
     {
       "id": "inside-out-2",
@@ -193,8 +118,7 @@
       "actor": "Amy Poehler, Maya Hawke",
       "language": "Tiếng Anh",
       "description": "Riley bước vào tuổi thiếu niên, kéo theo những cảm xúc hoàn toàn mới xuất hiện.",
-      "isUpComming": false,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "upcoming"
     },
     {
       "id": "transformers-one",
@@ -209,8 +133,7 @@
       "actor": "Chris Hemsworth, Brian Tyree Henry",
       "language": "Tiếng Anh",
       "description": "Câu chuyện nguồn gốc của Optimus Prime và Megatron.",
-      "isUpComming": false,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "upcoming"
     },
     {
       "id": "joker-folie-a-deux",
@@ -225,8 +148,7 @@
       "actor": "Joaquin Phoenix, Lady Gaga",
       "language": "Tiếng Anh",
       "description": "Joker trở lại với một chương đen tối và điên loạn hơn bao giờ hết.",
-      "isUpComming": false,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "upcoming"
     },
     {
       "id": "batman-the-dark-knight-rises",
@@ -241,24 +163,189 @@
       "actor": "Christian Bale, Tom Hardy, Anne Hathaway",
       "language": "Tiếng Anh",
       "description": "Tám năm sau cái chết của Harvey Dent, Batman buộc phải quay trở lại khi Gotham bị đe dọa bởi Bane – một kẻ khủng bố tàn bạo với âm mưu hủy diệt toàn bộ thành phố.",
-      "isUpComming": false,
-      "bannerUrl": "https://metiz.vn/media/slide_home/chung_se_doat_mang.jpg"
+      "status": "ended"
+    },
+    {
+      "id": "kungfu-panda-4",
+      "title": "Kung Fu Panda 4",
+      "ageRating": "P",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/kungfupanda4.jpg",
+      "releaseDate": "08-03-2024",
+      "genre": "hoạt hình, hành động, hài",
+      "duration": 94,
+      "rated": "P - phim dành cho mọi lứa tuổi",
+      "director": "Mike Mitchell",
+      "actor": "Jack Black",
+      "language": "Tiếng Anh",
+      "description": "Po trở lại với hành trình trở thành thủ lĩnh tinh thần mới.",
+      "status": "now_showing"
+    },
+    {
+      "id": "fast-x",
+      "title": "Fast X",
+      "ageRating": "C16",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/fastx.jpg",
+      "releaseDate": "19-05-2024",
+      "genre": "hành động, tốc độ",
+      "duration": 140,
+      "rated": "C16 - phim cấm dưới 16 tuổi",
+      "director": "Louis Leterrier",
+      "actor": "Vin Diesel",
+      "language": "Tiếng Anh",
+      "description": "Gia đình Toretto đối đầu với kẻ thù nguy hiểm nhất.",
+      "status": "now_showing"
+    },
+    {
+      "id": "oppenheimer",
+      "title": "Oppenheimer",
+      "ageRating": "C16",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/oppenheimer.jpg",
+      "releaseDate": "21-07-2024",
+      "genre": "chính kịch, lịch sử",
+      "duration": 180,
+      "rated": "C16 - phim cấm dưới 16 tuổi",
+      "director": "Christopher Nolan",
+      "actor": "Cillian Murphy",
+      "language": "Tiếng Anh",
+      "description": "Câu chuyện về cha đẻ bom nguyên tử.",
+      "status": "now_showing"
+    },
+    {
+      "id": "the-marvels",
+      "title": "The Marvels",
+      "ageRating": "C13",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/marvels.jpg",
+      "releaseDate": "10-11-2024",
+      "genre": "siêu anh hùng",
+      "duration": 120,
+      "rated": "C13 - phim cấm dưới 13 tuổi",
+      "director": "Nia DaCosta",
+      "actor": "Brie Larson",
+      "language": "Tiếng Anh",
+      "description": "Ba nữ anh hùng hợp lực chiến đấu.",
+      "status": "now_showing"
+    },
+
+    {
+      "id": "avatar-4",
+      "title": "Avatar 4",
+      "ageRating": "C13",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/avatar4.jpg",
+      "releaseDate": "2027-12-20",
+      "genre": "khoa học viễn tưởng",
+      "duration": 180,
+      "rated": "T13",
+      "director": "James Cameron",
+      "actor": "Sam Worthington",
+      "language": "Tiếng Anh",
+      "description": "Phần tiếp theo của Avatar.",
+      "status": "upcoming"
+    },
+    {
+      "id": "deadpool-3",
+      "title": "Deadpool 3",
+      "ageRating": "C18",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/deadpool3.jpg",
+      "releaseDate": "2026-05-01",
+      "genre": "hài, hành động",
+      "duration": 130,
+      "rated": "C18",
+      "director": "Shawn Levy",
+      "actor": "Ryan Reynolds",
+      "language": "Tiếng Anh",
+      "description": "Deadpool trở lại với multiverse.",
+      "status": "upcoming"
+    },
+    {
+      "id": "spider-man-4",
+      "title": "Spider-Man 4",
+      "ageRating": "C13",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/spiderman4.jpg",
+      "releaseDate": "2026-07-15",
+      "genre": "siêu anh hùng",
+      "duration": 140,
+      "rated": "T13",
+      "director": "Jon Watts",
+      "actor": "Tom Holland",
+      "language": "Tiếng Anh",
+      "description": "Peter Parker quay lại cuộc sống mới.",
+      "status": "upcoming"
+    },
+
+    {
+      "id": "inception",
+      "title": "Inception",
+      "ageRating": "C13",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/inception.jpg",
+      "releaseDate": "2010-07-16",
+      "genre": "khoa học viễn tưởng",
+      "duration": 148,
+      "rated": "T13",
+      "director": "Christopher Nolan",
+      "actor": "Leonardo DiCaprio",
+      "language": "Tiếng Anh",
+      "description": "Đánh cắp giấc mơ.",
+      "status": "ended"
+    },
+    {
+      "id": "avengers-infinity-war",
+      "title": "Avengers: Infinity War",
+      "ageRating": "C13",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/infinitywar.jpg",
+      "releaseDate": "2018-04-27",
+      "genre": "siêu anh hùng",
+      "duration": 149,
+      "rated": "T13",
+      "director": "Russo Brothers",
+      "actor": "Robert Downey Jr.",
+      "language": "Tiếng Anh",
+      "description": "Thanos thu thập đá vô cực.",
+      "status": "ended"
+    },
+    {
+      "id": "interstellar",
+      "title": "Interstellar",
+      "ageRating": "C13",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/interstellar.jpg",
+      "releaseDate": "2014-11-07",
+      "genre": "khoa học viễn tưởng",
+      "duration": 169,
+      "rated": "T13",
+      "director": "Christopher Nolan",
+      "actor": "Matthew McConaughey",
+      "language": "Tiếng Anh",
+      "description": "Du hành không gian cứu nhân loại.",
+      "status": "ended"
     }
   ],
   "users": [
     {
       "email": "khoa98921@donga.edu.vn",
-      "password": "$2a$10$5E3FdUxJRIjbsbB4W61eUuY5tsOvdryBZ826sjh3usHI1oSrtmC1e",
+      "password": "$2a$10$XFKVOd8qb/61oRfXWn9d9uZqGbKjLC/7s2UaMjepC5qI6KTyU5cYu",
       "fullName": "Dang Khoa Nguyen",
-      "dateOfBirth": "02-03-2026",
-      "phone": "0788515492",
-      "confirmPassword": "123@123a",
+      "dateOfBirth": "01-04-2026",
+      "phone": "0788515490",
+      "city": "danang",
+      "district": "",
+      "address": "61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng\n61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng",
+      "sex": "Nam",
+      "IDCardNumber": "01234565434",
+      "role": "user",
+      "id": 1
+    },
+    {
+      "email": "dangkhoa241024@gmail.com",
+      "password": "$2a$10$HWWxIlQ1ni0kUVY0usDHEOVlb967Ov7pE/QVRWU5vVZ78uBFxAQF.",
+      "fullName": "Nguyễn",
+      "dateOfBirth": "01-04-2026",
+      "phone": "0788515490",
       "city": "danang",
       "district": "camle",
       "address": "61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng\n61 Hồ Huân Nghiệp, Bắc Mỹ An, Đà Nẵng",
       "sex": "Nam",
-      "IDCardNumber": "012345654354",
-      "id": 1
+      "IDCardNumber": "0123456543",
+      "role": "admin",
+      "id": 2
     }
   ],
   "movies": [
@@ -267,21 +354,28 @@
       "title": "28 năm sau - ngôi đền tử thần",
       "age": "C18",
       "posterUrl": "https://metiz.vn/media/poster_film/28-year.jpg",
+      "duration": 150,
       "schedules": {
-        "2026-03-22": [
+        "2026-04-28": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 84
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 100
           }
         ],
-        "2026-03-21": [
+        "2026-04-29": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 36
           }
         ]
       }
@@ -291,29 +385,40 @@
       "title": "ai thương ai mến",
       "age": "C16",
       "posterUrl": "https://metiz.vn/media/poster_film/ai_men.jpg",
+      "duration": 166,
       "schedules": {
         "2026-03-20": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 65
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 92
           }
         ],
         "2026-03-22": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 28
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 100
           },
           {
-            "time": "20:45 - 23:15",
-            "room": "02"
+            "time": "14:15 - 16:45",
+            "room": "04",
+            "totalSeats": 80,
+            "soldSeats": 15
           }
         ]
       }
@@ -323,21 +428,28 @@
       "title": "Avatar 3 - lửa và tro tàn",
       "age": "C13",
       "posterUrl": "https://metiz.vn/media/poster_film/avatar.jpg",
+      "duration": 166,
       "schedules": {
         "2026-02-03": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 90
           }
         ],
-        "2026-02-04": [
+        "2026-04-21": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 0
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 0
           }
         ]
       }
@@ -347,21 +459,60 @@
       "title": "thiên đường máu",
       "age": "C16",
       "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
+      "duration": 166,
       "schedules": {
         "2026-01-30": [
           {
             "time": "17:00 - 19:30",
-            "room": "03"
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 90
           }
         ],
-        "2026-01-31": [
+        "2026-04-23": [
           {
             "time": "18:00 - 20:30",
-            "room": "01"
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 120
           },
           {
             "time": "20:45 - 23:15",
-            "room": "02"
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 74
+          }
+        ]
+      }
+    },
+    {
+      "id": "dino-family-jurassic",
+      "title": "gia đình khủng long: mắc kẹt kỷ jura",
+      "age": "C16",
+      "posterUrl": "https://metiz.vn/media/poster_film/tdm.jpg",
+      "duration": 166,
+      "releaseDate": "2026-04-28",
+      "schedules": {
+        "2026-04-28": [
+          {
+            "time": "17:00 - 19:30",
+            "room": "03",
+            "totalSeats": 90,
+            "soldSeats": 90
+          }
+        ],
+        "2026-04-23": [
+          {
+            "time": "18:00 - 20:30",
+            "room": "01",
+            "totalSeats": 120,
+            "soldSeats": 120
+          },
+          {
+            "time": "20:45 - 23:15",
+            "room": "02",
+            "totalSeats": 100,
+            "soldSeats": 74
           }
         ]
       }

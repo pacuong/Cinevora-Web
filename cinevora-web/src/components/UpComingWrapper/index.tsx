@@ -38,7 +38,7 @@ const UpComingWrapper = () => {
             onBooking={handleBooking}
             isShowGenre
             isShowBtn
-          />
+        />
         </div>
       )}
 

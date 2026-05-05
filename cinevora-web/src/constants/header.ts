@@ -1,7 +1,7 @@
 import { NavbarItem } from "@/src/components/Navbar";
 import pageUrl from "@/src/constants/pageUrl";
 
-export const navItems: NavbarItem[] = [
+export const userNavItems: NavbarItem[] = [
   { href: `${pageUrl.MOVIE_SHOWTIME_PAGE}`, content: "lịch chiếu" },
 
   {
@@ -25,4 +25,10 @@ export const navItems: NavbarItem[] = [
   { href: "#uu-dai", content: "ưu đãi" },
   { href: "#tin-tuc-phim", content: "tin tức phim" },
   { href: "#thanh-vien", content: "thành viên" },
+];
+
+export const adminNavItems: NavbarItem[] = [
+  { href: "/admin/quan-ly-phim", content: "quản lý phim" },
+  { href: "/admin/quan-ly-lich-chieu", content: "quản lý lịch chiếu" },
+  { href: "/admin/UserManagement", content: "quản lý người dùng" },
 ];

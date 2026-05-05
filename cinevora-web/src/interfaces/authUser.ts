@@ -3,6 +3,8 @@ export interface LoginUser {
   password: string;
 }
 
+export type UserRole = "user" | "admin";
+
 export interface UserRegister {
   fullName: string;
   dateOfBirth: string;
@@ -15,11 +17,12 @@ export interface UserRegister {
   address: string;
   sex: string;
   IDCardNumber: string;
-  recaptchaToken: string;
+  role?: UserRole;
 }
 
 export interface User extends UserRegister {
   id: string;
+  role: UserRole;
 }
 
 export interface AuthResponse {
@@ -39,6 +42,7 @@ export interface RegisterPayload {
   sex: string;
   IDCardNumber: string;
   recaptchaToken: string;
+  role: UserRole;
 }
 
 export interface UserProfile {

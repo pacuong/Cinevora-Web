@@ -1,3 +1,12 @@
+export type MovieApiStatus = "now_showing" | "upcoming" | "ended";
+
+export interface GenreFromBE {
+  id: number;
+  name: string;
+  slug: string;
+  createdAt: string;
+}
+
 export interface MovieCardProps {
   id: number;
   title: string;
@@ -10,21 +19,14 @@ export interface MovieCardProps {
   actor: string;
   language: string;
   ageRating: string;
-  rated: string;
   rating: number;
-  status: string;
+  rated: string;
+  status: MovieApiStatus;
   releaseDate: string;
   endDate: string;
   avgRating: number | null;
   createdAt: string;
   genres: GenreFromBE[];
-}
-
-export interface GenreFromBE {
-  id: number;
-  name: string;
-  slug: string;
-  createdAt: string;
 }
 
 export interface MovieFromBE {
@@ -41,7 +43,7 @@ export interface MovieFromBE {
   ageRating: string;
   rating: number;
   rated: string;
-  status: string;
+  status: MovieApiStatus;
   releaseDate: string;
   endDate: string;
   avgRating: number | null;

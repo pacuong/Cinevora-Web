@@ -9,6 +9,7 @@ export interface MovieSchedule {
   age?: string;
   posterUrl: string;
   schedules: Record<string, Showtime[]>;
+  releaseDate: string;
 }
 
 export interface MovieShowtimeCardProps {
@@ -16,6 +17,8 @@ export interface MovieShowtimeCardProps {
   age?: string;
   className?: string;
   posterUrl: string;
+  releaseDate: string;
+  selectedDate: string;
   showtimes: Showtime[];
   onSelectShowtime?: (showtime: Showtime) => void;
 }

@@ -32,16 +32,24 @@ const RegisterWrapper = () => {
   };
   const { message, type, clear, handleToastErrorMessage } = useToastMessage();
   const register = useAuthSlice((state) => state.register);
+
   const handleOnRegister = async (data: UserRegister) => {
     try {
       await register(data);
+
       addToast(
         TOAST_MESSAGE.REGISTER_SUCCESS.message,
         TOAST_MESSAGE.REGISTER_SUCCESS.type,
       );
+
       router.push("/");
     } catch (error: unknown) {
-      handleToastErrorMessage(error, TOAST_MESSAGE.REGISTER_ERROR.message);
+      const message = handleToastErrorMessage(
+        error,
+        TOAST_MESSAGE.REGISTER_ERROR.message,
+      );
+
+      addToast(message, TOAST_MESSAGE.REGISTER_ERROR.type);
     }
   };
 
