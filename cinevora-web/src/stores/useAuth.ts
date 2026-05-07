@@ -49,7 +49,6 @@ export const useAuthSlice = create(
 
         const payload: RegisterPayload = {
           ...rest,
-          role: "user",
           recaptchaToken: "test-recaptcha-token",
         };
 

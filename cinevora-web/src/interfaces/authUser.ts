@@ -42,7 +42,7 @@ export interface RegisterPayload {
   sex: string;
   IDCardNumber: string;
   recaptchaToken: string;
-  role: UserRole;
+  role?: UserRole;
 }
 
 export interface UserProfile {
