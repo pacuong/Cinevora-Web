@@ -1018,6 +1018,7 @@ textarea.ant-input {
   font-size: 15px;
   font-weight: 700;
 }
+
 .toast {
   position: relative;
   animation: slideIn 0.4s ease forwards;
