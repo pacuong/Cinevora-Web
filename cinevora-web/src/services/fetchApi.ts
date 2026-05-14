@@ -5,6 +5,24 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const fetchApi = axios.create({
   baseURL: API_URL,
 });
+
+fetchApi.interceptors.request.use((config) => {
+  if (typeof window === "undefined") return config;
+
+  const adminStorage = localStorage.getItem("admin-storage");
+
+  if (adminStorage) {
+    const parsed = JSON.parse(adminStorage);
+    const token = parsed?.state?.adminAuthentication?.accessToken;
+
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+  }
+
+  return config;
+});
+
 fetchApi.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -25,4 +43,5 @@ fetchApi.interceptors.response.use(
     return Promise.reject(error);
   },
 );
+
 export default fetchApi;

@@ -2,10 +2,10 @@ import { MovieCardProps } from "../interfaces/movieCard";
 import { MovieStatus } from "./statusBadge";
 
 export type MovieItem = {
-  id: string;
+  id: number;
   title: string;
   director: string;
-  genre: string;
+  genre: number[]; 
   duration: string;
   releaseDate: string;
   status: MovieStatus;
@@ -31,7 +31,7 @@ export const mapMovieToItem = (movie: MovieCardProps): MovieItem => ({
   id: movie.id,
   title: movie.title,
   director: movie.director,
-  genre: movie.genre,
+  genre: movie.genres.map((genre) => genre.id),
   duration: `${movie.duration} phút`,
   releaseDate: movie.releaseDate,
   status: mapApiStatusToUiStatus(movie.status),
