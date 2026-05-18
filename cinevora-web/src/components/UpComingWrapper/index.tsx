@@ -29,7 +29,7 @@ const UpComingWrapper = () => {
       </div>
 
       {isLoadingUpComingMovies ? (
-        <p>Đang tải dữ liệu...</p>
+        <MovieCardSkeleton count={10} />
       ) : (
         <div>
           <MovieCard
@@ -38,7 +38,7 @@ const UpComingWrapper = () => {
             onBooking={handleBooking}
             isShowGenre
             isShowBtn
-        />
+          />
         </div>
       )}
 

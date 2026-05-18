@@ -1,19 +1,14 @@
 "use client";
 
-import ScheduleDateSelector from "@/src/components/ScheduleDateSelector";
 import {
   TIME_MOVIE_MB,
   TIME_MOVIE_PC,
   TIME_MOVIE_TL,
 } from "@/src/constants/timeMovie";
 import { useCustomDevice } from "@/src/hooks/deviceDetect";
-import { generateShowDates } from "@/src/utils/generateShowDates";
-import { useMemo, useState } from "react";
 
 const MovieShowtimeCardSkeleton = () => {
-  const dates = useMemo(() => generateShowDates(7), []);
-  const [selected, setSelected] = useState(dates[0].fullDate);
-  const { isMobile, isTablet, isDesktop } = useCustomDevice();
+  const { isMobile, isTablet } = useCustomDevice();
   const buttonCount = isMobile
     ? TIME_MOVIE_MB
     : isTablet
@@ -21,17 +16,6 @@ const MovieShowtimeCardSkeleton = () => {
       : TIME_MOVIE_PC;
   return (
     <div className="lg:w-[1310px] mx-auto">
-      <h2 className="text-2xl font-saira text-orange-100 p-10 font-medium">
-        Lịch chiếu
-      </h2>
-      <ScheduleDateSelector
-        dates={dates}
-        selected={selected}
-        onSelect={setSelected}
-      />
-      <h2 className="text-2xl font-saira text-black-100 font-medium px-10">
-        Chọn lịch chiếu
-      </h2>
       <div className="px-10 overflow-y-scroll h-[300px] md:overflow-y-hidden md:h-auto mb-17">
         <div className="max-w-[1106px] mx-auto">
           <div className="mt-10 px-7">

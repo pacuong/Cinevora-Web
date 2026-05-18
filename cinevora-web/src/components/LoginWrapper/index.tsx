@@ -35,7 +35,7 @@ const LoginWrapper = () => {
     try {
       const response = await login(data);
 
-      if (response.user.role !== "user") {
+      if (response.user.role !== "customer") {
         useAuthSlice.getState().logout();
         alert("Tài khoản admin không được đăng nhập ở đây");
         return;

@@ -1,9 +1,10 @@
-import { SeatCinemaProps } from "@/src/constants/seat";
+import { Seat, SeatCinemaProps } from "@/src/interfaces/seat";
+import { SelectedSeat } from "@/src/stores/bookingStore";
 
 interface SeatCinemaPropsUI {
   rows: SeatCinemaProps[];
-  selectedSeats: string[];
-  setSelectedSeats: (prop: string[]) => void;
+  selectedSeats: SelectedSeat[];
+  setSelectedSeats: (prop: SelectedSeat[]) => void;
 }
 
 const SeatCinema = ({
@@ -11,19 +12,28 @@ const SeatCinema = ({
   selectedSeats,
   setSelectedSeats,
 }: SeatCinemaPropsUI) => {
-  const toggleSeat = (key: string, isPlaced?: boolean) => {
-    if (isPlaced) return;
+  const toggleSeat = (seat: Seat) => {
+    if (seat.isPlaced) return;
+
+    const exists = selectedSeats.some((s) => s.key === seat.keys);
 
     setSelectedSeats(
-      selectedSeats.includes(key)
-        ? selectedSeats.filter((s) => s !== key)
-        : [...selectedSeats, key],
+      exists
+        ? selectedSeats.filter((s) => s.key !== seat.keys)
+        : [
+            ...selectedSeats,
+            {
+              key: seat.keys,
+              price: seat.price,
+              type: seat.type,
+            },
+          ],
     );
   };
 
   return (
     <div className="w-full lg:flex lg:flex-col lg:items-center max-w-7xl mx-auto">
-      <div className="front md:w-[682px] lg:w-[652px] text-[12px] md:text-[15px] lg:text-[15px] md:mr-0 md:ml-0 md:mt-10">
+      <div className="front lg:w-[652px] text-[12px] md:text-[15px] lg:text-[15px] md:mr-0 md:ml-0 md:mt-10">
         Màn hình
       </div>
       <div className="space-y-3">
@@ -35,7 +45,9 @@ const SeatCinema = ({
 
             <div className="flex gap-6 md:gap-9 ml-4">
               {row.seats.map((seat) => {
-                const isSelected = selectedSeats.includes(seat.keys);
+                const isSelected = selectedSeats.some(
+                  (s) => s.key === seat.keys,
+                );
 
                 return (
                   <div
@@ -57,7 +69,7 @@ const SeatCinema = ({
                       type="checkbox"
                       disabled={seat.isPlaced}
                       checked={isSelected}
-                      onChange={() => toggleSeat(seat.keys, seat.isPlaced)}
+                      onChange={() => toggleSeat(seat)}
                       className="absolute opacity-0 h-full w-full cursor-pointer"
                     />
 

@@ -1,4 +1,4 @@
-import { SeatCinemaProps } from "@/src/constants/seat";
+import { SeatCinemaProps } from "@/src/interfaces/seat";
 
 export const mergeRowsWithPlacedSeats = (
   rows: SeatCinemaProps[],

@@ -15,6 +15,9 @@ interface UserAction {
 
   login: (data: LoginUser) => Promise<AuthResponse>;
   register: (data: UserRegister) => Promise<AuthResponse>;
+
+  setAccessToken: (token: string) => void;
+
   updateProfile: (profile: UserProfile) => void;
 
   logout: () => void;
@@ -61,6 +64,18 @@ export const useAuthSlice = create(
         return response;
       },
 
+      setAccessToken: (token) =>
+        set((state) => {
+          if (!state.userAuthentication) return state;
+
+          return {
+            userAuthentication: {
+              ...state.userAuthentication,
+              accessToken: token,
+            },
+          };
+        }),
+
       logout: () => {
         localStorage.removeItem("user-storage");
         set({
@@ -75,7 +90,7 @@ export const useAuthSlice = create(
 
         if (!currentUser) return;
         if (currentBackup) return;
-        if (currentUser.user.role !== "user") return;
+        if (currentUser.user.role !== "customer") return;
 
         set({
           userBackup: currentUser,

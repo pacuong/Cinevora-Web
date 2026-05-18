@@ -21,7 +21,7 @@ interface MovieListProps {
   isShowBtn?: boolean;
   className?: string;
   onBooking?: (movie: {
-    id: string;
+    id: number;
     title: string;
     posterUrl: string;
     releaseDate: string;
@@ -159,7 +159,7 @@ const MovieCard = ({
                             !px-[5px] md:!py-[5px] md:!px-[10px]"
                             onClick={() => {
                               onBooking?.({
-                                id: movie.id.toString(),
+                                id: movie.id,
                                 title: movie.title,
                                 posterUrl: movie.posterUrl,
                                 releaseDate: movie.releaseDate,
