@@ -52,10 +52,9 @@ const ChangePassword = ({ onSubmitChangePasswor }: changePasswordProps) => {
                 rules={oldPasswordRules}
                 render={({ field }) => (
                   <>
-                    <InputComponent
+                    <InputComponent.Password
                       {...field}
                       id="oldPassword"
-                      type="password"
                       placeholder="Mật khẩu cũ"
                       className="w-full"
                     />
@@ -77,11 +76,10 @@ const ChangePassword = ({ onSubmitChangePasswor }: changePasswordProps) => {
                 rules={newPasswordRules}
                 render={({ field }) => (
                   <>
-                    <InputComponent
+                    <InputComponent.Password
                       {...field}
                       id="newPassword"
                       placeholder="Mật khẩu mới"
-                      type="password"
                       className="w-full"
                     />
                     <FormError error={errors.newPassword} />
@@ -103,12 +101,11 @@ const ChangePassword = ({ onSubmitChangePasswor }: changePasswordProps) => {
                 rules={confirmNewPasswordRules(watch("newPassword"))}
                 render={({ field }) => (
                   <>
-                    <InputComponent
+                    <InputComponent.Password
                       {...field}
                       id="confirmNewPassword"
                       placeholder="Nhập lại mật khẩu mới"
                       className="w-full"
-                      type="password"
                     />
                     <FormError error={errors.confirmNewPassword} />
                   </>

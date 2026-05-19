@@ -17,7 +17,6 @@ interface MovieCardItemProps {
   isShowOnlyBookBtn?: boolean;
   isHoverMovie?: boolean;
   className?: string;
-  onBooking?: () => void;
   onTrailer?: () => void;
 }
 
@@ -27,7 +26,6 @@ const MovieCardItem = ({
   isShowOnlyBookBtn = false,
   isHoverMovie,
   className,
-  onBooking,
   onTrailer,
 }: MovieCardItemProps) => {
   const [isActive, setIsActive] = useState(false);
@@ -137,7 +135,7 @@ const MovieCardItem = ({
                 <button
                   className="uppercase btn-trailer text-[10px] md:text-xs lg:text-sm
                              py-[2px] px-4 md:py-[3px] md:px-[10px] lg:py-[4px] lg:px-[12px]"
-                  onClick={onBooking}
+                  onClick={() => handleClick(movie.slug)}
                 >
                   đặt vé
                 </button>

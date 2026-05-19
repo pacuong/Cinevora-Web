@@ -51,14 +51,12 @@ const MovieShowtimeCard = ({
     setMovie({
       title,
       posterUrl,
-      releaseDate,
+      releaseDate: releaseDate ?? "",
     });
 
     setDate(selectedDate);
 
-    setShowtime({
-      time: selectedShowtime.time,
-    });
+    setShowtime(selectedShowtime);
 
     setOpenConfirmProfile(true);
     setPendingIndex(null);
@@ -112,6 +110,7 @@ const MovieShowtimeCard = ({
 
   const handleCloseConfirmProfile = () => {
     setOpenConfirmProfile(false);
+    setSelectedIndex(null);
   };
 
   return (

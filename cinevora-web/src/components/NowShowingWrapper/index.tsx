@@ -9,13 +9,13 @@ import MovieCardSkeleton from "../common/movieCard/MovieCardSkeleton";
 
 const NowShowingWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
-  const [selectedMovieId, setSelectedMovieId] = useState<string | null>(null);
+  const [selectedMovieId, setSelectedMovieId] = useState<number | null>(null);
   const { nowShowingMovies = [], isLoadingNowShowingMovies } =
     useListNowMovies();
   const setMovie = useBookingStore((s) => s.setMovie);
 
   const handleBooking = (movie: {
-    id: string;
+    id: number;
     title: string;
     posterUrl: string;
     releaseDate: string;

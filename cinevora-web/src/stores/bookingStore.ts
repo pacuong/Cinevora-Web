@@ -1,10 +1,7 @@
-import { createWithEqualityFn } from 'zustand/traditional';
-import { shallow } from 'zustand/shallow';
-import { persist, createJSONStorage } from 'zustand/middleware';
-
-interface Showtime {
-  time: string;
-}
+import { createWithEqualityFn } from "zustand/traditional";
+import { shallow } from "zustand/shallow";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { Showtime } from "@/src/interfaces/movieSchedule";
 
 interface BookingMovie {
   title: string;
@@ -12,17 +9,29 @@ interface BookingMovie {
   releaseDate: string;
 }
 
+export interface SelectedSeat {
+  key: string;
+  type: "standard" | "vip" | "couple";
+  price: number;
+}
+
 interface BookingState {
   movie: BookingMovie | null;
   selectedDate: string | null;
   selectedShowtime: Showtime | null;
-  selectedSeats: string[];
+
+  selectedSeats: SelectedSeat[];
+
   expiresAt: number | null;
 
   setMovie: (movie: BookingMovie) => void;
   setDate: (date: string) => void;
   setShowtime: (showtime: Showtime) => void;
-  setSelectedSeats: (seats: string[]) => void;
+
+  setSelectedSeats: (seats: SelectedSeat[]) => void;
+
+  clearSeatSelection: () => void;
+
   resetBooking: () => void;
 }
 
@@ -34,20 +43,31 @@ export const useBookingStore = createWithEqualityFn<BookingState>()(
       movie: null,
       selectedDate: null,
       selectedShowtime: null,
+
       selectedSeats: [],
+
       expiresAt: null,
 
-      setMovie: (movie) =>
-        set({ movie, expiresAt: Date.now() + TTL }),
+      setMovie: (movie) => set({ movie }),
 
-      setDate: (date) =>
-        set({ selectedDate: date, expiresAt: Date.now() + TTL }),
+      setDate: (date) => set({ selectedDate: date }),
 
       setShowtime: (showtime) =>
-        set({ selectedShowtime: showtime, expiresAt: Date.now() + TTL }),
+        set({
+          selectedShowtime: showtime,
+        }),
 
       setSelectedSeats: (selectedSeats) =>
-        set({ selectedSeats, expiresAt: Date.now() + TTL }),
+        set({
+          selectedSeats,
+          expiresAt: Date.now() + TTL,
+        }),
+
+      clearSeatSelection: () =>
+        set({
+          selectedSeats: [],
+          expiresAt: null,
+        }),
 
       resetBooking: () =>
         set({
@@ -59,7 +79,7 @@ export const useBookingStore = createWithEqualityFn<BookingState>()(
         }),
     }),
     {
-      name: 'booking-storage',
+      name: "booking-storage",
       storage: createJSONStorage(() => localStorage),
 
       onRehydrateStorage: () => (state) => {
@@ -68,10 +88,10 @@ export const useBookingStore = createWithEqualityFn<BookingState>()(
         const now = Date.now();
 
         if (state.expiresAt && now > state.expiresAt) {
-          state.resetBooking();
+          state.clearSeatSelection();
         }
       },
-    }
+    },
   ),
-  shallow
+  shallow,
 );

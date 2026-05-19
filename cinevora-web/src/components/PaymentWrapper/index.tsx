@@ -2,25 +2,25 @@
 
 import { useBookingStore } from "@/src/stores/bookingStore";
 
-const PRICE_PER_TICKET = 75000;
-
 const PaymentWrapper = () => {
-  const { movie, selectedDate, selectedShowtime, selectedSeats } = useBookingStore(
-    (s) => ({
+  const { movie, selectedDate, selectedShowtime, selectedSeats } =
+    useBookingStore((s) => ({
       movie: s.movie,
       selectedDate: s.selectedDate,
       selectedShowtime: s.selectedShowtime,
       selectedSeats: s.selectedSeats,
-    })
-  );
+    }));
 
   const ticketCount = selectedSeats.length;
-  const totalPrice = ticketCount * PRICE_PER_TICKET;
+
+  const totalPrice = selectedSeats.reduce((sum, seat) => sum + seat.price, 0);
 
   return (
-    <div>
-      <div className="flex items-center justify-center my-6 md:mt-[35px] bg-[#7e8daa] w-[315px] h-[41px] md:w-[708px] lg:w-[980px]">
-        <h2 className="uppercase text-white-100 font-saira font-semibold">Phương thức thanh toán</h2>
+    <div className="!mx-10 lg:!mx-auto lg:!w-[1150px]">
+      <div className="flex items-center justify-center my-6 md:mt-[35px] bg-[#7e8daa] h-[41px]">
+        <h2 className="uppercase text-white-100 font-saira font-semibold">
+          Phương thức thanh toán
+        </h2>
       </div>
 
       <div className="p-2 my-12 md:flex md:items-center md:justify-center md:gap-6 lg:gap-16">
@@ -37,22 +37,14 @@ const PaymentWrapper = () => {
         </label>
 
         <label className="payment-label my-2">
-          <input
-            type="radio"
-            name="payment"
-            className="payment-input"
-          />
+          <input type="radio" name="payment" className="payment-input" />
           <span className="payment-span font-saira">
             Thanh toán bằng thẻ Helio
           </span>
         </label>
 
         <label className="payment-label">
-          <input
-            type="radio"
-            name="payment"
-            className="payment-input"
-          />
+          <input type="radio" name="payment" className="payment-input" />
           <span className="payment-span font-saira leading-snug">
             Thanh toán qua Internet
           </span>
@@ -82,7 +74,9 @@ const PaymentWrapper = () => {
 
           <div className="grid grid-cols-[120px_1fr] font-saira">
             <span className="payment-span">Ghế:</span>
-            <span className="text-[15px]">{selectedSeats.join(", ")}</span>
+            <span className="text-[15px]">
+              {selectedSeats.map((seat) => seat.key).join(", ")}
+            </span>
           </div>
 
           <div className="grid grid-cols-[120px_1fr] font-saira">
@@ -92,7 +86,9 @@ const PaymentWrapper = () => {
 
           <div className="grid grid-cols-[120px_1fr] font-saira">
             <span className="payment-span">Tổng tiền:</span>
-            <span className="text-[15px] mb-8">{totalPrice.toLocaleString("vi-VN")} VNĐ</span>
+            <span className="text-[15px] mb-8">
+              {totalPrice.toLocaleString("vi-VN")} VNĐ
+            </span>
           </div>
         </div>
       </fieldset>
@@ -103,7 +99,7 @@ const PaymentWrapper = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default PaymentWrapper;

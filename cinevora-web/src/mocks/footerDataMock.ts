@@ -58,7 +58,7 @@ export const footerDataMock: FooterData = {
   },
   bottomInfo: {
     productionNote: "một sản phẩm đến từ khởi phát, ltd.",
-    brandLogoUrl: "/assets/images/logo_bottom.png",
+    brandLogoUrl: "/assets/images/logoshape.png",
     copyrightText: "bản quyền © 2017 metiz cinema",
   },
 };

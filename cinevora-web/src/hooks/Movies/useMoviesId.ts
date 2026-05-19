@@ -1,5 +1,6 @@
 "use client";
 
+import { movieDetailQuery, moviesQuery } from "@/src/queries/movie.query";
 import { getMovieById } from "@/src/services/movieService";
 import { useQuery } from "@tanstack/react-query";
 
@@ -20,4 +21,15 @@ export const useMoviesId = (id: string) => {
   });
 
   return { movieDetail, isErrorMovieDetail, isLoadingMovie };
+};
+
+export const useMovieById = (movieId?: number, enabled = true) => {
+  return useQuery({
+    ...movieDetailQuery(movieId!),
+    enabled: !!movieId && enabled,
+  });
+};
+
+export const useMovies = () => {
+  return useQuery(moviesQuery);
 };
