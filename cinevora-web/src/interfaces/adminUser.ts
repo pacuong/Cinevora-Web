@@ -1,4 +1,4 @@
-export type UserRole = "Admin" | "User";
+export type UserRole = "admin" | "customer";
 export type UserStatus = "Hoạt động" | "Đã khóa";
 
 export type UserItem = {

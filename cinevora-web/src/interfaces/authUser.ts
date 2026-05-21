@@ -3,7 +3,7 @@ export interface LoginUser {
   password: string;
 }
 
-export type UserRole = "User" | "Admin";
+export type UserRole = "customer" | "admin";
 
 export interface UserRegister {
   fullName: string;

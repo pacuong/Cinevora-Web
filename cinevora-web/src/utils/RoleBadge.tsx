@@ -6,8 +6,8 @@ type RoleBadgeProps = {
 
 const RoleBadge = ({ role }: RoleBadgeProps) => {
   const styleMap: Record<UserRole, string> = {
-    Admin: "bg-violet-100 text-violet-600",
-    User: "bg-blue-100 text-blue-600",
+    admin: "bg-violet-100 text-violet-600",
+    customer: "bg-blue-100 text-blue-600",
   };
 
   return (

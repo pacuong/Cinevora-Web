@@ -21,7 +21,7 @@ export const useAdminAuthSlice = create(
       loginAdmin: async (data) => {
         const response = await authLogin(data);
 
-        if (response.user.role !== "Admin") {
+        if (response.user.role !== "admin") {
           alert("Tài khoản này không phải admin");
           return Promise.reject(new Error("NOT_ADMIN"));
         }

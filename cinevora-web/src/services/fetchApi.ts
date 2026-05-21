@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useAuthSlice } from "../stores/useAuth";
+import { useAdminAuthSlice } from "../stores/useAdminAuth";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -9,17 +10,11 @@ const fetchApi = axios.create({
 });
 
 fetchApi.interceptors.request.use((config) => {
-  //TODO: USE STORE
-  if (typeof window === "undefined") return config;
-  const adminStorage = localStorage.getItem("admin-storage");
+  const token =
+    useAdminAuthSlice.getState().adminAuthentication?.accessToken;
 
-  if (adminStorage) {
-    const parsed = JSON.parse(adminStorage);
-    const token = parsed?.state?.adminAuthentication?.accessToken;
-
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
   }
 
   return config;

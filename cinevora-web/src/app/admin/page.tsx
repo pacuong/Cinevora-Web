@@ -16,7 +16,7 @@ const AdminPage = () => {
   useEffect(() => {
     if (!isInitialized) return;
 
-    if (!adminAuthentication || adminAuthentication.user.role !== "Admin") {
+    if (!adminAuthentication || adminAuthentication.user.role !== "admin") {
       router.push("/admin/login");
     }
   }, [isInitialized, adminAuthentication, router]);
@@ -25,7 +25,7 @@ const AdminPage = () => {
     return null;
   }
 
-  if (!adminAuthentication || adminAuthentication.user.role !== "Admin") {
+  if (!adminAuthentication || adminAuthentication.user.role !== "admin") {
     return null;
   }
 

@@ -148,7 +148,7 @@ const MovieManagementWrapper = () => {
         </div>
 
         <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_2px_10px_rgba(15,23,42,0.03)]">
-          <div className="border-b border-slate-100 p-4">
+          {/* <div className="border-b border-slate-100 p-4">
             <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
               <div className="relative flex-1">
                 <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
@@ -178,7 +178,7 @@ const MovieManagementWrapper = () => {
                 Xóa lọc
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div
             className={`overflow-x-auto transition-opacity ${isLoading ? "opacity-70" : "opacity-100"
