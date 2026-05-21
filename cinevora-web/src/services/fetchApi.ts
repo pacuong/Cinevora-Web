@@ -1,5 +1,6 @@
-import { useAuthSlice } from "@/src/stores/useAuth";
 import axios from "axios";
+import { useAuthSlice } from "../stores/useAuth";
+import { useAdminAuthSlice } from "../stores/useAdminAuth";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
@@ -9,7 +10,8 @@ const fetchApi = axios.create({
 });
 
 fetchApi.interceptors.request.use((config) => {
-  const token = useAuthSlice.getState().userAuthentication?.accessToken;
+  const token =
+    useAdminAuthSlice.getState().adminAuthentication?.accessToken;
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;

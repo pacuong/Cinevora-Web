@@ -44,15 +44,18 @@ const ShowtimeScheduleModal = ({
 
   const showtimesByDate = useMemo(() => {
     if (!movieSchedule || !selectedDate) return [];
-    return movieSchedule?.schedules?.[selectedDate] ?? [];
+    return movieSchedule.schedules?.[selectedDate] ?? [];
   }, [movieSchedule, selectedDate]);
 
   const handleCloseModal = (open: boolean) => {
     setIsModalOpen(open);
-    if (!open) resetBooking();
+
+    if (!open) {
+      resetBooking();
+    }
   };
 
-  const hasShowtimes = showtimesByDate.length > 0 && movieSchedule;
+  const hasShowtimes = !!movieSchedule && showtimesByDate.length > 0;
 
   return (
     <ModalComponent

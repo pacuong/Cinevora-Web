@@ -1,10 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { deleteMovie, getMovieList } from "@/src/services/movieService";
+import {
+  createMovie,
+  deleteMovie,
+  getMovieById,
+  getMovieList,
+  updateMovie,
+} from "@/src/services/movieService";
 import { Search } from "lucide-react";
 import StatusBadge from "@/src/components/common/StatusBadge";
 import { mapMovieToItem, MovieItem } from "@/src/utils/movies";
+import { AddMovieForm, MovieCardProps, AgeRating } from "@/src/interfaces/movieCard";
+import AddMovieModal from "../AddMovieModal";
+import { getGenres } from "@/src/services/genreService";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -14,13 +23,15 @@ const MovieManagementWrapper = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalMovies, setTotalMovies] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
+  const [isAddMovieModalOpen, setIsAddMovieModalOpen] = useState(false);
+  const [genres, setGenres] = useState<{ id: number; name: string }[]>([]);
+  const [modalMode, setModalMode] = useState<"create" | "edit">("create");
+  const [selectedMovie, setSelectedMovie] = useState<MovieCardProps | null>(null);
 
   const fetchMovies = async (page: number) => {
     try {
       setIsLoading(true);
-
       const result = await getMovieList(page, ITEMS_PER_PAGE);
-
       setMovieList(result.data.map(mapMovieToItem));
       setTotalMovies(result.total);
       setTotalPages(result.totalPages);
@@ -31,11 +42,59 @@ const MovieManagementWrapper = () => {
     }
   };
 
+  const fetchGenres = async () => {
+    try {
+      const genreData = await getGenres();
+      setGenres(genreData);
+    } catch (error) {
+      console.error("Lỗi lấy danh sách thể loại:", error);
+    }
+  };
+
   useEffect(() => {
     fetchMovies(currentPage);
+    fetchGenres();
   }, [currentPage]);
 
-  const handleDeleteMovie = async (id: string) => {
+  const handleAddMovie = async (data: AddMovieForm) => {
+    const payload = {
+      title: data.title,
+      posterUrl: data.poster,
+      bannerUrl: data.poster,
+      actor: data.actor || undefined,
+      language: data.language || undefined,
+      description: data.description || undefined,
+      duration: Number(data.duration),
+      director: data.director || undefined,
+      ageRating: (selectedMovie?.ageRating || "P") as AgeRating,
+      status: data.status as "now_showing" | "upcoming" | "ended",
+      releaseDate: data.releaseDate,
+      genreIds: data.genres.map(Number),
+    };
+
+    if (modalMode === "edit" && selectedMovie) {
+      await updateMovie(selectedMovie.id, payload);
+    } else {
+      await createMovie(payload);
+    }
+
+    await fetchMovies(currentPage);
+    setSelectedMovie(null);
+  };
+
+  const handleEditMovie = async (id: number) => {
+    try {
+      const movie = await getMovieById(String(id));
+
+      setSelectedMovie(movie);
+      setModalMode("edit");
+      setIsAddMovieModalOpen(true);
+    } catch (error) {
+      console.error("Lỗi lấy chi tiết phim:", error);
+    }
+  };
+
+  const handleDeleteMovie = async (id: number) => {
     const confirmDelete = window.confirm("Bạn có chắc muốn xóa?");
     if (!confirmDelete) return;
 
@@ -57,12 +116,18 @@ const MovieManagementWrapper = () => {
     }
   };
 
+  const renderGenres = (genreIds: number[]) => {
+    return genreIds
+      .map((id) => genres.find((genre) => genre.id === id)?.name)
+      .join(", ");
+  };
+
   return (
-    <div className="bg-[#f8f9fc] p-6">
-      <div className="mx-auto max-w-[1400px]">
+    <div className="bg-[#f8f9fc] p-7">
+      <div className="mx-auto max-w-[1250px]">
         <div className="mb-6 flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-[40px] font-bold leading-tight text-slate-900">
+            <h1 className="text-[44px] font-bold leading-tight text-slate-900">
               Quản Lý Phim
             </h1>
             <p className="mt-2 text-lg text-slate-500">
@@ -70,13 +135,20 @@ const MovieManagementWrapper = () => {
             </p>
           </div>
 
-          <button className="rounded-xl bg-violet-600 px-6 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-violet-700">
+          <button
+            onClick={() => {
+              setModalMode("create");
+              setSelectedMovie(null);
+              setIsAddMovieModalOpen(true);
+            }}
+            className="rounded-xl bg-violet-600 px-6 py-3 text-base font-semibold text-white-100 shadow-sm transition hover:bg-violet-700"
+          >
             + Thêm Phim Mới
           </button>
         </div>
 
-        <div className="rounded-2xl border border-slate-100 bg-white shadow-sm">
-          <div className="border-b border-slate-100 p-4">
+        <div className="overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_2px_10px_rgba(15,23,42,0.03)]">
+          {/* <div className="border-b border-slate-100 p-4">
             <div className="flex flex-col gap-3 xl:flex-row xl:items-center">
               <div className="relative flex-1">
                 <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
@@ -98,30 +170,29 @@ const MovieManagementWrapper = () => {
                 <option>Ngừng chiếu</option>
               </select>
 
-              <button className="h-12 rounded-xl bg-violet-600 px-6 text-sm font-semibold text-white transition hover:bg-violet-700">
+              <button className="rounded-xl bg-violet-600 px-6 py-2 text-sm font-semibold text-white-100 transition hover:bg-violet-700">
                 Lọc
               </button>
 
-              <button className="h-12 px-3 text-sm font-semibold text-violet-600">
+              <button className="border-0 px-6 py-2 text-sm font-semibold text-violet-600 hover:border-0 hover:text-red-70">
                 Xóa lọc
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div
-            className={`overflow-x-auto transition-opacity ${
-              isLoading ? "opacity-70" : "opacity-100"
-            }`}
+            className={`overflow-x-auto transition-opacity ${isLoading ? "opacity-70" : "opacity-100"
+              }`}
           >
             <table className="min-w-full table-fixed">
               <thead className="bg-slate-50">
                 <tr className="text-left text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  <th className="px-4 py-4 w-[35%]">Phim</th>
-                  <th className="px-4 py-4 w-[20%]">Thể loại</th>
-                  <th className="px-4 py-4 w-[12%]">Thời lượng</th>
-                  <th className="px-4 py-4 w-[15%]">Ngày khởi chiếu</th>
-                  <th className="px-4 py-4 w-[10%]">Trạng thái</th>
-                  <th className="px-4 py-4 text-center w-[8%]">Thao tác</th>
+                  <th className="w-[35%] px-4 py-4">Phim</th>
+                  <th className="w-[20%] px-4 py-4">Thể loại</th>
+                  <th className="w-[12%] px-4 py-4">Thời lượng</th>
+                  <th className="w-[15%] px-4 py-4">Ngày khởi chiếu</th>
+                  <th className="w-[10%] px-4 py-4">Trạng thái</th>
+                  <th className="w-[8%] px-4 py-4 text-center">Thao tác</th>
                 </tr>
               </thead>
 
@@ -146,7 +217,7 @@ const MovieManagementWrapper = () => {
                           <img
                             src={movie.image}
                             alt={movie.title}
-                            className="h-16 w-12 rounded-lg object-cover shrink-0"
+                            className="h-16 w-12 shrink-0 rounded-lg object-cover"
                           />
                           <div className="min-w-0">
                             <h3 className="truncate text-base font-semibold text-slate-900">
@@ -159,8 +230,8 @@ const MovieManagementWrapper = () => {
                         </div>
                       </td>
 
-                      <td className="px-4 py-4 text-slate-500 truncate">
-                        {movie.genre}
+                      <td className="truncate px-4 py-4 text-slate-500">
+                        {renderGenres(movie.genre)}
                       </td>
                       <td className="px-4 py-4 text-slate-700">
                         {movie.duration}
@@ -174,7 +245,10 @@ const MovieManagementWrapper = () => {
 
                       <td className="px-4 py-4">
                         <div className="flex items-center justify-center gap-2">
-                          <button className="flex h-10 items-center justify-center rounded-lg bg-violet-200 px-3 transition">
+                          <button
+                            onClick={() => handleEditMovie(movie.id)}
+                            className="flex h-10 items-center justify-center rounded-lg bg-violet-200 px-3 transition"
+                          >
                             Sửa
                           </button>
                           <button
@@ -206,11 +280,10 @@ const MovieManagementWrapper = () => {
                     key={page}
                     onClick={() => setCurrentPage(page)}
                     disabled={isLoading}
-                    className={`flex h-10 w-10 items-center justify-center rounded-lg font-semibold ${
-                      currentPage === page
-                        ? "bg-violet-600 text-white"
-                        : "border border-slate-200 text-slate-700"
-                    } disabled:cursor-not-allowed disabled:opacity-50`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-lg font-semibold ${currentPage === page
+                      ? "bg-violet-600 text-white-100"
+                      : "border border-slate-200 text-slate-700"
+                      } disabled:cursor-not-allowed disabled:opacity-50`}
                   >
                     {page}
                   </button>
@@ -220,6 +293,21 @@ const MovieManagementWrapper = () => {
           </div>
         </div>
       </div>
+
+      <AddMovieModal
+        isModalOpen={isAddMovieModalOpen}
+        setIsModalOpen={(open) => {
+          setIsAddMovieModalOpen(open);
+
+          if (!open) {
+            setSelectedMovie(null);
+            setModalMode("create");
+          }
+        }}
+        onAddMovie={handleAddMovie}
+        mode={modalMode}
+        initialMovie={selectedMovie}
+      />
     </div>
   );
 };

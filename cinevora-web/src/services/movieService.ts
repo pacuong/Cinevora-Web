@@ -1,9 +1,9 @@
-import { MovieCardProps } from "@/src/interfaces/movieCard";
+import { MovieCardProps, CreateMoviePayload} from "@/src/interfaces/movieCard";
 import fetchApi from "./fetchApi";
 import { MovieScheduleInfoDto } from "@/src/interfaces/api/movieScheduleApi";
 
 export const getMovieList = async (page = 1, limit = 5) => {
-  const response = await fetchApi.get<MovieCardProps[]>("/movieList", {
+  const response = await fetchApi.get<MovieCardProps[]>("/movies", {
     params: {
       _page: page,
       _limit: limit,
@@ -36,6 +36,21 @@ export const getMovieById = async (slug: string) => {
   return res.data;
 };
 
+export const createMovie = async (
+  payload: CreateMoviePayload,
+): Promise<MovieCardProps> => {
+  const { data } = await fetchApi.post<MovieCardProps>("/movies", payload);
+  return data;
+};
+
+export const updateMovie = async (
+  id: number,
+  payload: CreateMoviePayload,
+): Promise<MovieCardProps> => {
+  const { data } = await fetchApi.put<MovieCardProps>(`/movies/${id}`, payload);
+  return data;
+};
+
 export const getMovieApiById = async (
   movieId: number,
 ): Promise<MovieScheduleInfoDto> => {
@@ -49,6 +64,6 @@ export const getMovies = async (): Promise<MovieScheduleInfoDto[]> => {
   return data;
 };
 
-export const deleteMovie = async (id: string) => {
-  await fetchApi.delete(`/movieList/${id}`);
+export const deleteMovie = async (id: number) => {
+  await fetchApi.delete(`/movies/${id}`);
 };

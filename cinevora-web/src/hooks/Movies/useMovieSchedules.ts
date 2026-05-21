@@ -1,5 +1,8 @@
 "use client";
 
+import { getShowtimes } from "@/src/services/showtimeService";
+import { mapShowtimesToMovieSchedules } from "@/src/utils/mapShowtimesToMovieSchedules";
+import { useQuery } from "@tanstack/react-query";
 import { useMovieById, useMovies } from "@/src/hooks/Movies/useMoviesId";
 import {
   useShowtimes,
@@ -10,6 +13,26 @@ import {
   toMovieSchedules,
 } from "@/src/mappers/movieScheduleMapper";
 import { useMemo } from "react";
+
+export const useMovieSchedulesFromShowtimes = () => {
+  const {
+    data = [],
+    isLoading: isLoadingSchedule,
+    isError: isErrorSchedule,
+  } = useQuery({
+    queryKey: ["movieSchedulesFromShowtimes"],
+    queryFn: async () => {
+      const showtimes = await getShowtimes();
+      return mapShowtimesToMovieSchedules(showtimes);
+    },
+  });
+
+  return {
+    scheduleMovie: data,
+    isLoadingSchedule,
+    isErrorSchedule,
+  };
+};
 
 export const useMovieSchedule = (movieId?: number | null, enabled = true) => {
   const movieQuery = useMovieById(movieId ?? undefined, enabled);
@@ -26,9 +49,7 @@ export const useMovieSchedule = (movieId?: number | null, enabled = true) => {
 
   return {
     movieSchedule,
-
     isLoading: movieQuery.isLoading || showtimeQuery.isLoading,
-
     isError: movieQuery.isError || showtimeQuery.isError,
   };
 };
@@ -48,9 +69,23 @@ export const useMovieSchedules = () => {
 
   return {
     scheduleMovie: movieSchedules,
-
     isLoadingSchedule: moviesQuery.isLoading || showtimesQuery.isLoading,
-
     isErrorSchedule: moviesQuery.isError || showtimesQuery.isError,
   };
+};
+
+export const useMovieScheduleFromShowtimes = (
+  movieId: string | null,
+  enabled: boolean
+) => {
+  return useQuery({
+    queryKey: ["movieScheduleFromShowtimes", movieId],
+    enabled: !!movieId && enabled,
+    queryFn: async () => {
+      const showtimes = await getShowtimes();
+      const movies = mapShowtimesToMovieSchedules(showtimes);
+
+      return movies.find((movie) => movie.id === movieId) ?? null;
+    },
+  });
 };
