@@ -75,7 +75,6 @@ const mapApiStatusToUiStatus = (status: ShowtimeApiStatus): ShowtimeStatus => {
     case "sold_out":
       return "Hết vé";
     case "open":
-    default:
       return "Đang mở bán";
   }
 };

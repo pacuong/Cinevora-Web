@@ -6,17 +6,18 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { GenreFromBE } from "@/src/interfaces/movieCard";
+import MovieDetailSkeleton from "@/src/components/MovieDetailSekeleton";
 
 const DetailWrapper = () => {
   const [openModal, setOpenModal] = useState(false);
   const { id } = useParams();
-  const movieId = Array.isArray(id) ? id[0] : id;
+  const movieIdentifier = Array.isArray(id) ? id[0] : id;
   const { movieDetail, isErrorMovieDetail, isLoadingMovie } = useMoviesId(
-    movieId || "",
+    movieIdentifier || "",
   );
 
   if (isLoadingMovie) {
-    return <div>Đang tải phim...</div>;
+    return <MovieDetailSkeleton />;
   }
 
   if (isErrorMovieDetail || !movieDetail) {
@@ -180,14 +181,16 @@ const DetailWrapper = () => {
             </button>
           </div>
 
-          <p className="w-full text-[15px] mb-10">{description}</p>
+          <p className="w-full text-[15px] mb-10 lg:!w-[1026px] lg:mx-auto">
+            {description}
+          </p>
         </div>
       </div>
 
       <ShowtimeScheduleModal
         isModalOpen={openModal}
         setIsModalOpen={setOpenModal}
-        movieId={movieId}
+        movieId={movieDetail.id}
       />
     </>
   );

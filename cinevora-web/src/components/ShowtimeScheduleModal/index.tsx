@@ -11,7 +11,7 @@ import { useEffect, useMemo } from "react";
 interface ShowtimeScheduleModalProps {
   isModalOpen: boolean;
   setIsModalOpen: (open: boolean) => void;
-  movieId?: string | null;
+  movieId?: number | null;
 }
 
 const ShowtimeScheduleModal = ({
@@ -19,7 +19,7 @@ const ShowtimeScheduleModal = ({
   setIsModalOpen,
   movieId,
 }: ShowtimeScheduleModalProps) => {
-  const dates = useMemo(() => generateShowDates(7), []);
+  const dates = generateShowDates(7);
 
   const [selectedDate, setDate, resetBooking] = useBookingStore((s) => [
     s.selectedDate,
@@ -27,10 +27,7 @@ const ShowtimeScheduleModal = ({
     s.resetBooking,
   ]);
 
-  const { data: movieSchedule } = useMovieSchedule(
-    movieId ?? null,
-    isModalOpen,
-  );
+  const { movieSchedule } = useMovieSchedule(movieId ?? null, isModalOpen);
 
   useEffect(() => {
     if (!isModalOpen || !movieSchedule) return;

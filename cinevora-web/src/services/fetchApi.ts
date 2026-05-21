@@ -1,14 +1,16 @@
 import axios from "axios";
+import { useAuthSlice } from "../stores/useAuth";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const fetchApi = axios.create({
   baseURL: API_URL,
+  withCredentials: true,
 });
 
 fetchApi.interceptors.request.use((config) => {
+  //TODO: USE STORE
   if (typeof window === "undefined") return config;
-
   const adminStorage = localStorage.getItem("admin-storage");
 
   if (adminStorage) {
@@ -25,15 +27,31 @@ fetchApi.interceptors.request.use((config) => {
 
 fetchApi.interceptors.response.use(
   (response) => response,
-  (error) => {
+
+  async (error) => {
+    const originalRequest = error.config;
     const status = error?.response?.status;
 
-    if (status === 400) {
-      return Promise.reject(error);
-    }
+    if (status === 401 && !originalRequest._retry) {
+      originalRequest._retry = true;
 
-    if (status === 401) {
-      return Promise.reject(new Error("Unauthorized"));
+      try {
+        const response = await fetchApi.post(
+          "/auth/refresh",
+          {},
+          { withCredentials: true },
+        );
+
+        const newAccessToken = response.data.accessToken;
+
+        useAuthSlice.getState().setAccessToken(newAccessToken);
+
+        originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
+
+        return fetchApi(originalRequest);
+      } catch (refreshError) {
+        return Promise.reject(refreshError);
+      }
     }
 
     if (status === 500) {

@@ -1,5 +1,5 @@
 import { MovieSchedule } from "@/src/interfaces/movieSchedule";
-import { ShowtimeFromBE } from "@/src/services/showtimeService";
+import { ShowtimeDto } from "../interfaces/api/movieScheduleApi";
 
 const getDateKey = (dateStr: string) => {
   return new Date(dateStr).toISOString().slice(0, 10);
@@ -13,7 +13,7 @@ const getTime = (dateStr: string) => {
 };
 
 export const mapShowtimesToMovieSchedules = (
-  showtimes: ShowtimeFromBE[],
+  showtimes: ShowtimeDto[]
 ): MovieSchedule[] => {
   const movieMap = new Map<string, MovieSchedule>();
 
@@ -24,7 +24,7 @@ export const mapShowtimesToMovieSchedules = (
     if (!movieMap.has(movieId)) {
       movieMap.set(movieId, {
         id: movieId,
-        title: showtime.movieTitle,
+        title: "",
         age: "P",
         posterUrl: "/images/no-poster.png",
         releaseDate: "",
@@ -42,7 +42,9 @@ export const mapShowtimesToMovieSchedules = (
     movie.schedules[dateKey].push({
       id: showtime.id,
       time: getTime(showtime.startTime),
-      room: showtime.roomName,
+      room: "",
+      roomId: showtime.roomId ?? 0,
+      showtimeId: showtime.id,
     });
   });
 

@@ -1,88 +1,57 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import {
-  createShowtime,
-  deleteShowtime,
-  getShowtimeById,
-  getShowtimes,
-  ShowtimeFromBE,
-  updateShowtime,
-} from "@/src/services/showtimeService";
-import { mapShowtimesToItems, ShowtimeItem } from "@/src/utils/showtimes";
+import { ShowtimeFromBE } from "@/src/services/showtimeService";
 import ShowtimeStatusBadge from "@/src/components/ShowtimeStatusBadge";
 import ShowtimeProgressBar from "@/src/components/ShowtimeProgressBar";
 import AgeBadge from "@/src/components/AgeBadge";
 import AddShowtimeModal from "../AddShowtimeModal";
 import { AddShowtimeFormValues } from "@/src/interfaces/movieSchedule";
+import { useShowtimeManagement } from "@/src/hooks/useShowtimeManagement";
 
 const ITEMS_PER_PAGE = 5;
 
 const ShowtimeManagementWrapper = () => {
-  const [showtimeList, setShowtimeList] = useState<ShowtimeItem[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [isAddShowtimeModalOpen, setIsAddShowtimeModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState<"create" | "edit">("create");
-  const [selectedShowtime, setSelectedShowtime] = useState<ShowtimeFromBE | null>(null);
+  const [selectedShowtime, setSelectedShowtime] =
+    useState<ShowtimeFromBE | null>(null);
 
-  const fetchShowtimes = async () => {
-    try {
-      setIsLoading(true);
-      const data = await getShowtimes();
-      setShowtimeList(mapShowtimesToItems(data));
-    } catch (error) {
-      console.error("Lỗi lấy lịch chiếu:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchShowtimes();
-  }, []);
+  const {
+    showtimeList,
+    isLoading,
+    getShowtimeDetailMutation,
+    createShowtimeMutation,
+    updateShowtimeMutation,
+    deleteShowtimeMutation,
+  } = useShowtimeManagement();
 
   const handleAddShowtime = async (data: AddShowtimeFormValues) => {
     if (modalMode === "edit" && selectedShowtime) {
-      const payload = {
-        roomId: Number(data.roomId),
-        startTime: `${data.showDate}T${data.startTime}:00`,
-        status: data.status as "open" | "sold_out",
-        priceStandard: Number(data.priceStandard),
-        priceVip: Number(data.priceVip),
-        priceCouple: data.priceCouple ? Number(data.priceCouple) : undefined,
-      };
-
-      await updateShowtime(selectedShowtime.id, payload);
+      await updateShowtimeMutation.mutateAsync({
+        id: selectedShowtime.id,
+        data,
+      });
     } else {
-      const payload = {
-        movieId: Number(data.movieId),
-        showtimes: [
-          {
-            roomId: Number(data.roomId),
-            startTime: `${data.showDate}T${data.startTime}:00`,
-            status: data.status as "open" | "sold_out",
-            priceStandard: Number(data.priceStandard),
-            priceVip: Number(data.priceVip),
-            priceCouple: data.priceCouple
-              ? Number(data.priceCouple)
-              : undefined,
-          },
-        ],
-      };
-
-      await createShowtime(payload);
+      await createShowtimeMutation.mutateAsync(data);
     }
 
-    await fetchShowtimes();
     setSelectedShowtime(null);
     setModalMode("create");
+    setIsAddShowtimeModalOpen(false);
+  };
+
+  const handleOpenCreateModal = () => {
+    setModalMode("create");
+    setSelectedShowtime(null);
+    setIsAddShowtimeModalOpen(true);
   };
 
   const handleEditShowtime = async (id: string) => {
     try {
-      const showtime = await getShowtimeById(Number(id));
+      const showtime = await getShowtimeDetailMutation.mutateAsync(id);
 
       setSelectedShowtime(showtime);
       setModalMode("edit");
@@ -97,8 +66,7 @@ const ShowtimeManagementWrapper = () => {
     if (!confirmDelete) return;
 
     try {
-      await deleteShowtime(Number(id));
-      await fetchShowtimes();
+      await deleteShowtimeMutation.mutateAsync(id);
     } catch (error: any) {
       const message =
         error?.response?.data?.message || "Xóa lịch chiếu thất bại";
@@ -139,11 +107,7 @@ const ShowtimeManagementWrapper = () => {
           </div>
 
           <button
-            onClick={() => {
-              setModalMode("create");
-              setSelectedShowtime(null);
-              setIsAddShowtimeModalOpen(true);
-            }}
+            onClick={handleOpenCreateModal}
             className="rounded-xl bg-violet-600 px-6 py-3 text-base font-semibold text-white-100 shadow-sm transition hover:bg-violet-700"
           >
             + Thêm Lịch Chiếu
@@ -348,6 +312,7 @@ const ShowtimeManagementWrapper = () => {
           </div>
         </div>
       </div>
+
       <AddShowtimeModal
         isModalOpen={isAddShowtimeModalOpen}
         setIsModalOpen={(open) => {

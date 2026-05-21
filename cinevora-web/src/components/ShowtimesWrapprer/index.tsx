@@ -1,6 +1,7 @@
 "use client";
 
 import MovieShowtimeCard from "@/src/components/common/movieShowtimeCard";
+import MovieShowtimeCardSkeleton from "@/src/components/MovieShowtimeCardSkeleton";
 import ScheduleDateSelector from "@/src/components/ScheduleDateSelector";
 import { useMovieSchedules } from "@/src/hooks/Movies/useMovieSchedules";
 import { generateShowDates } from "@/src/utils/generateShowDates";
@@ -17,7 +18,7 @@ const ShowtimesWrapper = () => {
     () =>
       scheduleMovie?.filter(
         (movie) => (movie?.schedules?.[selected]?.length ?? 0) > 0,
-      ),
+      ) ?? [],
     [scheduleMovie, selected],
   );
 
@@ -38,7 +39,7 @@ const ShowtimesWrapper = () => {
       </h2>
 
       <div className="px-10 font-saira overflow-y-scroll h-[300px] md:overflow-y-hidden md:h-auto mb-17">
-        {isLoadingSchedule && <p>Đang tải...</p>}
+        {isLoadingSchedule && <MovieShowtimeCardSkeleton />}
 
         {!isLoadingSchedule && isErrorSchedule && (
           <p className="font-saira text-center text-2xl text-red-500 mt-10">

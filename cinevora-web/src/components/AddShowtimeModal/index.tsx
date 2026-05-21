@@ -50,9 +50,9 @@ export const initialShowtimeValues: AddShowtimeFormValues = {
   status: "open",
   startTime: "",
   endTime: "",
-  priceStandard: "",
-  priceVip: "",
-  priceCouple: "",
+  priceStandard: "70000",
+  priceVip: "100000",
+  priceCouple: "120000",
 };
 
 const AddShowtimeModal = ({

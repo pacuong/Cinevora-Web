@@ -1,9 +1,10 @@
 import { IoMdRefresh } from "react-icons/io";
 import Image from "next/image";
+import { SelectedSeat } from "@/src/stores/bookingStore";
 interface BookingProps {
   posterUrl: string;
   title: string;
-  selectedSeats: string[];
+  selectedSeats: SelectedSeat[];
   ticketCount: number;
   totalPrice: number;
   releaseDate: string;
@@ -22,7 +23,7 @@ const BookingInfoPanel = ({
 }: BookingProps) => {
   return (
     <div>
-      <div className="flex justify-center">
+      <div className="flex justify-start">
         <Image width={195} height={280} src={posterUrl} alt="posterUrl" />
       </div>
 
@@ -40,7 +41,9 @@ const BookingInfoPanel = ({
             </li>
             <li className="capitalize text-base font-mont">
               ghế:{" "}
-              <span className="booking-title">{selectedSeats.join(", ")}</span>
+              <span className="booking-title">
+                {selectedSeats.map((s) => s.key).join(", ")}
+              </span>
             </li>
             <li className="capitalize text-base font-mont">
               số vé: <span className="booking-title">{ticketCount}</span>

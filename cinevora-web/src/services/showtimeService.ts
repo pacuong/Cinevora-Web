@@ -1,4 +1,5 @@
 import fetchApi from "./fetchApi";
+import { ShowtimeDto } from "@/src/interfaces/api/movieScheduleApi";
 
 export type ShowtimeStatus = "open" | "sold_out";
 
@@ -30,7 +31,13 @@ export interface ShowtimeFromBE {
   updatedAt: string;
 }
 
-export const getShowtimes = async (): Promise<ShowtimeFromBE[]> => {
+export const getShowtimes = async (): Promise<ShowtimeDto[]> => {
+  const { data } = await fetchApi.get("/showtimes");
+
+  return data;
+};
+
+export const getShowtimesAdmin = async (): Promise<ShowtimeFromBE[]> => {
   const { data } = await fetchApi.get<ShowtimeFromBE[]>("/showtimes");
   return data;
 };
@@ -60,6 +67,17 @@ export const updateShowtime = async (
     `/showtimes/${id}`,
     payload,
   );
+  return data;
+};
+
+export const getShowtimesByMovieId = async (
+  movieId: number,
+): Promise<ShowtimeDto[]> => {
+  const { data } = await fetchApi.get("/showtimes", {
+    params: {
+      movieId,
+    },
+  });
 
   return data;
 };
@@ -67,3 +85,4 @@ export const updateShowtime = async (
 export const deleteShowtime = async (id: number): Promise<void> => {
   await fetchApi.delete(`/showtimes/${id}`);
 };
+
