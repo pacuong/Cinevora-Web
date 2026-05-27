@@ -26,6 +26,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "file-saver": "^2.0.5",
     "lucide-react": "^1.8.0",
     "next": "16.1.4",
     "react": "^19.1.1",
@@ -36,6 +37,7 @@
     "recharts": "^3.8.1",
     "swiper": "^11.2.10",
     "use-sync-external-store": "^1.6.0",
+    "xlsx": "^0.18.5",
     "zustand": "5.0.9"
   },
   "devDependencies": {
