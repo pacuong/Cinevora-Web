@@ -7,6 +7,7 @@ import { getTagColor } from "@/src/utils/getTagColor";
 import { renderMedal } from "@/src/utils/renderMedal";
 import { MovieCardProps } from "@/src/interfaces/movieCard";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import PAGEURL from "@/src/constants/pageUrl";
 
 const { Meta } = Card;
@@ -45,12 +46,10 @@ const MovieCardItem = ({
 
   return (
     <div
-      className={`movie-card-list ${isLaptop ? "is-laptop" : ""} ${
-        className || ""
-      } lg:justify-center`}
+      className={`movie-card-list min-h-[330px] md:min-h-[485px] lg:min-h-[545px] ${isLaptop ? "is-laptop" : ""} ${className || ""} lg:justify-center`}
     >
       <Card
-        className={`movie-card ${isActive ? "active" : ""} w-[138px] md:w-[220px] lg:w-[264px]`}
+        className={`movie-card ${isActive ? "active" : ""} w-[138px] md:w-[220px] lg:w-[264px] overflow-hidden`}
         onClick={handleCardClick}
         variant="borderless"
       >
@@ -67,12 +66,7 @@ const MovieCardItem = ({
             <div className="movie-medal">{renderMedal(movie.rating)}</div>
           )}
 
-          <img
-            draggable={false}
-            alt={movie.title}
-            src={movie.posterUrl}
-            className="movie-poster w-full h-[221px] md:h-[340px] lg:h-[385px]"
-          />
+          <Image draggable={false} alt={movie.title} src={movie.posterUrl} width={264} height={385} sizes="(max-width: 768px) 138px, (max-width: 1024px) 220px, 264px" className="movie-poster w-full h-[221px] md:h-[340px] lg:h-[385px] object-cover" />
         </div>
 
         <Meta
@@ -112,15 +106,14 @@ const MovieCardItem = ({
               </div>
 
               <div
-                className={`movie-buttons ${
-                  isShowGenre || isShowOnlyBookBtn
-                    ? "always-visible"
-                    : isLaptop
-                      ? "hover-mode"
-                      : isActive
-                        ? "visible"
-                        : ""
-                }`}
+                className={`movie-buttons ${isShowGenre || isShowOnlyBookBtn
+                  ? "always-visible"
+                  : isLaptop
+                    ? "hover-mode"
+                    : isActive
+                      ? "visible"
+                      : ""
+                  }`}
               >
                 {!isShowOnlyBookBtn && (
                   <button
