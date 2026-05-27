@@ -88,13 +88,13 @@ const Footer = ({
         <div className="flex flex-col md:flex-row md:justify-between gap-10">
           <div className="flex flex-col items-start md:w-[25%]">
             <div className="w-[150px] m-auto md:m-0">
-              <img src={metiz.imageMetiz} alt="metiz logo" />
+             <Image width={150} height={80} src={metiz.imageMetiz} alt="metiz logo" className="h-auto w-full object-contain" />
             </div>
             <h3 className="text-white-100 w-full text-l font-saira uppercase my-9 text-center md:text-left md:text-s lg:text-l">
               {metiz.addressMetiz}
             </h3>
             <div className="flex items-center gap-5">
-              <img src={map.imageMap} alt="map icon" />
+              <Image width={24} height={24} src={map.imageMap} alt="map icon" className="h-6 w-6 object-contain" />
               <p className="text-blue-50 text-l md:text-base font-bold font-saira uppercase hover:text-orange-90">
                 {map.addressMap}
               </p>

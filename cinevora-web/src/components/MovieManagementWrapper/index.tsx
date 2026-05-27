@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   createMovie,
   deleteMovie,
@@ -8,7 +9,6 @@ import {
   getMovieList,
   updateMovie,
 } from "@/src/services/movieService";
-import { Search } from "lucide-react";
 import StatusBadge from "@/src/components/common/StatusBadge";
 import { mapMovieToItem, MovieItem } from "@/src/utils/movies";
 import { AddMovieForm, MovieCardProps, AgeRating } from "@/src/interfaces/movieCard";
@@ -214,11 +214,7 @@ const MovieManagementWrapper = () => {
                     >
                       <td className="px-4 py-4">
                         <div className="flex items-center gap-4">
-                          <img
-                            src={movie.image}
-                            alt={movie.title}
-                            className="h-16 w-12 shrink-0 rounded-lg object-cover"
-                          />
+                          <Image src={movie.image} alt={movie.title} width={48} height={64} sizes="48px" className="h-16 w-12 shrink-0 rounded-lg object-cover" />
                           <div className="min-w-0">
                             <h3 className="truncate text-base font-semibold text-slate-900">
                               {movie.title}

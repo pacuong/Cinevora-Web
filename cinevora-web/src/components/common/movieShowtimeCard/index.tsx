@@ -11,6 +11,7 @@ import { useBookingStore } from "@/src/stores/bookingStore";
 import { useAuthSlice } from "@/src/stores/useAuth";
 import { mapUserToProfile } from "@/src/utils/userMapper";
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const MovieShowtimeCard = ({
@@ -122,11 +123,7 @@ const MovieShowtimeCard = ({
 
         <div className="flex flex-col lg:flex-row ml-6">
           <div>
-            <img
-              src={posterUrl}
-              alt={title}
-              className="w-[117px] h-[166px] object-cover mb-5"
-            />
+            <Image src={posterUrl} alt={title} width={117} height={166} sizes="117px" className="mb-5 h-[166px] w-[117px] object-cover" />
           </div>
 
           <div className="lg:px-20">
@@ -142,10 +139,9 @@ const MovieShowtimeCard = ({
                       showtime-card cursor-pointer mb-5
                       w-[115px] h-[78px] p-0
                       lg:hover:bg-orange-100 lg:hover:text-white-100 lg:hover:border-0
-                      ${
-                        isSelected
-                          ? "bg-orange-100 text-white-100"
-                          : "bg-white-100 text-black-100"
+                      ${isSelected
+                        ? "bg-orange-100 text-white-100"
+                        : "bg-white-100 text-black-100"
                       }
                     `}
                   >

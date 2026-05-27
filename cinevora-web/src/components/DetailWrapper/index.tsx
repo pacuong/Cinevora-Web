@@ -5,6 +5,7 @@ import { useMoviesId } from "@/src/hooks/Movies/useMoviesId";
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { GenreFromBE } from "@/src/interfaces/movieCard";
 import MovieDetailSkeleton from "@/src/components/MovieDetailSekeleton";
 
@@ -72,11 +73,7 @@ const DetailWrapper = () => {
         <div>
           <div className="md:flex lg:justify-center">
             <div>
-              <img
-                className="w-[195px] h-[265px] lg:h-[281px] object-cover md:mr-15"
-                src={posterUrl}
-                alt="avatar 3"
-              />
+              <Image src={posterUrl} alt={title} width={195} height={281} sizes="(max-width: 768px) 195px, 281px" className="h-[265px] w-[195px] object-cover md:mr-15 lg:h-[281px]" />
 
               <div className="mt-5 mb-13 ml-4">
                 <button className="mr-5 p-0 px-5 text-[14px] bg-blue-20 text-white-100 rounded">
