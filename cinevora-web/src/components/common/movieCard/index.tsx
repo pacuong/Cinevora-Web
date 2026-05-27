@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Card, Tag } from "antd";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import PAGEURL from "@/src/constants/pageUrl";
 import { useCustomDevice } from "@/src/hooks/deviceDetect";
 import { getTagColor } from "@/src/utils/getTagColor";
@@ -90,11 +91,13 @@ const MovieCard = ({
                   </div>
                 )}
 
-                <img
+                <Image
                   draggable={false}
                   alt={movie.title}
                   src={movie.posterUrl}
-                  className="movie-poster !sepia-0 object-cover w-[163px] md:w-[173px] lg:h-[281px] h-[251px] md:h-[281px] lg:w-[195px]"
+                  width={195}
+                  height={281}
+                  className="movie-poster !sepia-0 object-cover w-[163px] md:w-[173px] lg:w-[195px] h-[251px] md:h-[281px]"
                 />
               </div>
 
@@ -133,15 +136,14 @@ const MovieCard = ({
                       </div>
                       {isShowBtn && (
                         <div
-                          className={`movie-buttons !mt-[20px] md:!h-auto ${
-                            isShowGenre || isShowOnlyBookBtn
+                          className={`movie-buttons !mt-[20px] md:!h-auto ${isShowGenre || isShowOnlyBookBtn
                               ? "always-visible md:items-center"
                               : isLaptop
                                 ? "hover-mode"
                                 : isActive
                                   ? "visible"
                                   : ""
-                          }`}
+                            }`}
                         >
                           {!isShowOnlyBookBtn && (
                             <button
