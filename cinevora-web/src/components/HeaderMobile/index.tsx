@@ -34,9 +34,8 @@ const HeaderMobile = () => {
           return (
             <div key={item.key}>
               <button
-                className={`tab-menu-item flex justify-between  ${
-                  openMovieMenu ? "!text-orange-70 !bg-white-90" : ""
-                }`}
+                className={`tab-menu-item flex justify-between  ${openMovieMenu ? "!text-orange-70 !bg-white-90" : ""
+                  }`}
                 onClick={() => setOpenMovieMenu((prev) => !prev)}
               >
                 {item.label}
@@ -127,12 +126,14 @@ const HeaderMobile = () => {
     <div className="bg-blue-100">
       <div className="px-[15px] pb-2">
         <Link href={PAGEURL.HOME}>
-          <div className="flex justify-center py-[5px]">
+          <div className="flex h-[87px] justify-center py-[5px]">
             <Image
               src="/assets/images/logo_header.png"
               alt="Logo Metiz"
+              priority
               width={70}
               height={77}
+              className="block h-[77px] w-[70px] shrink-0 object-contain"
             />
           </div>
         </Link>
@@ -155,21 +156,19 @@ const HeaderMobile = () => {
         />
 
         <div
-          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${
-            activeTab === "menu"
+          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${activeTab === "menu"
               ? "max-h-[300px] translate-y-0 opacity-100"
               : "pointer-events-none max-h-0 -translate-y-2 opacity-0"
-          }`}
+            }`}
         >
           {renderMenu()}
         </div>
 
         <div
-          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${
-            activeTab === "user"
+          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${activeTab === "user"
               ? "max-h-[300px] translate-y-0 opacity-100"
               : "pointer-events-none max-h-0 -translate-y-2 opacity-0"
-          }`}
+            }`}
         >
           {renderUserMenu()}
         </div>
