@@ -12,6 +12,10 @@ import { AddShowtimeFormValues } from "@/src/interfaces/movieSchedule";
 
 export const SHOWTIME_MANAGEMENT_QUERY_KEY = ["showtime-management"];
 
+const buildUtcStartTime = (showDate: string, startTime: string) => {
+  return `${ showDate }T${ startTime }:00.000Z`;
+};
+
 export const useShowtimeManagement = () => {
   const queryClient = useQueryClient();
 
@@ -36,13 +40,13 @@ export const useShowtimeManagement = () => {
         showtimes: [
           {
             roomId: Number(data.roomId),
-            startTime: `${data.showDate}T${data.startTime}:00`,
+            startTime: buildUtcStartTime(data.showDate, data.startTime),
             status: data.status as "open" | "sold_out",
             priceStandard: Number(data.priceStandard),
             priceVip: Number(data.priceVip),
-            priceCouple: data.priceCouple
-              ? Number(data.priceCouple)
-              : undefined,
+            ...(data.priceCouple
+              ? { priceCouple: Number(data.priceCouple) }
+              : {}),
           },
         ],
       };
@@ -54,6 +58,7 @@ export const useShowtimeManagement = () => {
         queryKey: SHOWTIME_MANAGEMENT_QUERY_KEY,
       });
     },
+
   });
 
   const updateShowtimeMutation = useMutation({
@@ -66,22 +71,23 @@ export const useShowtimeManagement = () => {
     }) => {
       const payload = {
         roomId: Number(data.roomId),
-        startTime: `${data.showDate}T${data.startTime}:00`,
+        startTime: buildUtcStartTime(data.showDate, data.startTime),
         status: data.status as "open" | "sold_out",
         priceStandard: Number(data.priceStandard),
         priceVip: Number(data.priceVip),
-        priceCouple: data.priceCouple
-          ? Number(data.priceCouple)
-          : undefined,
+        ...(data.priceCouple
+          ? { priceCouple: Number(data.priceCouple) }
+          : {}),
       };
 
-      return updateShowtime(id, payload);
+      return updateShowtime(Number(id), payload);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: SHOWTIME_MANAGEMENT_QUERY_KEY,
       });
     },
+
   });
 
   const deleteShowtimeMutation = useMutation({
@@ -104,5 +110,6 @@ export const useShowtimeManagement = () => {
     createShowtimeMutation,
     updateShowtimeMutation,
     deleteShowtimeMutation,
+
   };
 };

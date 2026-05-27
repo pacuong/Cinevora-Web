@@ -15,6 +15,6 @@ export const SHOWTIME_LANGUAGE_OPTIONS = [
 ];
 
 export const SHOWTIME_STATUS_OPTIONS = [
-  { label: "Đang mở", value: "open" },
+  { label: "Đang mở bán", value: "open" },
   { label: "Hết vé", value: "sold_out" },
 ];

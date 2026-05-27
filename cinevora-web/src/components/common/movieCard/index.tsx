@@ -112,7 +112,6 @@ const MovieCard = ({
                     <div className="movie-info">
                       {isShowGenre && (
                         <div className="text-black-100 tracking-tight truncate uppercase !text-[13px] font-saira md:text-xs lg:text-sm">
-                          {/* TODO: Test data */}
                           thể loại: {movie.genres[0].name || "—"}
                         </div>
                       )}

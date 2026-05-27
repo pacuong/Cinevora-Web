@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { userList } from "@/src/constants/adminUserData";
+import Image from "next/image";
 import StatusToggle from "@/src/utils/StatusToggle";
 import StatusBar from "@/src/utils/StatusBar";
 import StatCard from "@/src/utils/StatCard";
@@ -130,12 +131,7 @@ const UserManagementWrapper = () => {
                   >
                     <td className="px-5 py-4">
                       <div className="flex items-center gap-4">
-                        <img
-                          src={user.avatar}
-                          alt={user.fullName}
-                          className="h-12 w-12 rounded-full object-cover"
-                        />
-
+                        <Image src={user.avatar} alt={user.fullName} width={48} height={48} sizes="48px" className="h-12 w-12 rounded-full object-cover" />
                         <div>
                           <h3 className="text-[15px] font-semibold text-slate-900">
                             {user.fullName}

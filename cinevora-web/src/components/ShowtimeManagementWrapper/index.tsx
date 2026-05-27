@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import Image from "next/image";
 import { ShowtimeFromBE } from "@/src/services/showtimeService";
 import ShowtimeStatusBadge from "@/src/components/ShowtimeStatusBadge";
 import ShowtimeProgressBar from "@/src/components/ShowtimeProgressBar";
@@ -203,11 +203,7 @@ const ShowtimeManagementWrapper = () => {
                       >
                         <td className="px-5 py-4">
                           <div className="flex items-center gap-4">
-                            <img
-                              src={item.image}
-                              alt={item.movieTitle}
-                              className="h-14 w-11 shrink-0 rounded-lg object-cover"
-                            />
+                            <Image src={item.image} alt={item.movieTitle} width={44} height={56} sizes="44px" className="h-14 w-11 shrink-0 rounded-lg object-cover" />
 
                             <div className="min-w-0 overflow-hidden">
                               <div className="flex items-center gap-2 overflow-hidden">

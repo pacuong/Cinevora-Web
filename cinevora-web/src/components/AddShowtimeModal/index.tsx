@@ -82,7 +82,7 @@ const AddShowtimeModal = ({
       const startDate = new Date(initialShowtime.startTime);
 
       const showDate = startDate.toISOString().slice(0, 10);
-      const startTime = startDate.toTimeString().slice(0, 5);
+      const startTime = startDate.toISOString().slice(11, 16);
 
       reset({
         poster: "",
