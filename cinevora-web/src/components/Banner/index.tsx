@@ -36,6 +36,7 @@ export const Banner: React.FC<BannerProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
   const router = useRouter();
+
   const handlePrev = () => {
     swiperRef.current?.slidePrev();
   };
@@ -46,6 +47,7 @@ export const Banner: React.FC<BannerProps> = ({
 
   const [thumbSwiper, setThumbSwiper] = useState<SwiperType | null>(null);
   const middleIndex = 2;
+
   const centerThumbnail = (realIndex: number) => {
     if (!thumbSwiper) return;
 
@@ -53,6 +55,7 @@ export const Banner: React.FC<BannerProps> = ({
     const target = (realIndex + total - middleIndex) % total;
 
     thumbSwiper.slideToLoop(target, 300);
+
   };
 
   const handleBannerClick = (index: number, slug: string) => {
@@ -63,7 +66,9 @@ export const Banner: React.FC<BannerProps> = ({
     setTimeout(() => {
       centerThumbnail(index);
     });
+
     router.push(`${PAGEURL.DETAIL_PAGE}/${slug}`);
+
   };
 
   const handleThumbnailClick = (index: number) => {
@@ -74,28 +79,31 @@ export const Banner: React.FC<BannerProps> = ({
     setTimeout(() => {
       centerThumbnail(index);
     });
+
   };
 
   const handleSlideChange = (swiper: SwiperType) => {
     const real = swiper.realIndex;
     setCurrentIndex(real);
+
     setTimeout(() => {
       centerThumbnail(real);
     }, 30);
+
   };
 
   return (
-    <div className="mx-auto w-[315px] md:w-[720px] lg:w-[1140px] flex flex-col bg-black-50">
-      <div className="relative bg-black overflow-hidden cursor-pointer">
+    <div className="mx-auto flex w-[315px] flex-col bg-black-50 md:w-[720px] lg:w-[1140px]">
+      <div className="relative cursor-pointer overflow-hidden bg-black">
         <Swiper
           modules={[Navigation, Autoplay, Thumbs]}
           speed={600}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           onSlideChange={handleSlideChange}
           autoplay={{ delay: autoPlayInterval, disableOnInteraction: false }}
-          loop={true}
+          loop
           thumbs={{ swiper: thumbSwiper }}
-          className="w-full h-full"
+          className="h-full w-full"
         >
           {slides.map((slide, index) => (
             <SwiperSlide
@@ -103,12 +111,16 @@ export const Banner: React.FC<BannerProps> = ({
               onClick={() => handleBannerClick(index, slide.slug)}
             >
               <div className="relative h-[112px] md:h-[257px] lg:h-[407px]">
-                {slide?.bannerUrl ? (
+                {slide.bannerUrl ? (
                   <Image
                     fill
-                    src={slide?.bannerUrl}
-                    alt={slide?.title || `Slide ${index}`}
-                    className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-300"
+                    src={slide.bannerUrl}
+                    alt={slide.title || `Slide ${index}`}
+                    priority={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    sizes="(max-width: 768px) 315px, (max-width: 1024px) 720px, 1140px"
+                    className="object-cover transition-all duration-300"
                   />
                 ) : null}
               </div>
@@ -130,11 +142,12 @@ export const Banner: React.FC<BannerProps> = ({
           variant="circle"
         />
       </div>
-      <div className="relative overflow-hidden bg-black-100 mb-5 p-2 md:p-5">
+
+      <div className="relative mb-5 overflow-hidden bg-black-100 p-2 md:p-5">
         <Swiper
           modules={[Navigation, Thumbs]}
           onSwiper={setThumbSwiper}
-          loop={true}
+          loop
           slidesPerView={5}
           spaceBetween={10}
           centeredSlides={false}
@@ -157,17 +170,19 @@ export const Banner: React.FC<BannerProps> = ({
                       : "opacity-50 hover:opacity-50",
                   ].join(" ")}
                 >
-                  {slide?.bannerUrl ? (
+                  {slide.bannerUrl ? (
                     <Image
                       fill
-                      src={slide?.bannerUrl}
-                      alt={slide?.title || `Slide ${index}`}
+                      src={slide.bannerUrl}
+                      alt={slide.title || `Slide ${index}`}
+                      sizes="(max-width: 768px) 63px, (max-width: 1024px) 144px, 228px"
                       className="object-cover transition-all duration-300"
                     />
                   ) : null}
+
                   <BorderGlow
                     strokeWidth={5}
-                    color={"#ff8800"}
+                    color="#ff8800"
                     opacity={0.5}
                     className={[
                       "absolute inset-0 w-full h-full transition-all duration-300",
@@ -176,15 +191,17 @@ export const Banner: React.FC<BannerProps> = ({
                         : "opacity-0",
                     ].join(" ")}
                   />
+
                   <BorderGlow
                     strokeWidth={5}
-                    color={"white"}
+                    color="white"
                     opacity={0.5}
                     className={[
                       "absolute inset-0 w-full h-full transition-all duration-300",
                       "opacity-0 group-hover:opacity-100",
                     ].join(" ")}
                   />
+
                   <div
                     className={[
                       "absolute inset-0 w-full h-full flex items-center justify-center transition-all duration-300",
@@ -206,5 +223,6 @@ export const Banner: React.FC<BannerProps> = ({
         </Swiper>
       </div>
     </div>
+
   );
 };
