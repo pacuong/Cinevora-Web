@@ -44,13 +44,14 @@ const OffersSection = ({
           {topImages.map((item) => (
             <div
               key={item.id}
-              className="relative group w-full h-[152px] md:h-[170px] lg:h-[260px] "
+              className="relative group w-full h-[152px] md:h-[170px] lg:h-[260px]"
             >
               <Image
                 className="object-cover"
                 src={item.image}
                 alt={item.alt}
                 fill
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 285px"
               />
               <OfferHoverOverlay title={item.titlePromotion} />
             </div>
@@ -58,23 +59,25 @@ const OffersSection = ({
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-5 h-[314px] md:grid-cols-4 ">
+      <div className="grid grid-cols-2 gap-5 h-[314px] md:grid-cols-4">
         {gridImages.map((item) => (
           <div
             key={item.id}
-            className="relative group w-full h-full md:h-[170px] lg:h-[260px] "
+            className="relative group w-full h-full md:h-[170px] lg:h-[260px]"
           >
             <Image
               className="object-cover"
               src={item.image}
               alt={item.alt}
               fill
+              sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 285px"
             />
             <OfferHoverOverlay title={item.titlePromotion} />
           </div>
         ))}
       </div>
     </div>
+
   );
 };
 
