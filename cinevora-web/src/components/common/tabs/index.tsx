@@ -26,11 +26,12 @@ const TabsComponent = ({
   return (
     <Tabs
       activeKey={activeKey ?? undefined}
+      animated={{ inkBar: false, tabPane: false }}
       items={items.map((item) => ({
         ...item,
         label: (
           <button
-            className={`tab-click-area ${className} ${activeKey === item.key ? "active" : ""}`}
+            className={`h-[44px] tab-click-area ${className} ${activeKey === item.key ? "active" : ""}`}
             onClick={() => handleClick(item.key)}
           >
             {item.label}

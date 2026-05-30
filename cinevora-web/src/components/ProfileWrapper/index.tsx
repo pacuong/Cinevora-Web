@@ -7,7 +7,7 @@ import { updateUserProfile } from "@/src/services/authService";
 import { useAuthSlice } from "@/src/stores/useAuth";
 import { mapUserToUserProfile } from "@/src/utils/mapUserToUserProfile";
 import { useShallow } from "zustand/react/shallow";
-import { useEffect, useState } from "react";
+import Loading from "@/src/app/loading";
 
 const ProfileWrapper = () => {
   const [user, isInitialized] = useAuthSlice(
@@ -23,15 +23,25 @@ const ProfileWrapper = () => {
   };
 
   if (!isInitialized) {
-    return <div>Loading...</div>;
+    return <div className='bg-gray-950'>hello toi dsdj</div>;
   }
 
   if (!user) {
-    return <GuideWrapper />;
+    return (
+      <GuideWrapper
+        title='Access Denied'
+        subtitle='Bạn chưa đăng nhập'
+        description='Vui lòng đăng nhập để tiếp tục sử dụng chức năng đặt vé.'
+        primaryButtonText='Đăng nhập ngay'
+        primaryButtonHref='/dang-nhap'
+        secondaryButtonText='Về trang chủ'
+        secondaryButtonHref='/'
+      />
+    );
   }
 
   return (
-    <div className="md:pb-17 lg:py-17">
+    <div className='md:pb-17 lg:py-17'>
       <ProfileForm
         onSubmitProfile={handleUpdateProfile}
         profileAccount={profileAccount}

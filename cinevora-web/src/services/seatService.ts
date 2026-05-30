@@ -33,6 +33,7 @@ export const getSeatsByShowtimeId = async (
     const row = acc.find((r) => r.label === seat.rowLabel);
 
     const mappedSeat = {
+      id: seat.id,
       keys: seat.seatKey,
       type: seat.seatType,
       price: seat.price,

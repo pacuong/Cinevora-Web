@@ -6,12 +6,12 @@ import { useQuery } from "@tanstack/react-query";
 export const useListUpComingMovies = () => {
   const {
     data: upComingMovies,
-    isError: isErrorMovie,
+    isError: isErrorUpComingMovies,
     isLoading: isLoadingUpComingMovies,
   } = useQuery({
     queryKey: ["upComingMovies"],
     queryFn: getUpComingMovies,
   });
 
-  return { upComingMovies, isErrorMovie, isLoadingUpComingMovies };
+  return { upComingMovies, isErrorUpComingMovies, isLoadingUpComingMovies };
 };

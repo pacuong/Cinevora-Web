@@ -73,6 +73,12 @@ button:focus-visible {
   display: none !important;
 }
 
+.main-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .background-link-btn {
   border: none;
   padding: 0;
@@ -314,6 +320,29 @@ button:focus-visible {
   border-top: 1px solid #2e3a4b;
   border-bottom: 1px solid #2e3a4b;
   margin-bottom: 0;
+  max-height: 46px !important;
+}
+
+.tabs-container .ant-tabs-nav::before {
+  border: none;
+}
+
+.no-underline-tabs .ant-tabs-nav::before {
+  display: none;
+}
+
+.ant-tabs-nav-wrap {
+  flex-wrap: nowrap !important;
+}
+
+.ant-tabs-nav-list {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.tabs-wrapper {
+  width: 100%;
+  min-width: 0;
 }
 
 .tabs-container .ant-tabs-nav-wrap {
@@ -356,6 +385,7 @@ button:focus-visible {
 }
 .auth-tabs-wrapper .ant-tabs .ant-tabs-tab {
   padding: 0;
+  height: 35px !important;
 }
 
 .auth-tabs-wrapper .ant-tabs-tab {

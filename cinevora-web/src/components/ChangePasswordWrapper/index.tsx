@@ -25,7 +25,17 @@ const ChangePasswordWrapper = () => {
   }
 
   if (!user) {
-    return <GuideWrapper />;
+    return (
+      <GuideWrapper
+        title='Access Denied'
+        subtitle='Bạn chưa đăng nhập'
+        description='Vui lòng đăng nhập để sử dụng chức năng đổi mật khẩu.'
+        primaryButtonText='Đăng nhập ngay'
+        primaryButtonHref='/dang-nhap'
+        secondaryButtonText='Trang chủ'
+        secondaryButtonHref='/'
+      />
+    );
   }
 
   return (

@@ -23,6 +23,7 @@ const SeatCinema = ({
         : [
             ...selectedSeats,
             {
+              id: seat.id,
               key: seat.keys,
               price: seat.price,
               type: seat.type,
@@ -32,18 +33,18 @@ const SeatCinema = ({
   };
 
   return (
-    <div className="w-full lg:flex lg:flex-col lg:items-center max-w-7xl mx-auto">
-      <div className="front lg:w-[652px] text-[12px] md:text-[15px] lg:text-[15px] md:mr-0 md:ml-0 md:mt-10">
+    <div className='w-full lg:flex lg:flex-col lg:items-center max-w-7xl mx-auto'>
+      <div className='front lg:w-[652px] text-[12px] md:text-[15px] lg:text-[15px] md:mr-0 md:ml-0 md:mt-10'>
         Màn hình
       </div>
-      <div className="space-y-3">
+      <div className='space-y-3'>
         {rows.map((row) => (
-          <div key={row.label} className="flex md:justify-center items-center">
-            <div className="w-6 text-center font-semibold text-gray-70 md:mr-5">
+          <div key={row.label} className='flex md:justify-center items-center'>
+            <div className='w-6 text-center font-semibold text-gray-70 md:mr-5'>
               {row.label}
             </div>
 
-            <div className="flex gap-6 md:gap-9 ml-4">
+            <div className='flex gap-6 md:gap-9 ml-4'>
               {row.seats.map((seat) => {
                 const isSelected = selectedSeats.some(
                   (s) => s.key === seat.keys,
@@ -66,11 +67,11 @@ const SeatCinema = ({
                     `}
                   >
                     <input
-                      type="checkbox"
+                      type='checkbox'
                       disabled={seat.isPlaced}
                       checked={isSelected}
                       onChange={() => toggleSeat(seat)}
-                      className="absolute opacity-0 h-full w-full cursor-pointer"
+                      className='absolute opacity-0 h-full w-full cursor-pointer'
                     />
 
                     <div

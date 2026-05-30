@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: "link" | "default" | "outline" | "outlinePill" | "badge" | "circle";
   isLoading?: boolean;
   buttonType?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 const ButtonComponent = ({
@@ -17,6 +18,7 @@ const ButtonComponent = ({
   variant = "default",
   isLoading = false,
   buttonType = "button",
+  disabled = false,
 }: ButtonProps) => {
   const variantClassMap: Record<string, string> = {
     link: "background-link-btn",
@@ -29,10 +31,11 @@ const ButtonComponent = ({
 
   return (
     <Button
-      className={`${variantClassMap[variant]} ${className}`}
+      className={`main-btn ${variantClassMap[variant]} ${className}`}
       onClick={onClick}
       loading={isLoading}
       htmlType={buttonType}
+      disabled={disabled}
     >
       {name}
     </Button>
