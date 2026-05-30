@@ -1,4 +1,5 @@
 export interface Seat {
+  id: number;
   keys: string;
   type: "standard" | "vip" | "couple";
   price: number;

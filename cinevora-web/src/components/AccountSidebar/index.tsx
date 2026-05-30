@@ -11,12 +11,12 @@ const AccountSidebar = ({ accountMenuItems }: AccountSidebarProps) => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <div className=" border md:mb-17 lg:my-17 bg-sand-80 lg:bg-white-100 border-red-80 md:flex lg:self-start">
-      <div className="flex items-center justify-between px-4 py-3 md:hidden">
-        <h2 className=" font-saira uppercase text-red-70 text-l">Tài khoản</h2>
+    <div className=' border md:mb-17 lg:my-17 bg-sand-80 lg:bg-white-100 border-red-80 md:flex lg:self-start'>
+      <div className='h-[44px] flex items-center justify-between px-4 py-3 md:hidden'>
+        <h2 className=' font-saira uppercase text-red-70 text-l'>Tài khoản</h2>
         <ButtonComponent
           onClick={() => setOpen(!open)}
-          className="text-2xl text-blue-100 md:hidden !border !rounded-sm"
+          className='h-[32px] text-2xl text-blue-100 md:hidden !border !rounded-sm'
           name={<HamburgerMenu />}
         />
       </div>
@@ -26,13 +26,13 @@ const AccountSidebar = ({ accountMenuItems }: AccountSidebarProps) => {
           md:block
         `}
       >
-        <ul className="md:flex md:flex-wrap md:items-center md:gap-10 lg:block">
+        <ul className='md:flex md:flex-wrap md:items-center md:gap-10 lg:block'>
           <h2
-            className="hidden md:flex
+            className='hidden md:flex
   items-center justify-center
   p-4 text-red-70 lg:text-blue-100 font-saira
   text-l uppercase
-  lg:py-10"
+  lg:py-10'
           >
             Tài khoản
           </h2>
@@ -47,8 +47,8 @@ const AccountSidebar = ({ accountMenuItems }: AccountSidebarProps) => {
                   !text-blue-100 md:gap-2 lg:border-t lg:border-t-red-100 hover:!text-white-100
                   ${isActive ? "font-bold bg-orange-100 !text-white-100" : "hover:bg-orange-100"}`}
                 >
-                  <span className="uppercase">{item.label}</span>
-                  <span className="text-xl hidden md:flex">{item.icon}</span>
+                  <span className='uppercase'>{item.label}</span>
+                  <span className='text-xl hidden md:flex'>{item.icon}</span>
                 </Link>
               </li>
             );

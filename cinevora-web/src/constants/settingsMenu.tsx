@@ -23,6 +23,6 @@ export const accountMenuItems: NavProps[] = [
   {
     icon: <HistoryIcon size={14} />,
     label: "Lịch sử giao dich online",
-    to: "/settings",
+    to: "/lich-su-giao-dich",
   },
 ];

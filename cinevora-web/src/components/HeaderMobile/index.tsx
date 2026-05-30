@@ -34,17 +34,18 @@ const HeaderMobile = () => {
           return (
             <div key={item.key}>
               <button
-                className={`tab-menu-item flex justify-between  ${openMovieMenu ? "!text-orange-70 !bg-white-90" : ""
-                  }`}
+                className={`tab-menu-item flex justify-between  ${
+                  openMovieMenu ? "!text-orange-70 !bg-white-90" : ""
+                }`}
                 onClick={() => setOpenMovieMenu((prev) => !prev)}
               >
                 {item.label}
               </button>
 
               {openMovieMenu && (
-                <div className="ml-16 mt-2 flex items-start flex-col">
+                <div className='ml-16 mt-2 flex items-start flex-col'>
                   <button
-                    className="bg-black-50 tracking-tight text-blue-50 uppercase font-saira font-bold px-0 py-[5px]"
+                    className='bg-black-50 tracking-tight text-blue-50 uppercase font-saira font-bold px-0 py-[5px]'
                     onClick={() => {
                       router.push(PAGEURL.NOW_SHOWING_PAGE);
                       setActiveTab(null);
@@ -54,7 +55,7 @@ const HeaderMobile = () => {
                   </button>
 
                   <button
-                    className="bg-black-50 tracking-tight text-blue-50 uppercase font-saira font-bold px-0 py-[5px]"
+                    className='bg-black-50 tracking-tight text-blue-50 uppercase font-saira font-bold px-0 py-[5px]'
                     onClick={() => {
                       router.push(PAGEURL.UP_COMING_PAGE);
                       setActiveTab(null);
@@ -123,32 +124,32 @@ const HeaderMobile = () => {
   ];
 
   return (
-    <div className="bg-blue-100">
-      <div className="px-[15px] pb-2">
+    <div className='bg-blue-100'>
+      <div className='px-[15px] pb-2'>
         <Link href={PAGEURL.HOME}>
-          <div className="flex h-[87px] justify-center py-[5px]">
+          <div className='flex h-[87px] justify-center py-[5px]'>
             <Image
-              src="/assets/images/logo_header.png"
-              alt="Logo Metiz"
+              src='/assets/images/logo_header.png'
+              alt='Logo Metiz'
               priority
               width={70}
               height={77}
-              className="block h-[77px] w-[70px] shrink-0 object-contain"
+              className='h-[60px]'
             />
           </div>
         </Link>
 
-        <div className="grid justify-end leading-4">
-          <p className="text-white-100 uppercase text-[10px] font-saira">
+        <div className='grid justify-end leading-4'>
+          <p className='text-white-100 uppercase text-[10px] font-saira'>
             hotline: 0123 456 789
           </p>
-          <p className="text-white-100 uppercase text-[10px] font-saira">
+          <p className='text-white-100 uppercase text-[10px] font-saira'>
             giờ mở cửa: 9:00 - 22:00
           </p>
         </div>
       </div>
 
-      <div className="tabs-container relative">
+      <div className='tabs-container relative'>
         <TabsComponent
           items={tabItems}
           activeKey={activeTab}
@@ -156,19 +157,21 @@ const HeaderMobile = () => {
         />
 
         <div
-          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${activeTab === "menu"
+          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${
+            activeTab === "menu"
               ? "max-h-[300px] translate-y-0 opacity-100"
               : "pointer-events-none max-h-0 -translate-y-2 opacity-0"
-            }`}
+          }`}
         >
           {renderMenu()}
         </div>
 
         <div
-          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${activeTab === "user"
+          className={`absolute left-0 top-full z-50 w-full overflow-hidden bg-black-50 shadow-lg transition-all duration-500 ease-out ${
+            activeTab === "user"
               ? "max-h-[300px] translate-y-0 opacity-100"
               : "pointer-events-none max-h-0 -translate-y-2 opacity-0"
-            }`}
+          }`}
         >
           {renderUserMenu()}
         </div>

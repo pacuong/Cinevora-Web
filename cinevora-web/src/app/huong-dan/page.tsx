@@ -7,5 +7,13 @@ export const metadata: Metadata = {
     "Bạn cần đăng nhập để sử dụng các chức năng như đặt vé, hồ sơ cá nhân và đổi mật khẩu.",
 };
 
-const GuidePage = () => <GuideWrapper />;
+//TODO: attibute for guide page
+const GuidePage = () => (
+  <GuideWrapper
+    title={""}
+    description={""}
+    primaryButtonText={""}
+    primaryButtonHref={""}
+  />
+);
 export default GuidePage;

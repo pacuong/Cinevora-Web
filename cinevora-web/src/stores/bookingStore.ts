@@ -10,6 +10,7 @@ interface BookingMovie {
 }
 
 export interface SelectedSeat {
+  id: number;
   key: string;
   type: "standard" | "vip" | "couple";
   price: number;
