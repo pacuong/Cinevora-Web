@@ -73,7 +73,7 @@ const PaymentWrapper = () => {
             defaultChecked
           />
           <span className='payment-span font-saira'>
-            Thanh toán bằng thẻ Metiz
+            Thanh toán bằng thẻ Cinevora
           </span>
         </label>
 

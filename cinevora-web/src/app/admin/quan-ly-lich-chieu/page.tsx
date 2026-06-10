@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Quản Lý Lịch Chiếu",
-  description: "Metiz Cinema website",
+  description: "Cinevora website",
 };
 
 const ShowtimeManagementPage = () => {

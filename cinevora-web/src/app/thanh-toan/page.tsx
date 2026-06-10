@@ -3,7 +3,7 @@ import PaymentWrapper from "@/src/components/PaymentWrapper";
 
 export const metadata: Metadata = {
   title: "Phương Thức Thanh Toán",
-  description: "Metiz Cinema website",
+  description: "Cinevora website",
 };
 
 const PaymentPage = () => {

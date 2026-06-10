@@ -130,7 +130,7 @@ const HeaderMobile = () => {
           <div className='flex h-[87px] justify-center py-[5px]'>
             <Image
               src='/assets/images/logo_header.png'
-              alt='Logo Metiz'
+              alt='Logo cinevora'
               priority
               width={70}
               height={77}

@@ -6,10 +6,10 @@ import ToastProvider from "@/src/components/ToastProvider";
 
 export const metadata: Metadata = {
   title: {
-    default: "Metiz Cinema",
+    default: "Cinevora",
     template: "%s ",
   },
-  description: "Metiz Cinema website",
+  description: "Cinevora website",
 };
 
 export default function RootLayout({
