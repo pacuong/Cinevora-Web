@@ -3,7 +3,7 @@ import UserManagementWrapper from "@/src/components/UserManagementWrapper";
 
 export const metadata: Metadata = {
   title: "Quản Lý Người Dùng",
-  description: "Metiz Cinema website",
+  description: "Cinevora website",
 };
 
 const UserManagementPage = () => {

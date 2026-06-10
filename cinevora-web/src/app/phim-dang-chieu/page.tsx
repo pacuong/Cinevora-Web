@@ -3,7 +3,7 @@ import NowShowingWrapper from "@/src/components/NowShowingWrapper";
 
 export const metadata: Metadata = {
   title: "Phim Đang Chiếu",
-  description: "Metiz Cinema website",
+  description: "Cinevora website",
 };
 
 const NowShowingPage = () => {

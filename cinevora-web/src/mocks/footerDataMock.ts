@@ -10,7 +10,7 @@ export const footerDataMock: FooterData = {
     { icon: YoutubeIcon, url: "https://www.youtube.com/" },
   ],
   metiz: {
-    imageMetiz: "/assets/images/logo_footer.png",
+    imageMetiz: "/assets/images/logotext.png",
     addressMetiz: "Tầng 1 Helio Center, Đường 2/9, Hải Châu, Đà Nẵng",
   },
   map: {
@@ -19,7 +19,7 @@ export const footerDataMock: FooterData = {
   },
   navigation: [
     {
-      title: "METIZ CINEMA",
+      title: "CINEVORA",
       items: [
         { text: "giới thiệu", url: "/gioi-thieu" },
         { text: "tuyển dụng", url: "/tuyen-dung" },
@@ -36,7 +36,7 @@ export const footerDataMock: FooterData = {
     },
   ],
   brand: {
-    logo: "/assets/images/logo_metiz.png",
+    logo: "/assets/images/logo_cinevora.png",
     label: "Cinevora",
   },
   companyInfo: [
@@ -59,6 +59,6 @@ export const footerDataMock: FooterData = {
   bottomInfo: {
     productionNote: "một sản phẩm đến từ khởi phát, ltd.",
     brandLogoUrl: "/assets/images/logoshape.png",
-    copyrightText: "bản quyền © 2017 metiz cinema",
+    copyrightText: "bản quyền © 2017 Cinevora",
   },
 };

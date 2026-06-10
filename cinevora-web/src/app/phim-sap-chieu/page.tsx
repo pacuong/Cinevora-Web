@@ -3,7 +3,7 @@ import UpComingWrapper from "@/src/components/UpComingWrapper";
 
 export const metadata: Metadata = {
   title: "Phim Sắp Chiếu",
-  description: "Metiz Cinema website",
+  description: "Cinevora website",
 };
 
 const UpComingPage = () => {

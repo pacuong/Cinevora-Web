@@ -4,7 +4,7 @@ export const offersData: OffersSectionProps = {
   highlight: {
     title: "khuyến mãi hấp dẫn",
     description:
-      "Khám phá ngay hàng trăm lợi ích dành cho bạn trong chuyên mục Khuyến mãi & Ưu đãi hấp dẫn của Metiz Cinema.",
+      "Khám phá ngay hàng trăm lợi ích dành cho bạn trong chuyên mục Khuyến mãi & Ưu đãi hấp dẫn của Cinevora.",
   },
 
   topImages: [
@@ -31,7 +31,7 @@ export const offersData: OffersSectionProps = {
         "/assets/images/uu-dai-thanh-toan-vnpay-tai-rap-chieu-phim-metiz-cinema-da-nang.png",
       alt: "uu-dai-vnpay",
       titlePromotion:
-        "XEM PHIM METIZ THỎA THÍCH CÙNG ƯU ĐÃI SIÊU HỜI TỪ VNPAY-QR ",
+        "XEM PHIM CINEVORA THỎA THÍCH CÙNG ƯU ĐÃI SIÊU HỜI TỪ VNPAY-QR ",
     },
     {
       id: 2,
@@ -43,13 +43,13 @@ export const offersData: OffersSectionProps = {
       id: 3,
       image: "/assets/images/hang-muc-thanh-vien-metiz-2023.jpg",
       alt: "hang-muc-thanh-vien",
-      titlePromotion: "THÔNG BÁO THĂNG HẠNG THÀNH VIÊN METIZ 2023",
+      titlePromotion: "THÔNG BÁO THĂNG HẠNG THÀNH VIÊN CINEVORA 2023",
     },
     {
       id: 4,
       image: "/assets/images/dat-rung-phuong-nam-mua-1-tang-1.jpg",
       alt: "dat-rung-phuong-nam",
-      titlePromotion: "THÔNG BÁO THĂNG HẠNG THÀNH VIÊN METIZ 2023",
+      titlePromotion: "THÔNG BÁO THĂNG HẠNG THÀNH VIÊN CINEVORA 2023",
     },
   ],
 };

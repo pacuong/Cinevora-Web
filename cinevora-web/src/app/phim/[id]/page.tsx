@@ -23,7 +23,7 @@ export const generateMetadata = async (
 
   return {
     title: toTitleCase(movie?.title || "Chi tiết phim"),
-    description: movie?.description || "Metiz Cinema website",
+    description: movie?.description || "Cinevora website",
   };
 };
 

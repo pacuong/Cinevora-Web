@@ -3,7 +3,7 @@ import TransactionManagementWrapper from "@/src/components/TransactionManagement
 
 export const metadata: Metadata = {
   title: "Quản Lý Giao Dịch",
-  description: "Metiz Cinema website",
+  description: "Cinevora website",
 };
 
 const TransactionManagementPage = () => {

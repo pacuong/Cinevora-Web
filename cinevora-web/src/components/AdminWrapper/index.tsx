@@ -9,7 +9,7 @@ const AdminWrapper = () => {
     <div className=" bg-[#f3f5f9] p-4 md:p-6">
       <div className="mx-auto">
         <h1 className="mb-10 text-2xl font-bold text-slate-800 md:text-[22px]">
-          Trang Quản Trị Metiz Cinema
+          Trang Quản Trị Cinevora
         </h1>
 
         <DashboardStats />
