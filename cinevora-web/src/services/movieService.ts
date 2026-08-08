@@ -1,4 +1,4 @@
-import { MovieCardProps, CreateMoviePayload} from "@/src/interfaces/movieCard";
+import { MovieCardProps, CreateMoviePayload } from "@/src/interfaces/movieCard";
 import fetchApi from "./fetchApi";
 import { MovieScheduleInfoDto } from "@/src/interfaces/api/movieScheduleApi";
 
@@ -47,7 +47,10 @@ export const updateMovie = async (
   id: number,
   payload: CreateMoviePayload,
 ): Promise<MovieCardProps> => {
-  const { data } = await fetchApi.put<MovieCardProps>(`/movies/${id}`, payload);
+  const { data } = await fetchApi.patch<MovieCardProps>(
+    `/movies/${id}`,
+    payload,
+  );
   return data;
 };
 
