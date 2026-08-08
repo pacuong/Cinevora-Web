@@ -154,15 +154,9 @@ const DetailWrapper = () => {
                 <li className='detail-list'>
                   <span className='label'>Rated:</span>
                   <span className='value'>
-                    {rated ? (
-                      <>
-                        <span className='rated'>{rated.split(" - ")[0]}</span>
-                        {" - "}
-                        {rated.split(" - ")[1]?.toUpperCase()}
-                      </>
-                    ) : (
-                      <span className='rated'>{ageRating}</span>
-                    )}
+                    <span className='rated'>{rated.split(" - ")[0]}</span>
+                    {" - "}
+                    {rated.split(" - ")[1].toUpperCase()}
                   </span>
                 </li>
               </ul>
